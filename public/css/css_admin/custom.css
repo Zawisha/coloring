@@ -1,0 +1,100 @@
+.red_border {
+    border-color: red;
+}
+.input_coloring_name {
+    width: 300px;
+}
+.add_coloring_title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.add_c_select {
+    margin-bottom: 10px;
+    min-width: 220px;
+}
+.page-footer {
+    margin-top: auto;
+}
+.wrapper {
+    min-height: 100vh;
+}
+.coloring_list_title {
+    margin-bottom: 20px;
+}
+
+.pagination_button {
+    cursor:pointer;
+}
+#autocomplete-result-list-1 {
+    color: black!important;
+}
+.tag_title {
+    margin-top: 20px;
+    /*color: black!important;*/
+}
+.add_tag {
+    margin-top: 20px!important;
+}
+.title_success_tag{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.borders_tag_list{
+    border-left: 1px solid rgb(255 255 255 / 15%) !important;
+    border-right: 1px solid rgb(255 255 255/ 15%) !important;
+}
+.tag_list_title{
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+}
+.load_more_tags {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.add_tag_in_row {
+    margin-top: 20px!important;
+}
+.tag_title_coloring {
+    margin-top: 10px!important;
+}
+.colored_tags {
+    margin-top: 10px!important;
+}
+#autocomplete-result-list-1 {
+    color: black!important;
+}
+.edit_text_black {
+    color: black!important;
+}
+.ck-editor__editable {
+    min-height: 1500px;
+}
+.go_to_page {
+    margin-bottom: 40px;
+}
+.custom_text_comp {
+    padding: 1rem;
+    width: 200px;
+    height: 60px;
+    overflow: hidden;
+}
+.custom_text_comp_header {
+    padding: 1rem;
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+}
+.change_status_col_fai {
+    min-height: 40px;
+    min-width: 40px;
+    font-size: 25px;
+}
+.v-dialog-btn-danger {
+    margin-right: 20px;
+}
+@media (max-width: 576px) {
+    .admin_tag_button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
