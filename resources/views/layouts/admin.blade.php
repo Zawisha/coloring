@@ -111,6 +111,15 @@
                         <li> <a href={{ route('tags') }}><i class="bx bx-right-arrow-alt"></i>Теги</a>
                         </li>
                     </ul>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-category"></i>
+                        </div>
+                        <div class="menu-title">Работа с категориями</div>
+                    </a>
+                    <ul>
+                        <li> <a href={{ route('cat') }}><i class="bx bx-right-arrow-alt"></i>Категории</a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 

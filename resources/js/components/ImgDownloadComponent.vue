@@ -34,6 +34,27 @@
                         <h6 class="font-14">{{ tag.name }}</h6>
                     </div>
                 </div>
+
+                <div class="add_coloring_title">Добавьте категории</div>
+                <div class="col-md-8">
+                    <autocomplete
+                        :search="search_cat"
+                        :get-result-value="getResultValue_cat"
+                        :debounce-time="500"
+                        @submit="handleSubmit_cat"
+                        v-on:focus=delete_bars()
+                    ></autocomplete>
+                </div>
+                <div class="row float-left add_tag_in_row">
+                    <div v-if="search_result_cat!=''" class="tag_title_coloring col-4">Выбрана категория: {{ search_result_cat }}</div>
+                    <button v-if="search_result_cat!=''" v-on:click="add_cat_to_cat_list()" class="btn btn-light col-4" >Добавить категорию</button>
+                </div>
+                <div v-for="tag in cat_list" class="col-4 colored_tags customers-list-item d-flex align-items-center border-top border-bottom _list borders_tag_list cursor-pointer">
+                    <div class="col-12" v-on:click="delete_cat_from_cat_list(tag.id)">
+                        <h6 class="font-14">{{ tag.name }}</h6>
+                    </div>
+                </div>
+
                 <div class="add_coloring_title">Добавьте изображение</div>
                 <form @submit="formSubmit" enctype="multipart/form-data">
                     <input type="file" class="form-control" v-on:change="imgPreview" name="avatar">
@@ -66,9 +87,12 @@ export default {
             isDisabled_button: false,
             search_result:'',
             search_result_id:'',
+            search_result_cat:'',
+            search_result_id_cat:'',
             tag_list:[],
             success_added:false,
-            published:false
+            published:false,
+            cat_list:[]
         };
     },
     mounted() {
@@ -99,6 +123,15 @@ export default {
                     arr.splice(i, 1);                }
             });
         },
+        delete_cat_from_cat_list(id)
+        {
+            let tag_temp_id=id
+            this.cat_list.forEach(function(item,i,arr) {
+                if(item.id==tag_temp_id)
+                {
+                    arr.splice(i, 1);                }
+            });
+        },
         add_tag_to_tag_list()
         {
             let tag_temp_id=this.search_result_id
@@ -115,6 +148,23 @@ export default {
                         name: this.search_result,
                     });
                 }
+        },
+        add_cat_to_cat_list()
+        {
+            let tag_temp_id=this.search_result_id_cat
+            let flag=false
+            this.cat_list.forEach(function(item,i,arr) {
+                if(item.id==tag_temp_id)
+                {
+                    flag=true
+                }
+            });
+            if(!flag) {
+                this.cat_list.push({
+                    id: this.search_result_id_cat,
+                    name: this.search_result_cat,
+                });
+            }
         },
         delete_bars()
         {
@@ -203,15 +253,21 @@ export default {
             let description=this.description;
             let selected_category=this.tag_list;
             let published=this.published;
+            let selected_cat=this.cat_list;
             let temp_selected_category=[];
                 selected_category.forEach(function(number) {
                     temp_selected_category.push(number.id)
+                });
+                let temp_selected_cat=[];
+                selected_cat.forEach(function(number) {
+                    temp_selected_cat.push(number.id)
                 });
                 data.append('file', this.file);
             data.append('coloring_name', coloring_name);
             data.append('description', description);
             data.append('published', published);
             data.append('selected_category', temp_selected_category);
+            data.append('cat', temp_selected_cat);
                 axios.post('/upload_img'
              ,data,config)
                 .then(function (res) {
@@ -259,6 +315,31 @@ export default {
             //результат забирать отсюда
             this.search_result= result.name
             this.search_result_id=result.id
+        },
+
+        search_cat(input)
+        {
+            return new Promise(resolve => {
+                if (input.length < 3) {
+                    return resolve([])
+                }
+                axios
+                    .post('/get_cat_search',{
+                        req:input
+                    }).then(response => {
+                    resolve(response.data)
+                })
+            })
+        },
+
+        getResultValue_cat(result) {
+            return result.name
+        },
+        handleSubmit_cat(result)
+        {
+            //результат забирать отсюда
+            this.search_result_cat= result.name
+            this.search_result_id_cat=result.id
         }
 
     }

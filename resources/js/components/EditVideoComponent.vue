@@ -36,7 +36,6 @@
                 </div>
                 <div class="add_coloring_title">Ссылка на видео (Кнопка "поделиться" под видео, а там кнопка "встроить". И копируете код, только сам без фрейма, например https://www.youtube.com/embed/P6ho3jU4bzM)</div>
                 <input class="input_coloring_name search-control form-control" v-model="video_link" placeholder="введите ссылку на видео"  >
-                <button v-on:click="save_edit_video()" class="btn btn-light add_coloring_title">Сохранить видео</button>
                <div v-if="video_link">
                 <iframe width="560" height="315" v-bind:src=video_link frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                </div>

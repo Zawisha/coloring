@@ -38,6 +38,8 @@ Vue.component('front-coloring-list-component', require('./components/FrontColori
 Vue.component('front-fairy-list-component', require('./components/FrontFairyListComponent').default);
 Vue.component('front-video-list-component', require('./components/FrontVideoListComponent').default);
 Vue.component('read-fairy-component', require('./components/ReadFairyComponent').default);
+Vue.component('cat-component', require('./components/CatComponent').default);
+
 import iosAlertView from 'vue-ios-alertview';
 Vue.use(iosAlertView);
 import Autocomplete from '@trevoreyre/autocomplete-vue'
