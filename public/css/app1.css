@@ -5,6 +5,7 @@
     cursor: pointer;
     height: 200px!important;
 }
+
 @media (min-width: 1450px) {
     .front-list-img {
         height: 300px!important;

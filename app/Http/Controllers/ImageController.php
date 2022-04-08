@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Colored;
+use App\Models\ColoringCat;
 use App\Models\ColoringCategory;
 use App\Models\Fairy;
 use App\Models\FairyCategory;
@@ -30,6 +31,8 @@ class ImageController extends Controller
         }
 
         $selected_category = $request->input('selected_category');
+        $selected_cat = $request->input('cat');
+
         try {
             $this->validate($request,[
                 'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -65,7 +68,15 @@ class ImageController extends Controller
                'colored_id' => $colored_id['id'],
            ]);
        }
-
+       if($selected_cat) {
+           $myArray_cat = explode(',', $selected_cat);
+           foreach ($myArray_cat as $colored) {
+               ColoringCat::create([
+                   'cat_id' => $colored,
+                   'colored_id' => $colored_id['id'],
+               ]);
+           }
+       }
 
         return response()->json([
             'status' => 'success',

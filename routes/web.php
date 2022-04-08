@@ -35,6 +35,7 @@ Route::get('/video/{id}', [\App\Http\Controllers\MainViewController::class, 'get
 Route::post('/get_video_list', [App\Http\Controllers\VideoController::class, 'get_video_list'])->name('get_video_list');
 Route::get('/download/{file}', [App\Http\Controllers\MainViewController::class, 'download'])->name('download');
 Route::get('/print', [App\Http\Controllers\MainViewController::class, 'print'])->name('print');
+Route::post('/get_cat_search',  [App\Http\Controllers\CatController::class, 'get_cat_search'])->name('get_cat_search');
 
 
 
@@ -51,6 +52,7 @@ Route::post('/get_edit_fairy', [App\Http\Controllers\FairyController::class, 'ge
 Route::get('/admin/add_coloring_success', [App\Http\Controllers\AdminController::class, 'add_coloring_success'])->name('add_coloring_success');
 Route::get('/admin/edit_coloring_success/{id}', [App\Http\Controllers\AdminController::class, 'edit_coloring_success'])->name('edit_coloring_success');
 Route::get('/admin/tags', [App\Http\Controllers\AdminController::class, 'tags'])->name('tags');
+Route::get('/admin/cat', [App\Http\Controllers\AdminController::class, 'cat'])->name('cat');
 Route::get('/admin/coloring_list', [App\Http\Controllers\ColoringController::class, 'coloring_list'])->name('coloring_list');
 Route::get('/admin/fairy_list', [App\Http\Controllers\FairyController::class, 'fairy_list'])->name('fairy_list');
 Route::post('/upload_img', [\App\Http\Controllers\ImageController::class, 'upload_img'])->name('upload_img');
@@ -78,4 +80,8 @@ Route::get('/video_list', [App\Http\Controllers\AdminController::class, 'video_l
 Route::post('/change_permission', [App\Http\Controllers\AdminController::class, 'change_permission'])->name('change_permission');
 Route::get('/users_list', [App\Http\Controllers\AdminController::class, 'users_list'])->name('users_list')->middleware('admin');
 Route::post('/get_users_list', [App\Http\Controllers\AdminController::class, 'get_users_list'])->name('get_users_list')->middleware('admin');
+Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
+Route::post('/add_cat', [\App\Http\Controllers\CatController::class, 'add_cat'])->name('add_cat');
+Route::post('/edit_cat', [\App\Http\Controllers\CatController::class, 'edit_cat'])->name('edit_cat');
+
 });

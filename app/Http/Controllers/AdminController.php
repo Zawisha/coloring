@@ -91,6 +91,10 @@ class AdminController extends Controller
     {
         return view('admin.users_list');
     }
+    public function cat()
+    {
+        return view('admin.cat');
+    }
     public function get_users_list(Request $request)
     {
         $offset =  $request->input('offset');
