@@ -15,6 +15,7 @@ class ColoringController extends Controller
 //    }
     public function get_categories(Request $request)
     {
+        //unidev comment
         $queryString=$request->input('req');
         $categories = Categories::where('name', 'LIKE', "%$queryString%")->orderBy('name')->get();
         return $categories;
