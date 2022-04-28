@@ -6,6 +6,7 @@ use App\Models\Video;
 use App\Models\VideoCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 use Nette\Schema\ValidationException;
 
@@ -27,6 +28,7 @@ class VideoController extends Controller
             $published=0;
         }
         $selected_category = $request->input('selected_category');
+        $slug = $request->input('slug');
         try {
             $this->validate($request,[
                 'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -34,6 +36,7 @@ class VideoController extends Controller
                 'description'=> 'required|string|min:10|max:300',
                 'video_link'=> 'required|string',
                 'selected_category'=> 'required',
+                'slug'=> 'unique:video,slug',
             ]);
         }
         catch (ValidationException $exception) {
@@ -53,7 +56,8 @@ class VideoController extends Controller
             'video_link' => $video_link,
             'description' => $description,
             'from_user' => $user->id,
-            'published'=>$published
+            'published'=>$published,
+            'slug'=>$slug
         ]);
 
        $myArray = explode(',', $selected_category);
@@ -98,6 +102,7 @@ class VideoController extends Controller
         $description = $request->input('description');
         $published = $request->input('published');
         $video_link = $request->input('video_link');
+        $slug = $request->input('slug');
         if($published=="true")
         {
             $published=1;
@@ -114,7 +119,9 @@ class VideoController extends Controller
                 'description'=> 'required|string|min:10|max:300',
                 'video_link'=> 'required|string',
                 'selected_category'=> 'required',
-            ]);
+                'slug'=>  'required',Rule::unique('video,slug')->where(function($query,$id) {
+                    $query->where('id', '!=', $id);
+                })            ]);
             if($file)
             {
                 $this->validate($request,[
@@ -145,7 +152,8 @@ class VideoController extends Controller
                 'image' => $save_to,
                 'description' => $description,
                 'from_user' => $user->id,
-                'published'=>$published
+                'published'=>$published,
+                'slug'=>$slug
             ]);
         }
         else
@@ -156,7 +164,8 @@ class VideoController extends Controller
                 'video_link' => $video_link,
                 'description' => $description,
                 'from_user' => $user->id,
-                'published'=>$published
+                'published'=>$published,
+                'slug'=>$slug
             ]);
         }
 

@@ -15,7 +15,8 @@
                 <div v-if="published">Опубликовано <input type="checkbox" id="checkbox" v-model="published"></div>
                 <div v-else>Не опубликовано <input type="checkbox" id="checkbox1" v-model="published"></div>
                 <div class="add_coloring_title">Название раскраски</div>
-                <input class="input_coloring_name search-control form-control" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="30" v-on:focus=delete_red_border_name() >
+                <input class="input_coloring_name search-control form-control"v-on:change="slugCheck" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="30" v-on:focus=delete_red_border_name() >
+                <div>ЧПУ: {{ chpu }}</div>
                 <div class="add_coloring_title">Описание раскраски</div>
                 <textarea class="input_coloring_name search-control form-control" v-model="description" placeholder="введите описание" rows=5 v-bind:class="{ red_border: isActive_description }" :maxlength="30" v-on:focus=delete_red_border_desc()></textarea>
                 <div class="add_coloring_title">Добавьте теги</div>
@@ -54,6 +55,7 @@
 </template>
 
 <script>
+let slug = require('slug')
 export default {
     data() {
         return {
@@ -77,13 +79,17 @@ export default {
             imagepreview_start:false,
             color_id:'',
             success_add_final:false,
-            published:false
+            published:false,
+            chpu:''
         };
     },
     mounted() {
         this.get_start_color(this.tag_list)
     },
     methods: {
+        slugCheck(){
+            this.chpu=slug(this.coloring_name)
+        },
         get_start_color(inp)
         {
             let adres=window.location.href;
@@ -96,7 +102,8 @@ export default {
                     this.coloring_name=data[0]['name'],
                     this.description=data[0]['description'],
                     this.published=data[0]['published'],
-                    this.imagepreview_start='/images/colorings/'+data[0]['img'],
+                        this.chpu=data[0]['slug'],
+                        this.imagepreview_start='/images/colorings/'+data[0]['img'],
                         data[0].categories.forEach(function(entry) {
                             inp.push({
                                 id:entry.id,
@@ -235,7 +242,8 @@ export default {
             let description=this.description;
             let selected_category=this.tag_list;
             let color_id=this.color_id;
-            let published=this.published;
+                let slug=this.chpu;
+                let published=this.published;
             let temp_selected_category=[];
                 selected_category.forEach(function(number) {
                     temp_selected_category.push(number.id)
@@ -248,7 +256,8 @@ export default {
             data.append('description', description);
             data.append('color_id', color_id);
             data.append('published', published);
-            data.append('selected_category', temp_selected_category);
+                data.append('slug', slug);
+                data.append('selected_category', temp_selected_category);
                 axios.post('/upload_img_edit'
              ,data,config)
                     .then(response => {

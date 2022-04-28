@@ -43,13 +43,22 @@ export default {
     },
     mounted() {
         this.get_page_parametres()
-        this.get_fairy_page_to_read()
     },
     methods: {
         get_page_parametres()
         {
             let uri = window.location.href.split('/');
-            this.fairy_id=uri[4]
+            this.fairy_slug=uri[4]
+            axios
+                .post('/get_fairy_id_by_slug',{
+                    current_fairy:this.fairy_slug,
+                })
+                .then(({ data }) => (
+                    this.fairy_id=data.id[0].id,
+                            this.get_fairy_page_to_read()
+                    ),
+
+                );
         },
         get_fairy_page_to_read()
             {

@@ -29,8 +29,8 @@ class MainViewController extends Controller
     }
     public function get_one_coloring(Request $request)
     {
-        $coloring_id=$request->id;
-        $coloring=Colored::where('id','=',$coloring_id)->with('categories')->get();
+        $slug=$request->slug;
+        $coloring=Colored::where('slug','=',$slug)->with('categories')->get();
         if ($coloring->isEmpty()) {
             return view('errors.404');
         }
@@ -42,8 +42,8 @@ class MainViewController extends Controller
     }
     public function get_one_fairy(Request $request)
     {
-        $coloring_id=$request->id;
-        $coloring=Fairy::where('id','=',$coloring_id)->with('categories')->get();
+        $slug=$request->slug;
+        $coloring=Fairy::where('slug','=',$slug)->with('categories')->get();
         if ($coloring->isEmpty()) {
             return view('errors.404');
         }
@@ -55,8 +55,8 @@ class MainViewController extends Controller
     }
     public function get_one_video(Request $request)
     {
-        $coloring_id=$request->id;
-        $coloring=Video::where('id','=',$coloring_id)->with('categories')->get();
+        $slug=$request->slug;
+        $coloring=Video::where('slug','=',$slug)->with('categories')->get();
         if ($coloring->isEmpty()) {
             return view('errors.404');
         }

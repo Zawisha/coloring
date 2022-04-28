@@ -24,19 +24,19 @@ Route::get('/', [App\Http\Controllers\MainViewController::class, 'index'])->name
 Route::post('/get_categories',  [App\Http\Controllers\ColoringController::class, 'get_categories'])->name('get_categories');
 Route::post('/front_get_tag_list',  [App\Http\Controllers\MainViewController::class, 'front_get_tag_list'])->name('front_get_tag_list');
 Route::post('/get_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list'])->name('get_coloring_list');
-Route::get('/coloring/{id}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
+Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');
 Route::post('/get_fairy_list', [\App\Http\Controllers\FairyController::class, 'get_fairy_list'])->name('get_fairy_list');
-Route::get('/fairy/{id}', [\App\Http\Controllers\MainViewController::class, 'get_one_fairy'])->name('get_one_fairy');
+Route::get('/fairy/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_fairy'])->name('get_one_fairy');
 Route::get('/fairy-read/{fairy}', [\App\Http\Controllers\MainViewController::class, 'fairy_read'])->name('fairy_read');
 Route::post('/get_fairy_page_data', [\App\Http\Controllers\FairyController::class, 'get_fairy_page_data'])->name('get_fairy_page_data');
 Route::get('/video-list', [\App\Http\Controllers\MainViewController::class, 'front_video_list'])->name('front_video_list');
-Route::get('/video/{id}', [\App\Http\Controllers\MainViewController::class, 'get_one_video'])->name('get_one_video');
+Route::get('/video/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_video'])->name('get_one_video');
 Route::post('/get_video_list', [App\Http\Controllers\VideoController::class, 'get_video_list'])->name('get_video_list');
 Route::get('/download/{file}', [App\Http\Controllers\MainViewController::class, 'download'])->name('download');
 Route::get('/print', [App\Http\Controllers\MainViewController::class, 'print'])->name('print');
 Route::post('/get_cat_search',  [App\Http\Controllers\CatController::class, 'get_cat_search'])->name('get_cat_search');
-
+Route::post('/get_fairy_id_by_slug',  [App\Http\Controllers\FairyController::class, 'get_fairy_id_by_slug'])->name('get_fairy_id_by_slug');
 
 
 //админка

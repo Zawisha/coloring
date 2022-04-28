@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="cart clearfix">
-                        <a href="{{ url('fairy-read/'.$coloring[0]->id) }}"><button type="submit" name="addtocart" value="5" class="btn amado-btn">Читать</button></a>
+                        <a href="{{ url('fairy-read/'.$coloring[0]->slug) }}"><button type="submit" name="addtocart" value="5" class="btn amado-btn">Читать</button></a>
                     </div>
 
                 </div>

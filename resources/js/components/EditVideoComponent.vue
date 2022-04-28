@@ -12,7 +12,8 @@
                 <div v-if="published">Опубликовано <input type="checkbox" id="checkbox" v-model="published"></div>
                 <div v-else>Не опубликовано <input type="checkbox" id="checkbox1" v-model="published"></div>
                 <div class="add_coloring_title">Название видео</div>
-                <input class="input_coloring_name search-control form-control" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="30" v-on:focus=delete_red_border_name() >
+                <input class="input_coloring_name search-control form-control"v-on:change="slugCheck" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="30" v-on:focus=delete_red_border_name() >
+                <div>ЧПУ: {{ chpu }}</div>
                 <div class="add_coloring_title">Описание видео</div>
                 <textarea class="input_coloring_name search-control form-control" v-model="description" placeholder="введите описание" rows=5 v-bind:class="{ red_border: isActive_description }" :maxlength="300" v-on:focus=delete_red_border_desc()></textarea>
                 <div class="add_coloring_title">Добавьте теги</div>
@@ -55,6 +56,7 @@
 </template>
 
 <script>
+let slug = require('slug')
 export default {
     data() {
         return {
@@ -76,7 +78,8 @@ export default {
             tag_list:[],
             success_added:false,
             published:false,
-            video_link:''
+            video_link:'',
+            chpu:''
 
         };
     },
@@ -84,6 +87,9 @@ export default {
         this.get_start_video(this.tag_list)
     },
     methods: {
+        slugCheck(){
+            this.chpu=slug(this.coloring_name)
+        },
         get_start_video(inp)
         {
             let adres=window.location.href;
@@ -96,7 +102,8 @@ export default {
                             this.coloring_name=data[0]['name'],
                             this.description=data[0]['description'],
                             this.published=data[0]['published'],
-                            this.video_link=data[0]['video_link'], this.imagepreview_start='/images/video/'+data[0]['image'],
+                                this.chpu=data[0]['slug'],
+                                this.video_link=data[0]['video_link'], this.imagepreview_start='/images/video/'+data[0]['image'],
                                 data[0].categories.forEach(function(entry) {
                                 inp.push({
                                     id:entry.id,
@@ -268,6 +275,7 @@ export default {
                 let selected_category=this.tag_list;
                 let color_id=this.color_id;
                 let video_link= this.video_link;
+                let slug=this.chpu;
                 let published=this.published;
                 let temp_selected_category=[];
                 selected_category.forEach(function(number) {
@@ -282,6 +290,7 @@ export default {
                 data.append('id', color_id);
                 data.append('video_link', video_link);
                 data.append('published', published);
+                data.append('slug', slug);
                 data.append('selected_category', temp_selected_category);
                 axios.post('/save_edit_video'
                     ,data,config)

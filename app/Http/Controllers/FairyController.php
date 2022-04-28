@@ -155,7 +155,16 @@ class FairyController extends Controller
         header('Content-Type: text/html; charset=utf-8');
         echo json_encode($response);
     }
-
+    public function get_fairy_id_by_slug(Request $request)
+    {
+        $current_fairy_id = $request->input('current_fairy');
+        $current_fairy_id = Fairy::where('slug', '=', $current_fairy_id)
+            ->get();
+        return response()->json([
+            'status' => 'success',
+            'id' => $current_fairy_id,
+        ], 200);
+    }
     public function get_fairy_pagination(Request $request)
     {
         $current_fairy_id =  $request->input('current_fairy_id');

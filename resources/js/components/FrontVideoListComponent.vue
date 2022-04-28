@@ -14,9 +14,9 @@
                     <tbody>
                     <tr v-for="(colored,index) in coloring_list">
                         <td class="cart_product_img ">
-                            <img :src="'/images/video/'+colored.img" alt="Product" v-on:click="go_to_one_video(colored.id)">
+                            <img :src="'/images/video/'+colored.img" alt="Product" v-on:click="go_to_one_video(colored.slug)">
                         </td>
-                        <td class="cart_product_desc" v-on:click="go_to_one_video(colored.id)">
+                        <td class="cart_product_desc" v-on:click="go_to_one_video(colored.slug)">
                             <h5>{{ colored.name }}</h5>
                         </td>
                         <td class="qty" v-on:click="go_to_one_video(colored.id)">
@@ -104,6 +104,7 @@ export default {
                                 description:entry.description,
                                 img:entry.image,
                                 published_db:entry.published,
+                                slug:entry.slug
                             });
                         }),
                         this.pagination_counter()

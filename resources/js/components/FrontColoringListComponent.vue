@@ -17,7 +17,7 @@
 
                 <div class="col-12 col-sm-4" v-for="(colored,index) in coloring_list">
                     <div class="single-product-wrapper">
-                        <div class="product-img " v-on:click="go_to_one_coloring(colored.id)">
+                        <div class="product-img " v-on:click="go_to_one_coloring(colored.slug)">
                             <img class="front-list-img" :src="'/images/colorings/'+colored.img" alt="">
                         </div>
                         <!-- Product Description -->
@@ -25,7 +25,7 @@
                             <!-- Product Meta Data -->
                             <div class="product-meta-data">
                                 <div class="line"></div>
-                                <p class="product-price"  v-on:click="go_to_one_coloring(colored.id)">{{ colored.name }}</p>
+                                <p class="product-price"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</p>
                             </div>
                         </div>
                     </div>
@@ -111,6 +111,7 @@ export default {
                                 description:entry.description,
                                 img:entry.img,
                                 published_db:entry.published,
+                                slug:entry.slug
                             });
                         }),
                         this.pagination_counter()

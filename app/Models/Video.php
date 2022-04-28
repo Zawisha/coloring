@@ -9,7 +9,7 @@ class Video extends Model
 {
     use HasFactory;
     protected $table = 'video';
-    protected $fillable = ['id','name', 'video_link','description', 'from_user', 'published','image'];
+    protected $fillable = ['id','name', 'video_link','description', 'from_user', 'published','image','slug'];
     public function categories()
     {
         return $this->belongsToMany(Categories::class,'video_category','video_id','category_id');

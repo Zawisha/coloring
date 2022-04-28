@@ -48,6 +48,7 @@ Vue.use(Autocomplete)
 import 'v-slim-dialog/dist/v-slim-dialog.css'
 import SlimDialog from 'v-slim-dialog'
 
+//let slug = require('slug')
 Vue.use(SlimDialog)
 //шинна данных
 export let eventBusColoring = new Vue();
@@ -55,7 +56,6 @@ export let eventBusFairy = new Vue();
 
 
 export let eventBusVideo = new Vue();
-
 
 
 

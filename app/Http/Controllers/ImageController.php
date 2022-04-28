@@ -10,6 +10,7 @@ use App\Models\FairyCategory;
 use App\Models\FairyPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 use Nette\Schema\ValidationException;
 
@@ -32,6 +33,7 @@ class ImageController extends Controller
 
         $selected_category = $request->input('selected_category');
         $selected_cat = $request->input('cat');
+        $slug = $request->input('slug');
 
         try {
             $this->validate($request,[
@@ -39,6 +41,7 @@ class ImageController extends Controller
                 'coloring_name'=> 'required|string|min:5|max:40',
                 'description'=> 'required|string|min:10|max:300',
                 'selected_category'=> 'required',
+                'slug'=> 'unique:colored,slug',
             ]);
         }
         catch (ValidationException $exception) {
@@ -56,7 +59,8 @@ class ImageController extends Controller
             'img' => $save_to,
             'description' => $description,
             'from_user' => $user->id,
-           'published'=>$published
+           'published'=>$published,
+           'slug'=>$slug
         ]);
 
         $myArray = explode(',', $selected_category);
@@ -101,12 +105,14 @@ class ImageController extends Controller
             $published=0;
         }
         $selected_category = $request->input('selected_category');
+        $slug = $request->input('slug');
         try {
             $this->validate($request,[
                 'file' => 'required|image|mimes:jpeg,png,jpg,svg',
                 'coloring_name'=> 'required|string|min:5|max:40',
                 'description'=> 'required|string|min:10|max:300',
                 'selected_category'=> 'required',
+                'slug'=> 'unique:fairy,slug',
             ]);
         }
         catch (ValidationException $exception) {
@@ -124,7 +130,8 @@ class ImageController extends Controller
             'img_title' => $save_to,
             'description' => $description,
             'from_user' => $user->id,
-           'published'=>$published
+           'published'=>$published,
+           'slug'=>$slug
        ]);
 
         $myArray = explode(',', $selected_category);
@@ -159,7 +166,7 @@ class ImageController extends Controller
         $description = $request->input('description');
         $selected_category = $request->input('selected_category');
         $published = $request->input('published');
-
+        $slug = $request->input('slug');
         if($published=="true")
         {
             $published=1;
@@ -174,6 +181,9 @@ class ImageController extends Controller
                 'coloring_name'=> 'required|string|min:5|max:25',
                 'description'=> 'required|string|min:10|max:40',
                 'selected_category'=> 'required',
+                'slug'=>  'required',Rule::unique('colored,slug')->where(function($query,$color_id) {
+                    $query->where('id', '!=', $color_id);
+                })
             ]);
             if($file)
             {
@@ -203,6 +213,7 @@ class ImageController extends Controller
                 'img' => $save_to,
                 'description' => $description,
                 'published' => $published,
+                'slug'=>$slug
             ]);
         }
         else
@@ -212,6 +223,7 @@ class ImageController extends Controller
                 'name' => $coloring_name,
                 'description' => $description,
                 'published' => $published,
+                'slug'=>$slug
             ]);
         }
         ColoringCategory::where('colored_id','=',$color_id)->delete();
@@ -242,6 +254,7 @@ class ImageController extends Controller
         $description = $request->input('description');
         $selected_category = $request->input('selected_category');
         $published = $request->input('published');
+        $slug = $request->input('slug');
         if($published=="true")
         {
             $published=1;
@@ -256,7 +269,9 @@ class ImageController extends Controller
                 'coloring_name'=> 'required|string|min:5|max:25',
                 'description'=> 'required|string|min:10|max:300',
                 'selected_category'=> 'required',
-            ]);
+                'slug'=>  'required',Rule::unique('fairy,slug')->where(function($query,$color_id) {
+                    $query->where('id', '!=', $color_id);
+                })            ]);
             if($file)
             {
                 $this->validate($request,[
@@ -285,6 +300,7 @@ class ImageController extends Controller
                 'img_title' => $save_to,
                 'description' => $description,
                 'published' => $published,
+                'slug'=>$slug
             ]);
         }
         else
@@ -294,6 +310,7 @@ class ImageController extends Controller
                 'name' => $coloring_name,
                 'description' => $description,
                 'published' => $published,
+                'slug'=>$slug
             ]);
         }
         FairyCategory::where('fairy_id','=',$color_id)->delete();

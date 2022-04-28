@@ -9,7 +9,7 @@ class Fairy extends Model
 {
     use HasFactory;
     protected $table = 'fairy';
-    protected $fillable = ['id','name', 'img_title','description', 'from_user', 'published'];
+    protected $fillable = ['id','name', 'img_title','description', 'from_user', 'published','slug'];
     public function categories()
     {
         return $this->belongsToMany(Categories::class,'fairy_category','fairy_id','category_id');
