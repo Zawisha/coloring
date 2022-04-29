@@ -36,6 +36,15 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/88651975" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL2L8VK8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1LL2L8VK8T');
+    </script>
 </head>
 <body class="antialiased" >
 <div id="app">
