@@ -69,44 +69,44 @@
                 <div class="col-5   button_download_green button_download_green_print text-center" v-on:click="print()">Печатать</div>
             </div>
         </div>
-        <div class="col-12 streack"></div>
-        <div class="col-12 header_works text-center">Работы художников</div>
-        <div class="col-12 row works_imgs_row mob_settings_one_imgs">
-            <div class="col-4 col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-<!--                <span class="streak_black_works iconify" data-icon="codicon:triangle-right" data-width="80" data-height="240"></span>-->
-            </div>
-            <div v-if="menu_size>991" class="col-lg-3">
-                <div class="text-center works_list_empty">
-                    <div class="works_text">
-                       <span class="works_add_plus">+</span>
-                       <div class="works_add">Добавить свой вариант</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div v-if="menu_size<992" class="col-12 add_your_coloring text-center">Добавить свой вариант</div>
+<!--        <div class="col-12 streack"></div>-->
+<!--        <div class="col-12 header_works text-center">Работы художников</div>-->
+<!--        <div class="col-12 row works_imgs_row mob_settings_one_imgs">-->
+<!--            <div class="col-4 col-lg-3">-->
+<!--                <div class="text-center works_list">-->
+<!--                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">-->
+<!--                    <div class="who_works">-->
+<!--                        Oleg 5 let-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-4  col-lg-3">-->
+<!--                <div class="text-center works_list">-->
+<!--                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">-->
+<!--                    <div class="who_works">-->
+<!--                        Oleg 5 let-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-4  col-lg-3">-->
+<!--                <div class="text-center works_list">-->
+<!--                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">-->
+<!--                    <div class="who_works">-->
+<!--                        Oleg 5 let-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--&lt;!&ndash;                <span class="streak_black_works iconify" data-icon="codicon:triangle-right" data-width="80" data-height="240"></span>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div v-if="menu_size>991" class="col-lg-3">-->
+<!--                <div class="text-center works_list_empty">-->
+<!--                    <div class="works_text">-->
+<!--                       <span class="works_add_plus">+</span>-->
+<!--                       <div class="works_add">Добавить свой вариант</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div v-if="menu_size<992" class="col-12 add_your_coloring text-center">Добавить свой вариант</div>-->
         <div v-if="menu_size<992" class="col-12 row">
             <div class="col-6">
                 <div class="text-center">

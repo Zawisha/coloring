@@ -11248,53 +11248,7 @@ var render = function render() {
         return _vm.print();
       }
     }
-  }, [_vm._v("Печатать")])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 streack"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-12 header_works text-center"
-  }, [_vm._v("Работы художников")]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 row works_imgs_row mob_settings_one_imgs"
-  }, [_c("div", {
-    staticClass: "col-4 col-lg-3"
-  }, [_c("div", {
-    staticClass: "text-center works_list"
-  }, [_c("img", {
-    staticClass: "works_list_img",
-    attrs: {
-      src: "/images/colorings/1_1651087261.jpg",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "who_works"
-  }, [_vm._v("\n                        Oleg 5 let\n                    ")])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4 col-lg-3"
-  }, [_c("div", {
-    staticClass: "text-center works_list"
-  }, [_c("img", {
-    staticClass: "works_list_img",
-    attrs: {
-      src: "/images/colorings/1_1651087261.jpg",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "who_works"
-  }, [_vm._v("\n                        Oleg 5 let\n                    ")])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4 col-lg-3"
-  }, [_c("div", {
-    staticClass: "text-center works_list"
-  }, [_c("img", {
-    staticClass: "works_list_img",
-    attrs: {
-      src: "/images/colorings/1_1651087261.jpg",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "who_works"
-  }, [_vm._v("\n                        Oleg 5 let\n                    ")])])]), _vm._v(" "), _vm.menu_size > 991 ? _c("div", {
-    staticClass: "col-lg-3"
-  }, [_vm._m(2)]) : _vm._e()]), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
-    staticClass: "col-12 add_your_coloring text-center"
-  }, [_vm._v("Добавить свой вариант")]) : _vm._e(), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
+  }, [_vm._v("Печатать")])])]), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
     staticClass: "col-12 row"
   }, [_c("div", {
     staticClass: "col-6"
@@ -11540,19 +11494,6 @@ var staticRenderFns = [function () {
   }), _vm._v(" "), _c("div", {
     staticClass: "col-12 mob_menu_bootom_text text-center"
   }, [_vm._v("Сказки")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "text-center works_list_empty"
-  }, [_c("div", {
-    staticClass: "works_text"
-  }, [_c("span", {
-    staticClass: "works_add_plus"
-  }, [_vm._v("+")]), _vm._v(" "), _c("div", {
-    staticClass: "works_add"
-  }, [_vm._v("Добавить свой вариант")])])]);
 }];
 render._withStripped = true;
 
