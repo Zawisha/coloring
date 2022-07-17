@@ -68,7 +68,7 @@ export default {
                 axios
                     .post('/get_coloring_list',{
                         offset:this.offset,
-                        front:true,
+                        front:false,
                         search_id:this.search_id
                     })
                     .then(({ data }) => (

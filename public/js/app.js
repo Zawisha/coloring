@@ -3762,7 +3762,7 @@ __webpack_require__.r(__webpack_exports__);
         this.preload = true;
         axios.post('/get_coloring_list', {
           offset: this.offset,
-          front: true,
+          front: false,
           search_id: this.search_id
         }).then(function (_ref) {
           var data = _ref.data;
