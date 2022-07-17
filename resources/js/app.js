@@ -39,7 +39,14 @@ Vue.component('front-fairy-list-component', require('./components/FrontFairyList
 Vue.component('front-video-list-component', require('./components/FrontVideoListComponent').default);
 Vue.component('read-fairy-component', require('./components/ReadFairyComponent').default);
 Vue.component('cat-component', require('./components/CatComponent').default);
-
+Vue.component('profile-component', require('./components/ProfileComponent').default);
+Vue.component('front-liked-component', require('./components/FrontLikedComponent').default);
+Vue.component('front-cat-component', require('./components/FrontCatComponent').default);
+Vue.component('ava-component', require('./components/AvaComponent').default);
+Vue.component('preloader-component', require('./components/PreloaderComponent').default);
+Vue.component('front-coloring-one-component', require('./components/FrontColoringOneComponent').default);
+Vue.component('front-cat-one-with-colorings-component', require('./components/FrontCatOneWithColoringsComponent').default);
+import { Icon } from '@iconify/vue2';
 import iosAlertView from 'vue-ios-alertview';
 Vue.use(iosAlertView);
 import Autocomplete from '@trevoreyre/autocomplete-vue'
@@ -48,13 +55,16 @@ Vue.use(Autocomplete)
 import 'v-slim-dialog/dist/v-slim-dialog.css'
 import SlimDialog from 'v-slim-dialog'
 
+// import VueCropper from 'vue-cropperjs';
+// import 'cropperjs/dist/cropper.css';
+// Vue.component(VueCropper);
+
 //let slug = require('slug')
 Vue.use(SlimDialog)
+
 //шинна данных
 export let eventBusColoring = new Vue();
 export let eventBusFairy = new Vue();
-
-
 export let eventBusVideo = new Vue();
 
 
@@ -70,11 +80,11 @@ export let eventBusVideo = new Vue();
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+export default {
 
-
+}
 
 const app = new Vue({
     el: '#app',
-
 
 });

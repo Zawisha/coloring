@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div v-if="success_add_final" class="alert alert-success" role="alert">
-                    Сказка отредактирована успешно
+                    Раскраска отредактирована успешно
                 </div>
                 <div v-if="alert" class="alert alert-danger" role="alert">
                     <ul id="error_list">

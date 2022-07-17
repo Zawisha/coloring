@@ -20,4 +20,5 @@ class Categories extends Model
     {
         return $this->belongsToMany(Fairy::class);
     }
+
 }

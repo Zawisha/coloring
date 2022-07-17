@@ -1,69 +1,87 @@
 <template>
-    <div class="amado_product_area section-padding-100">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-12">
-<!--                    <div class="product-topbar d-xl-flex align-items-end justify-content-between">-->
-<!--                        &lt;!&ndash; Total Products &ndash;&gt;-->
-<!--                        <div class="total-products">-->
-<!--                            <p>Showing 01-8 0f 25</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
-            </div>
-
+        <div class="container-fluid front_coloring_list_cont">
             <div class="row">
 
-                <div class="col-12 col-sm-4" v-for="(colored,index) in coloring_list">
-                    <div class="single-product-wrapper">
-                        <div class="product-img " v-on:click="go_to_one_coloring(colored.slug)">
-                            <img class="front-list-img" :src="'/images/colorings/'+colored.img" alt="">
+                <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
+                    <div class="mob_menu_bootom_left col">
+                        <div class="mob_menu_bootom ">
+                            <span class="iconify col-12 mob_menu_bootom_icon" style="color: #FFFFFF;" data-icon="ion:color-palette-outline"></span>
+                            <div class="col-12 mob_menu_bootom_text text-center" v-on:click="go_to_col()">Раскраски</div>
                         </div>
-                        <!-- Product Description -->
-                        <div class="product-description d-flex align-items-center justify-content-between">
-                            <!-- Product Meta Data -->
-                            <div class="product-meta-data">
-                                <div class="line"></div>
-                                <p class="product-price"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</p>
+                    </div >
+                    <div class="mob_menu_bootom_center col">
+                        <div class="mob_menu_bootom ">
+                            <span class="iconify col-12 mob_menu_bootom_icon" style="color: #FFFFFF;" data-icon="ion:videocam-outline"></span>
+                            <div class="col-12 mob_menu_bootom_text text-center">Видео</div>
+                        </div>
+                    </div >
+                    <div class="mob_menu_bootom_right col">
+                        <div class="mob_menu_bootom ">
+                            <span class="iconify col-12 mob_menu_bootom_icon" style="color: #FFFFFF;" data-icon="icon-park-outline:book-open"></span>
+                            <div class="col-12 mob_menu_bootom_text text-center">Сказки</div>
+                        </div>
+                    </div >
+                </div>
+                <div  class="col-12 one_front_coloring " v-for="(colored,index) in coloring_list">
+                    <div class="col-12 row reklama_row_main_list" v-if="(index===reklama_number)&& (hide_on_mob)">
+                        <div class="col-3 ">
+                            <div class="text-center">
+                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
                             </div>
                         </div>
                     </div>
+                    <span v-else class="row">
+                     <div class="col-3 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
+                          <img class="front-list-img-new" :src="'/images/colorings/'+colored.img" alt="">
+                     </div>
+                    <div class="col-9 col-lg-9">
+                        <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
+                        <div class="offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l">{{ colored.description }}</div>
+                        <div class="rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right">
+
+                            <span v-show="colored.type_of_like=='1'"  class="like_up1"   v-on:click="setLike('1',colored.id,coloring_list)" ><span  class="iconify" data-icon="ant-design:like-filled" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
+                            <span v-show="colored.type_of_like==('0'||'2')"  class="like_down2" v-on:click="setLike('1',colored.id,coloring_list)" ><span  class="iconify" data-icon="ant-design:like-outlined" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
+                            <span class="coloring_rate">{{ colored.count_of_like }}</span>
+                            <span v-show="colored.type_of_like=='2'" class="like_down3" v-on:click="setLike(2,colored.id,coloring_list)" ><span class="iconify" data-icon="ant-design:dislike-filled" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
+                            <span v-show="colored.type_of_like==('0'||'1')" class="like_down4" v-on:click="setLike(2,colored.id,coloring_list)" ><span class="iconify" data-icon="ant-design:dislike-outlined" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height' ></span></span>
+
+                            <span v-if="menu_size<993" class="iconify follow_arrow_mob" data-icon="akar-icons:arrow-forward-thick-fill" v-bind:data-width='menu_data_width_arrow'  v-bind:data-height='menu_data_height_arrow'></span>
+<!--                            <span class="iconify" data-icon="ant-design:star-filled" data-width="25" data-height="23"></span>-->
+                            <!--                            <span class="iconify" data-icon="icon-park:like"></span>-->
+                        </div>
+                    </div>
+                    </span>
                 </div>
 
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <!-- Pagination -->
-                    <!--            пагинация          -->
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item pagination_button prev_pag_button" v-on:click="prev_page()"><span class="page-link page_link_width" >Назад</span>
-                            </li>
-                            <li v-if="pag.id!='...'" v-for="pag in pagination_numb" class="page-item pagination_button"
-                                v-bind:class="{ active: pag.id==current_page }"
-                                v-on:click="new_page(pag.id)">
-                                <span class="page-link" >{{ pag.id }}</span>
-                            </li>
-                            <li v-else class="page-item">
-                                <span class="page-link" >{{ pag.id }}</span>
-                            </li>
-                            <li class="page-item pagination_button next_pag_button" v-on:click="next_page()"><span class="page-link page_link_width" href="javascript:;">Вперёд</span>
-                            </li>
-                        </ul>
-                    </nav>
+                    <preloader-component v-if="preload"></preloader-component>
 
-                </div>
+
             </div>
+
 
         </div>
-    </div>
 </template>
 
 <script>
 import {eventBusColoring} from "../app";
 
 export default {
+    props: ['auth_user'],
     data() {
         return {
             coloring_list:[],
@@ -71,16 +89,35 @@ export default {
             //текущая страница
             current_page:1,
             //по сколько записей на странице выбирать результат
-            offset:12,
+            offset:0,
+            types_count:0,
             // ниже сколько всего записей в БД с такими параметрами
             pagination_all:0,
             //ниже массив в который добавляем страницы пагинации 1 2 3 и т.д.
             pagination_numb:[],
-            search_id:''
+            search_id:'',
+            menu_size:'',
+            menu_data_width:'',
+            menu_data_height:'',
+            menu_data_width_arrow:'',
+            menu_data_height_arrow:'',
+            window_height:'',
+            isStick:true,
+            reklama_number:9999,
+            hide_on_mob:true,
+            like_status_arr:[{12: 'ant-design:like-outlined' },{13: 'ant-design:like-filled'}],
+            like_status:'ant-design:like-outlined',
+            like_status1:'ant-design:like-filled',
+            like1:false,
+            like2:false,
+            preload:false
+
         };
     },
     mounted() {
         this.get_coloring_list(this.coloring_list);
+        this.get_size();
+        this.scroll();
     },
     created() {
         eventBusColoring.$on("click_tag_coloring", (id) => {
@@ -93,17 +130,94 @@ export default {
         })
     },
     methods: {
+        scroll () {
+            window.onscroll = () => {
+                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+
+                if (bottomOfWindow) {
+                    this.get_coloring_list(this.coloring_list)
+                }
+            }
+        },
+        go_to_col()
+        {
+            window.location.href = '/'
+        },
+          setLike(n,colored_id,inp) {
+              if(this.auth_user) {
+                  this.coloring_list.forEach(function (item, i) {
+                      if (item.id === colored_id) {
+                          axios
+                              .post('/setLike', {
+                                  type_of_like: n,
+                                  colored_id: colored_id
+                              })
+                          if (inp[i]['type_of_like'] == n) {
+                              inp[i]['type_of_like'] = '0'
+                              if (n == '1') {
+                                  inp[i]['count_of_like'] = (Number(inp[i]['count_of_like']) - Number(1))
+                              }
+                          } else {
+                              if (n == '1') {
+                                  inp[i]['count_of_like'] = (Number(inp[i]['count_of_like']) + Number(1))
+                                  console.log(inp[i]['count_of_like']);
+                              }
+                              inp[i]['type_of_like'] = n;
+                          }
+
+                      }
+                  });
+              }
+              else
+              {
+                  window.location.href = '/login'
+              }
+        },
+        get_size()
+        {
+           this.menu_size=window.innerWidth;
+           this.window_height=(window.innerHeight-60);
+           //получаем высоту экрана
+           // console.log(this.window_height)
+           // console.log(this.menu_size);
+           if(this.menu_size>993)
+           {
+               this.menu_data_width=25
+               this.menu_data_height=23
+           }
+           if(this.menu_size<993)
+           {
+               this.menu_data_width=20
+               this.menu_data_height=16
+               this.hide_on_mob=false
+
+
+           }
+            if(this.menu_size<373)
+            {
+                this.menu_data_width_arrow=18
+                this.menu_data_height_arrow=15
+            }
+            else
+            {
+                this.menu_data_width_arrow=25
+                this.menu_data_height_arrow=23
+            }
+
+        },
         get_coloring_list(inp)
         {
-            let offset_from_start=(this.current_page-1)*this.offset
+            if(this.offset<=this.types_count)
+            {
+            this.preload=true
             axios
                 .post('/get_coloring_list',{
-                    offset:offset_from_start,
+                    offset:this.offset,
                     front:true,
                     search_id:this.search_id
                 })
                 .then(({ data }) => (
-                        this.pagination_all=data.tipes_count,
+                        this.types_count=data.tipes_count,
                         data.list_colored.forEach(function(entry) {
                             inp.push({
                                 id:entry.id,
@@ -111,12 +225,17 @@ export default {
                                 description:entry.description,
                                 img:entry.img,
                                 published_db:entry.published,
-                                slug:entry.slug
+                                slug:entry.slug,
+                                type_of_like:entry.type_of_like,
+                                count_of_like:entry.count_of_like
                             });
                         }),
-                        this.pagination_counter()
-                    )
+                            this.preload=false
+                    ),
+                    this.offset=Number(this.offset)+Number(20),
                 );
+            }
+
         },
         go_to_one_coloring(id)
         {
@@ -146,76 +265,6 @@ export default {
             this.coloring_list=[]
             this.current_page=page_id
             this.get_coloring_list(this.coloring_list);
-        },
-        pagination_counter()
-        {
-            if(this.pagination_all!=0) {
-                //формирование отрисовки пагинации
-                let g = Math.ceil(this.pagination_all / this.offset);
-
-                //текущая страница первая
-                if (this.current_page == 1) {
-                    if (g > 1) {
-                        for (let i = 1; i <= 2; i++) {
-                            this.pagination_numb.push({'id': i})
-                        }
-                        this.pagination_numb.push({'id': '...'})
-                        this.pagination_numb.push({'id': g})
-                    } else {
-                        this.pagination_numb.push({'id': g})
-                    }
-                }
-                //текущая страница вторая
-                if (this.current_page == 2) {
-                    if (g > 2) {
-                        for (let i = 1; i <= 3; i++) {
-                            this.pagination_numb.push({'id': i})
-                        }
-                        this.pagination_numb.push({'id': '...'})
-                        this.pagination_numb.push({'id': g})
-                    } else {
-                        for (let i = 1; i <= 2; i++) {
-                            this.pagination_numb.push({'id': i})
-                        }
-                    }
-                }
-                if (this.current_page > 2) {
-
-                    //минусовая
-                    if ((this.current_page - 3) == 1) {
-                        let page = this.current_page - 3
-                        this.pagination_numb.push({'id': '1'})
-                    } else {
-                        if ((this.current_page - 2) > 1) {
-                            this.pagination_numb.push({'id': '1'})
-                            this.pagination_numb.push({'id': '...'})
-                        }
-                    }
-                    let page = this.current_page - 2
-                    this.pagination_numb.push({'id': page})
-                    page = this.current_page - 1
-                    this.pagination_numb.push({'id': page})
-                    this.pagination_numb.push({'id': this.current_page})
-                    //плюсовая
-                    if ((this.current_page + 1) <= g) {
-                        page = this.current_page + 1
-                        this.pagination_numb.push({'id': page})
-                    }
-                    if ((this.current_page + 2) <= g) {
-                        page = this.current_page + 2
-                        this.pagination_numb.push({'id': page})
-                    }
-                    if ((this.current_page + 3) == g) {
-                        page = this.current_page + 3
-                        this.pagination_numb.push({'id': page})
-                    } else {
-                        if ((g - this.current_page) > 2) {
-                            this.pagination_numb.push({'id': '...'})
-                            this.pagination_numb.push({'id': g})
-                        }
-                    }
-                }
-            }
         },
         moderation(index,id)
         {
@@ -253,4 +302,8 @@ export default {
         },
     }
 }
+
+
+
+
 </script>

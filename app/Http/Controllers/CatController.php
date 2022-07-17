@@ -11,9 +11,11 @@ class CatController extends Controller
     public function add_cat(Request $request)
     {
         $tag = $request->input('tag');
+        $slug = $request->input('slug');
         try {
             $this->validate($request,[
-                'tag'=> 'required|string|unique:categories,name|min:3|max:32',
+                'tag'=> 'required|string|unique:cat,name|min:3|max:32',
+                'slug'=> 'required|string|unique:cat,slug|min:3|max:32',
             ]);
         }
         catch (ValidationException $exception) {
@@ -24,12 +26,14 @@ class CatController extends Controller
             ], 422);
 
         }
-        Cat::create([
-            'name'=>$tag
+      $cat= Cat::create([
+            'name'=>$tag,
+            'slug'=>$slug
         ]);
         return response()->json([
             'status' => 'success',
             'message'    => 'категория создана',
+            'id'=>$cat['id']
         ], 201);
     }
     public function get_cat_list(Request $request)
@@ -37,7 +41,7 @@ class CatController extends Controller
         $offset =  $request->input('offset');
         $list_tags= Cat::where('id', '>', 0)->
             offset($offset)
-            ->limit(50)
+            ->limit(20)
             ->get();
         $count = Cat::count();
         return response()->json([
@@ -50,9 +54,12 @@ class CatController extends Controller
     {
         $tag_name = $request->input('tag');
         $tag_id = $request->input('tag_id');
+        $slug = $request->input('slug');
+
         try {
             $this->validate($request,[
-                'tag'=> 'required|string|unique:categories,name|min:3|max:32',
+                'tag'=> 'required|string|max:32|min:3|unique:cat,name,'.$tag_id.',id',
+                'slug'=> 'required|string|min:3|max:32|unique:cat,slug,'.$tag_id.',id',
             ]);
         }
         catch (ValidationException $exception) {
@@ -64,7 +71,8 @@ class CatController extends Controller
 
         }
         Cat::where('id', '=', $tag_id)->update([
-            'name' =>$tag_name
+            'name' =>$tag_name,
+            'slug' =>$slug
         ]);
         return response()->json([
             'status' => 'success',

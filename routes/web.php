@@ -22,8 +22,12 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\MainViewController::class, 'index'])->name('home');
 //Route::get('/coloring',  [App\Http\Controllers\ColoringController::class, 'index'])->name('coloring');
 Route::post('/get_categories',  [App\Http\Controllers\ColoringController::class, 'get_categories'])->name('get_categories');
+Route::get('/cat',  [App\Http\Controllers\MainViewController::class, 'front_cat_list'])->name('front_cat_list');
+Route::get('/cat/{slug}',  [App\Http\Controllers\MainViewController::class, 'front_cat_one'])->name('front_cat_one');
 Route::post('/front_get_tag_list',  [App\Http\Controllers\MainViewController::class, 'front_get_tag_list'])->name('front_get_tag_list');
 Route::post('/get_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list'])->name('get_coloring_list');
+Route::post('/get_coloring_list_by_cat', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_cat'])->name('get_coloring_list_by_cat');
+Route::post('/get_coloring_list_liked', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_liked'])->name('get_coloring_list_liked');
 Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');
 Route::post('/get_fairy_list', [\App\Http\Controllers\FairyController::class, 'get_fairy_list'])->name('get_fairy_list');
@@ -37,7 +41,22 @@ Route::get('/download/{file}', [App\Http\Controllers\MainViewController::class, 
 Route::get('/print', [App\Http\Controllers\MainViewController::class, 'print'])->name('print');
 Route::post('/get_cat_search',  [App\Http\Controllers\CatController::class, 'get_cat_search'])->name('get_cat_search');
 Route::post('/get_fairy_id_by_slug',  [App\Http\Controllers\FairyController::class, 'get_fairy_id_by_slug'])->name('get_fairy_id_by_slug');
+Route::post('/getOneFrontColoring', [App\Http\Controllers\ColoringController::class, 'getOneFrontColoring'])->name('getOneFrontColoring');
+Route::post('/setLike', [App\Http\Controllers\LikeController::class, 'setLike'])->name('setLike');
+Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
+    Route::get('/new_password', [App\Http\Controllers\MainViewController::class, 'new_password'])->name('new_password');
+    Route::post('/change_profile_data', [App\Http\Controllers\ProfileController::class, 'change_profile_data'])->name('change_profile_data');
+    Route::post('/changePasswordPost', [App\Http\Controllers\ProfileController::class, 'changePasswordPost'])->name('changePasswordPost');
+    Route::post('/logout', [App\Http\Controllers\ProfileController::class, 'logout'])->name('logout');
+    Route::get('/liked', [App\Http\Controllers\MainViewController::class, 'liked'])->name('liked');
+    Route::post('/upload_crop', [App\Http\Controllers\ProfileController::class, 'upload_crop'])->name('upload_crop');
+    Route::post('/get_user_params', [App\Http\Controllers\ProfileController::class, 'get_user_params'])->name('get_user_params');
+    Route::post('/get_user_params_main', [App\Http\Controllers\ProfileController::class, 'get_user_params_main'])->name('get_user_params_main');
+
+});
 
 //админка
 Route::middleware(['editor'])->group(function () {
@@ -58,7 +77,10 @@ Route::get('/admin/fairy_list', [App\Http\Controllers\FairyController::class, 'f
 Route::post('/upload_img', [\App\Http\Controllers\ImageController::class, 'upload_img'])->name('upload_img');
 Route::post('/upload_fairy', [\App\Http\Controllers\ImageController::class, 'upload_fairy'])->name('upload_fairy');
 Route::post('/upload_img_edit', [\App\Http\Controllers\ImageController::class, 'upload_img_edit'])->name('upload_img_edit');
+Route::post('/upload_img_cat', [\App\Http\Controllers\ImageController::class, 'upload_img_cat'])->name('upload_img_cat');
+Route::post('/upload_img_cat_edit', [\App\Http\Controllers\ImageController::class, 'upload_img_cat_edit'])->name('upload_img_cat_edit');
 Route::post('/fairy_img_edit', [\App\Http\Controllers\ImageController::class, 'fairy_img_edit'])->name('fairy_img_edit');
+Route::post('/get_cat_img', [\App\Http\Controllers\ImageController::class, 'get_cat_img'])->name('get_cat_img');
 Route::post('/moderation_color', [\App\Http\Controllers\ColoringController::class, 'moderation_color'])->name('moderation_color');
 Route::post('/moderation_fairy', [\App\Http\Controllers\FairyController::class, 'moderation_fairy'])->name('moderation_fairy');
 Route::post('/moderation_video', [\App\Http\Controllers\VideoController::class, 'moderation_video'])->name('moderation_video');
@@ -80,7 +102,6 @@ Route::get('/video_list', [App\Http\Controllers\AdminController::class, 'video_l
 Route::post('/change_permission', [App\Http\Controllers\AdminController::class, 'change_permission'])->name('change_permission');
 Route::get('/users_list', [App\Http\Controllers\AdminController::class, 'users_list'])->name('users_list')->middleware('admin');
 Route::post('/get_users_list', [App\Http\Controllers\AdminController::class, 'get_users_list'])->name('get_users_list')->middleware('admin');
-Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
 Route::post('/add_cat', [\App\Http\Controllers\CatController::class, 'add_cat'])->name('add_cat');
 Route::post('/edit_cat', [\App\Http\Controllers\CatController::class, 'edit_cat'])->name('edit_cat');
 

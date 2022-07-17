@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\VideoCat;
 use App\Models\VideoCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,17 @@ class VideoController extends Controller
                 'category_id'=>$colored,
                 'video_id' => $colored_id['id'],
             ]);
+        }
+
+        $selected_cat = $request->input('cat');
+        if($selected_cat) {
+            $myArray_cat = explode(',', $selected_cat);
+            foreach ($myArray_cat as $colored) {
+                VideoCat::create([
+                    'cat_id' => $colored,
+                    'colored_id' => $colored_id['id'],
+                ]);
+            }
         }
 
         return response()->json([

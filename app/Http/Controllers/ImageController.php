@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cat;
 use App\Models\Colored;
 use App\Models\ColoringCat;
 use App\Models\ColoringCategory;
 use App\Models\Fairy;
+use App\Models\FairyCat;
 use App\Models\FairyCategory;
 use App\Models\FairyPage;
 use Illuminate\Http\Request;
@@ -90,6 +92,17 @@ class ImageController extends Controller
         ], 201);
 
     }
+    public function get_cat_img(Request $request)
+    {
+        $cat_id =  $request->input('cat_id');
+        $cat_list = Cat::where('id', '=', $cat_id)
+            ->get('img');
+        return response()->json([
+            'status' => 'success',
+            'cat_list' => $cat_list,
+        ], 201);
+
+    }
     public function upload_fairy(Request $request)
     {
         $user = Auth::user();
@@ -148,6 +161,16 @@ class ImageController extends Controller
             'description' => 'Описание первой страницы ( стереть при заполнении )',
             'page' => 1,
         ]);
+        $selected_cat = $request->input('cat');
+        if($selected_cat) {
+            $myArray_cat = explode(',', $selected_cat);
+            foreach ($myArray_cat as $colored) {
+                FairyCat::create([
+                    'cat_id' => $colored,
+                    'colored_id' => $colored_id['id'],
+                ]);
+            }
+        }
 
         return response()->json([
             'status' => 'success',
@@ -158,6 +181,89 @@ class ImageController extends Controller
         ], 201);
 
     }
+
+    public function upload_img_cat(Request $request)
+    {
+        $user = Auth::user();
+        $file = request()->file();
+        $cat_id = $request->input('cat_id');
+
+            try {
+                $this->validate($request, [
+                    'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+                ]);
+            }
+            catch (ValidationException $exception) {
+                return response()->json([
+                    'status' => 'error',
+                    'message'    => 'Error',
+                    'errors' => $exception->errors(),
+                ], 422);
+            }
+//            $to_del = Colored::where('id','=',$color_id)->get();
+//            $path = public_path()."/images/colorings/".$to_del[0]['img'];
+//            unlink($path);
+            $image = request()->file();
+            $save_to = $user->id . '_' . time() . '.jpg';
+            Image::make($request->file)->save(public_path('images/cat/') . $save_to);
+            Cat::where('id','=',$cat_id)->
+            update([
+                'img' => $save_to,
+
+            ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message'    => 'file added',
+        ], 201);
+
+    }
+
+    public function upload_img_cat_edit(Request $request)
+    {
+        $user = Auth::user();
+        $file = request()->file();
+        $cat_id = $request->input('cat_id');
+
+        try {
+            $this->validate($request, [
+                'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+            ]);
+        }
+        catch (ValidationException $exception) {
+            return response()->json([
+                'status' => 'error',
+                'message'    => 'Error',
+                'errors' => $exception->errors(),
+            ], 422);
+        }
+            $to_del = Cat::where('id','=',$cat_id)->get();
+        if($to_del[0]['img'] != null)
+        {
+            try {
+                $path = public_path() . "/images/cat/" . $to_del[0]['img'];
+                unlink($path);
+            }
+            catch (\Throwable $e)
+            {
+
+            }
+        }
+
+        $image = request()->file();
+        $save_to = $user->id . '_' . time() . '.jpg';
+        Image::make($request->file)->save(public_path('images/cat/') . $save_to);
+        Cat::where('id','=',$cat_id)->
+        update([
+            'img' => $save_to
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message'    => 'file added',
+        ], 201);
+
+    }
+
     public function upload_img_edit(Request $request)
     {
         $user = Auth::user();
@@ -175,7 +281,7 @@ class ImageController extends Controller
         {
             $published=0;
         }
-        $file = request()->file();;
+        $file = request()->file();
         try {
             $this->validate($request,[
                 'coloring_name'=> 'required|string|min:5|max:25',

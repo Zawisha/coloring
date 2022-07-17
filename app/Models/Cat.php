@@ -11,7 +11,7 @@ class Cat extends Model
 {
     use HasFactory;
     protected $table = 'cat';
-    protected $fillable = ['id','name'];
+    protected $fillable = ['id','name','slug','img'];
     public function colored()
     {
         return $this->belongsToMany(Colored::class);

@@ -17,15 +17,35 @@ class MainViewController extends Controller
 {
     public function index()
    {
-       return view('main.coloring');
+       return view('main.coloring')->with('auth_user',  auth()->user());
    }
+   public function profile()
+   {
+       return view('main.profile')->with('auth_user',  auth()->user());;
+   }
+    public function new_password()
+    {
+        return view('new_password')->with('auth_user',  auth()->user());;
+    }
+    public function front_cat_one()
+    {
+        return view('main.cat_one')->with('auth_user',  auth()->user());
+    }
     public function front_fairy_list()
     {
-        return view('main.fairy');
+        return view('main.fairy')->with('auth_user',  auth()->user());
     }
     public function front_video_list()
     {
-        return view('main.video');
+        return view('main.video')->with('auth_user',  auth()->user());
+    }
+    public function front_cat_list()
+    {
+        return view('main.cat')->with('auth_user',  auth()->user());
+    }
+    public function liked()
+    {
+        return view('main.liked')->with('auth_user',  auth()->user());
     }
     public function get_one_coloring(Request $request)
     {
@@ -36,7 +56,7 @@ class MainViewController extends Controller
         }
         else
         {
-            return view('main.coloring_one')->with(['coloring'=>$coloring]);
+            return view('main.coloring_one')->with('auth_user',  auth()->user())->with(['coloring'=>$coloring]);
         }
 
     }
