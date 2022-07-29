@@ -323,8 +323,10 @@ class ColoringController extends Controller
         {
 
         }
-        Colored::where('id','=',$fairy_id)->delete();
         ColoringCategory::where('colored_id', '=', $fairy_id) ->delete();
+        ColoringCat::where('colored_id', '=', $fairy_id) ->delete();
+        Colored::where('id','=',$fairy_id)->delete();
+
 
         return response()->json([
             'status' => 'success',
