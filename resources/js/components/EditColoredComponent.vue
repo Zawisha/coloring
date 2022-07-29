@@ -18,7 +18,7 @@
                 <input class="input_coloring_name search-control form-control"v-on:change="slugCheck" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="30" v-on:focus=delete_red_border_name() >
                 <div>ЧПУ: {{ chpu }}</div>
                 <div class="add_coloring_title">Описание раскраски</div>
-                <textarea class="input_coloring_name search-control form-control" v-model="description" placeholder="введите описание" rows=5 v-bind:class="{ red_border: isActive_description }" :maxlength="30" v-on:focus=delete_red_border_desc()></textarea>
+                <textarea class="input_coloring_name search-control form-control" v-model="description" placeholder="введите описание" rows=5 v-bind:class="{ red_border: isActive_description }" :maxlength="130" v-on:focus=delete_red_border_desc()></textarea>
                 <div class="add_coloring_title">Добавьте теги</div>
                 <div class="col-md-8">
                     <autocomplete
@@ -203,7 +203,7 @@ export default {
             if((this.coloring_name.length>25)&&(this.coloring_name!==""))
             {
                 this.alert=true;
-                this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 25 символов"');
+                this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 30 символов"');
                 this.isActive_name=true;
             }
             if(this.description=="")
@@ -218,7 +218,7 @@ export default {
                 this.alert_arr.push('Поле "Описание раскраски не должно быть короче 10 символов"');
                 this.isActive_description=true;
             }
-            if((this.description.length>40)&&(this.description!==""))
+            if((this.description.length>130)&&(this.description!==""))
             {
                 this.alert=true;
                 this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 40 символов"');

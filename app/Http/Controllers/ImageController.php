@@ -284,8 +284,8 @@ class ImageController extends Controller
         $file = request()->file();
         try {
             $this->validate($request,[
-                'coloring_name'=> 'required|string|min:5|max:25',
-                'description'=> 'required|string|min:10|max:40',
+                'coloring_name'=> 'required|string|min:5|max:30',
+                'description'=> 'required|string|min:10|max:130',
                 'selected_category'=> 'required',
                 'slug'=>  'required',Rule::unique('colored,slug')->where(function($query,$color_id) {
                     $query->where('id', '!=', $color_id);

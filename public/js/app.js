@@ -3981,7 +3981,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
       if (this.coloring_name.length > 25 && this.coloring_name !== "") {
         this.alert = true;
-        this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 25 символов"');
+        this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 30 символов"');
         this.isActive_name = true;
       }
 
@@ -3997,7 +3997,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         this.isActive_description = true;
       }
 
-      if (this.description.length > 40 && this.description !== "") {
+      if (this.description.length > 130 && this.description !== "") {
         this.alert = true;
         this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 40 символов"');
         this.isActive_description = true;
@@ -9362,7 +9362,7 @@ var render = function render() {
     attrs: {
       placeholder: "введите описание",
       rows: "5",
-      maxlength: 30
+      maxlength: 130
     },
     domProps: {
       value: _vm.description

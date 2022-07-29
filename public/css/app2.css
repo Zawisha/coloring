@@ -314,7 +314,7 @@ a.green_menu_element:hover {
     display: flex;
     align-items: center;
     color: #000000;
-    margin-top: 30px;
+    margin-top: 18px;
     cursor: pointer;
 
 }
@@ -336,6 +336,7 @@ a.green_menu_element:hover {
     align-items: center;
     color: #000000;
     margin-top: 10px;
+    text-align: justify;
 }
 @media (min-width: 992px) {
     .coloring_list_text {
