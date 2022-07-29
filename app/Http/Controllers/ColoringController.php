@@ -316,8 +316,15 @@ class ColoringController extends Controller
         $fairy_id =  $request->input('id');
         ColoringCategory::where('colored_id', '=', $fairy_id) ->delete();
         $to_del = Colored::where('id','=',$fairy_id)->get();
-        $path = public_path()."/images/colorings/".$to_del[0]['img'];
-        unlink($path);
+        try {
+            $path = public_path() . "/images/colorings/" . $to_del[0]['img'];
+            unlink($path);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+
         Colored::where('id','=',$fairy_id)->delete();
         return response()->json([
             'status' => 'success',
