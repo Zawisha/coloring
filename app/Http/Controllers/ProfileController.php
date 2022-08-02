@@ -34,15 +34,19 @@ class ProfileController extends Controller
         update([
             'email' => $email,
             'nickname' => $nickname,
+            'name' => $nickname,
         ]);
         return response()->json([
             'status' => 'success',
             'message'    => 'Профиль обновлён',
         ], 201);
     }
-    public function logout()
+    public function logout(Request $request)
     {
         auth()->logout();
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
     }
     public function changePasswordPost(Request $request)
     {

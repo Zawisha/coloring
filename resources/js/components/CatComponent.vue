@@ -45,6 +45,8 @@
                     <img class="col-12" :src="imagepreview"/>
                 </div>
             </form>
+                <div class="desc_cat">Описание новой категории (description)</div>
+                <textarea class="input_coloring_name search-control form-control desc_cat" v-model="description_new" placeholder="введите описание" rows=5  :maxlength="130" ></textarea>
             </div>
             <div class="add_coloring_title col-6">Добавьте изображение для РЕДАКТИРУЕМОЙ категории
             <form @submit="formSubmit1" enctype="multipart/form-data">
@@ -56,6 +58,8 @@
                     <img class="col-12" :src="imagepreview1"/>
                 </div>
             </form>
+                <div class="desc_cat">Описание редактируемой категории (description)</div>
+                <textarea class="input_coloring_name search-control form-control desc_cat" v-model="description_old" placeholder="введите описание" rows=5  :maxlength="130" ></textarea>
             </div>
             </div>
             <div class="col-12 tag_list_title ">
@@ -63,7 +67,7 @@
             </div>
             <div class="customers-list row col-12 float-left">
                 <div  v-for="tag in tag_list" class="col-12 col-sm-4 customers-list-item d-flex align-items-center border-top border-bottom _list borders_tag_list cursor-pointer text-center">
-                    <div class="col-12" v-on:click="select_tag_from_list(tag.id,tag.name)">
+                    <div class="col-12" v-on:click="select_tag_from_list(tag.id,tag.name,tag.description)">
                         <h6 class="font-14">{{ tag.name }}</h6>
                     </div>
                 </div>
@@ -101,7 +105,9 @@ export default {
             file:'',
             imagepreview1:null,
             imagepreview_start1:false,
-            file1:''
+            file1:'',
+            description_new:'',
+            description_old:''
 
         };
     },
@@ -122,7 +128,8 @@ export default {
             else {
                 axios.post('/add_cat', {
                         tag:this.tag_to_add,
-                        slug:this.chpu
+                        slug:this.chpu,
+                        description:this.description_new
                     }
                 )
                     .then(response => {
@@ -198,7 +205,8 @@ export default {
                 axios.post('/edit_cat', {
                         tag: this.search_result,
                         tag_id: this.search_result_id,
-                        slug: this.chpu1
+                        slug: this.chpu1,
+                        description: this.description_old,
                     }
                 )
                     .then(response => {
@@ -274,11 +282,12 @@ export default {
         slugCheck1(){
             this.chpu1=slug(this.search_result)
         },
-        select_tag_from_list(id,name)
+        select_tag_from_list(id,name,description)
         {
             this.search_result=name
             this.search_result_id=id
-            this.disable_edit=false
+            this.disable_edit=false,
+            this.description_old=description
             this.slugCheck1()
             this.get_cat_img()
 
@@ -302,7 +311,6 @@ export default {
         },
         add_more_tags()
         {
-            this.tag_offset=(this.tag_offset)+50
             this.get_tag_list(this.tag_list)
         },
         get_tag_list(inp)
@@ -316,11 +324,13 @@ export default {
                                 inp.push({
                                     id:entry.id,
                                     name:entry.name,
+                                    description:entry.description,
                                 });
                             }),
                            this.tags_count=data.tipes_count
                     )
                 );
+            this.tag_offset=(this.tag_offset)+20
         },
         delete_bars()
         {

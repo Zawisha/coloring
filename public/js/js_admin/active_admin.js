@@ -7,10 +7,10 @@ window.onload = function(e){
         console.log(adminTogMenu)
 
         $('.sidebar-wrapper').css('left','0px');
-        $('.bx bx-arrow-to-left').css('left','-350px');
+        $('.bx bx-arrow-to-left').css('left','20px');
     });
     adminTogMenuHide.on('click', function () {
-        $('.sidebar-wrapper').css('left','-350px');
+        $('.sidebar-wrapper').css('left','-20px');
     });
 
 }

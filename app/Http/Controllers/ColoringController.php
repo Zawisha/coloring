@@ -300,6 +300,7 @@ class ColoringController extends Controller
         $color_id =  $request->input('color_id');
         $list_colored = Colored::where('id', '=', $color_id)
             ->with('categories')
+            ->with('cat')
             ->get();
         if($list_colored)
         {

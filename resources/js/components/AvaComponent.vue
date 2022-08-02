@@ -1,7 +1,7 @@
 <template>
         <div class="row">
 <!--                <span v-if="auth_user">-->
-            <img class="new_head_user_icon " :src="'/images/ava/'+image"/>
+            <img class="new_head_user_icon " :src="image"/>
             <div class="new_head_user_name d-none d-sm-block col-6 align-self-center" >{{ nickname }}</div>
 <!--                </span>-->
 
@@ -16,13 +16,12 @@ export default {
     props: ['auth_user'],
     data() {
         return {
-
             image: "",
             nickname:'',
             is_not_login:true
         };
     },
-    mounted() {
+    created() {
         this.get_user_params()
     },
     methods: {
@@ -35,7 +34,7 @@ export default {
                     .post('/get_user_params_main',{
                     })
                     .then(({ data }) => (
-                            this.image=data.ava[0].ava,
+                            this.image='/images/ava/'+data.ava[0].ava,
                                 this.nickname=data.ava[0].nickname
                         )
                     )

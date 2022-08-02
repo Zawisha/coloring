@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cat;
 use App\Models\Colored;
 use App\Models\ColoringCategory;
 use App\Models\Fairy;
 use App\Models\FairyCategory;
+use App\Models\User;
 use App\Models\Video;
 use App\Models\VideoCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Nette\Schema\ValidationException;
 use Rawilk\Printing\Facades\Printing;
 
@@ -17,19 +20,27 @@ class MainViewController extends Controller
 {
     public function index()
    {
-       return view('main.coloring')->with('auth_user',  auth()->user());
+       //no h1
+       return view('main.coloring')->with('auth_user',  auth()->user())->with(['title'=>'Первая в мире творческая социальная сеть.','description'=>'ворческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.']);
    }
    public function profile()
    {
-       return view('main.profile')->with('auth_user',  auth()->user());;
+       $user = Auth::user();
+       $nickname = User::where('id', $user->id)
+           ->get('nickname');
+         $title=$nickname[0]['nickname'].' - профиль участника творческой сети virask';
+         $description=$nickname[0]['nickname'].' творческая мастерская участника сообщества авторов и пользователей, творческой сети virask';
+       return view('main.profile')->with('auth_user',  auth()->user())->with(['title'=>$title,'description'=>$description]);
    }
     public function new_password()
     {
-        return view('new_password')->with('auth_user',  auth()->user());;
+        return view('new_password')->with('auth_user',  auth()->user())->with(['title'=>'Раскраски','description'=>'Распечатай и разукрась свою раскраску']);
     }
-    public function front_cat_one()
+    public function front_cat_one(Request $request)
     {
-        return view('main.cat_one')->with('auth_user',  auth()->user());
+        $slug=$request->slug;
+        $coloring=Cat::where('slug','=',$slug)->get();
+        return view('main.cat_one')->with('auth_user',  auth()->user())->with(['title'=>$coloring[0]['name'],'description'=>$coloring[0]['description']]);
     }
     public function front_fairy_list()
     {
@@ -41,11 +52,16 @@ class MainViewController extends Controller
     }
     public function front_cat_list()
     {
-        return view('main.cat')->with('auth_user',  auth()->user());
+        return view('main.cat')->with('auth_user',  auth()->user())->with(['title'=>'Каталог бесплатных раскрасок на все случаи жизни.','description'=>'Каталог раскрасок творческой сети virask, популярных мультфильмов, развивающих, обучающих, известных и редких, с помощью каталога можно легко выбрать и бесплатно распечатать или скачать интересную раскраску']);
     }
     public function liked()
     {
-        return view('main.liked')->with('auth_user',  auth()->user());
+        $user = Auth::user();
+        $nickname = User::where('id', $user->id)
+            ->get('nickname');
+        $title=$nickname[0]['nickname'].' - избранные раскраски';
+        $description='Избранные раскраски автора творческой сети virask '.$nickname[0]['nickname'];
+        return view('main.liked')->with('auth_user',  auth()->user())->with(['title'=>$title,'description'=>$description]);
     }
     public function get_one_coloring(Request $request)
     {
@@ -56,7 +72,7 @@ class MainViewController extends Controller
         }
         else
         {
-            return view('main.coloring_one')->with('auth_user',  auth()->user())->with(['coloring'=>$coloring]);
+            return view('main.coloring_one')->with('auth_user',  auth()->user())->with(['coloring'=>$coloring,'title'=>$coloring[0]['name'],'description'=>$coloring[0]['description']]);
         }
 
     }

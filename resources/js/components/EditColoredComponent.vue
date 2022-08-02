@@ -38,6 +38,27 @@
                         <h6 class="font-14">{{ tag.name }}</h6>
                     </div>
                 </div>
+
+                <div class="add_coloring_title">Добавьте категории</div>
+                <div class="col-md-8">
+                    <autocomplete
+                        :search="search_cat"
+                        :get-result-value="getResultValue_cat"
+                        :debounce-time="500"
+                        @submit="handleSubmit_cat"
+                        v-on:focus=delete_bars()
+                    ></autocomplete>
+                </div>
+                <div class="row float-left add_tag_in_row">
+                    <div v-if="search_result_cat!=''" class="tag_title_coloring col-4">Выбрана категория: {{ search_result_cat }}</div>
+                    <button v-if="search_result_cat!=''" v-on:click="add_cat_to_cat_list()" class="btn btn-light col-4" >Добавить категорию</button>
+                </div>
+                <div v-for="tag in cat_list" class="col-4 colored_tags customers-list-item d-flex align-items-center border-top border-bottom _list borders_tag_list cursor-pointer">
+                    <div class="col-12" v-on:click="delete_cat_from_cat_list(tag.id)">
+                        <h6 class="font-14">{{ tag.name }}</h6>
+                    </div>
+                </div>
+
                 <div class="add_coloring_title">Добавьте изображение</div>
                 <form @submit="formSubmit" enctype="multipart/form-data">
                     <input type="file" class="form-control" v-on:change="imgPreview" name="avatar">
@@ -80,17 +101,20 @@ export default {
             color_id:'',
             success_add_final:false,
             published:false,
-            chpu:''
+            chpu:'',
+            search_result_cat:'',
+            search_result_id_cat:'',
+            cat_list:[],
         };
     },
     mounted() {
-        this.get_start_color(this.tag_list)
+        this.get_start_color(this.tag_list,this.cat_list)
     },
     methods: {
         slugCheck(){
             this.chpu=slug(this.coloring_name)
         },
-        get_start_color(inp)
+        get_start_color(inp,inp_cat)
         {
             let adres=window.location.href;
            this.color_id = adres.split("/")[5];
@@ -109,7 +133,13 @@ export default {
                                 id:entry.id,
                                 name:entry.name
                             });
-                        })
+                        }),
+            data[0].cat.forEach(function(entry) {
+                inp_cat.push({
+                    id:entry.id,
+                    name:entry.name
+                });
+            })
                     )
                 )
                 .catch((error) => {
@@ -224,9 +254,8 @@ export default {
                 this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 40 символов"');
                 this.isActive_description=true;
             }
-            if(this.tag_list=='')
-            {
-                this.alert=true;
+            if(this.tag_list=='') {
+                this.alert = true;
                 this.alert_arr.push('Выберите хотя бы один тег');
             }
             if(this.alert==false)
@@ -241,12 +270,17 @@ export default {
             let coloring_name=this.coloring_name;
             let description=this.description;
             let selected_category=this.tag_list;
+                let selected_cat=this.cat_list;
             let color_id=this.color_id;
                 let slug=this.chpu;
                 let published=this.published;
             let temp_selected_category=[];
                 selected_category.forEach(function(number) {
                     temp_selected_category.push(number.id)
+                });
+                let temp_selected_cat=[];
+                selected_cat.forEach(function(number) {
+                    temp_selected_cat.push(number.id)
                 });
                 if(this.file)
                 {
@@ -256,6 +290,7 @@ export default {
             data.append('description', description);
             data.append('color_id', color_id);
             data.append('published', published);
+                data.append('cat', temp_selected_cat);
                 data.append('slug', slug);
                 data.append('selected_category', temp_selected_category);
                 axios.post('/upload_img_edit'
@@ -297,9 +332,57 @@ export default {
                 })
             })
         },
-
+        search_cat(input)
+        {
+            return new Promise(resolve => {
+                if (input.length < 3) {
+                    return resolve([])
+                }
+                axios
+                    .post('/get_cat_search',{
+                        req:input
+                    }).then(response => {
+                    resolve(response.data)
+                })
+            })
+        },
+        delete_cat_from_cat_list(id)
+        {
+            let tag_temp_id=id
+            this.cat_list.forEach(function(item,i,arr) {
+                if(item.id==tag_temp_id)
+                {
+                    arr.splice(i, 1);                }
+            });
+        },
+        getResultValue_cat(result) {
+            return result.name
+        },
+        handleSubmit_cat(result)
+        {
+            //результат забирать отсюда
+            this.search_result_cat= result.name
+            this.search_result_id_cat=result.id
+        },
         getResultValue(result) {
             return result.name
+        },
+        add_cat_to_cat_list()
+        {
+            let tag_temp_id=this.search_result_id_cat
+            let flag=false
+            this.cat_list.forEach(function(item,i,arr) {
+                if(item.id==tag_temp_id)
+                {
+                    flag=true
+                }
+            });
+            if(!flag) {
+                this.cat_list.push({
+                    id: this.search_result_id_cat,
+                    name: this.search_result_cat,
+                });
+            }
         },
         handleSubmit(result)
         {

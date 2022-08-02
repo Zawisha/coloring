@@ -273,6 +273,8 @@ class ImageController extends Controller
         $selected_category = $request->input('selected_category');
         $published = $request->input('published');
         $slug = $request->input('slug');
+        $selected_cat = $request->input('cat');
+
         if($published=="true")
         {
             $published=1;
@@ -342,6 +344,17 @@ class ImageController extends Controller
                'colored_id' => $color_id,
            ]);
        }
+       // ColoringCat::where('colored_id','=',$color_id)->delete();
+
+        if($selected_cat) {
+            $myArray_cat = explode(',', $selected_cat);
+            foreach ($myArray_cat as $colored) {
+                ColoringCat::create([
+                    'cat_id' => $colored,
+                    'colored_id' => $color_id,
+                ]);
+            }
+        }
 
         return response()->json([
             'status' => 'success',

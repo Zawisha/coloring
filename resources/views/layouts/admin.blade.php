@@ -53,8 +53,8 @@
 				<div>
 					<h4 class="logo-text"><a href={{ route('admin') }}><i class="bx bx-right-arrow-alt"></i>Админка</a></h4>
 				</div>
-				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
-				</div>
+{{--				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>--}}
+{{--				</div>--}}
 			</div>
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
@@ -490,9 +490,7 @@
 <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 
 	</div>
-    <footer class="page-footer " >
-        <p class="mb-0">Copyright © 2021. All right reserved.</p>
-    </footer>
+
 	<div class="switcher-wrapper">
 		<div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
 		</div>

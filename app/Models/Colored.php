@@ -15,6 +15,10 @@ class Colored extends Model
     {
         return $this->belongsToMany(Categories::class,'coloring_category','colored_id','category_id');
     }
+    public function cat()
+    {
+        return $this->belongsToMany(Cat::class,'coloring_cat','colored_id','cat_id');
+    }
     public function like()
     {
 //        return $this->hasOne(Like::class,'post_id','id');

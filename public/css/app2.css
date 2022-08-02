@@ -322,6 +322,7 @@ a.green_menu_element:hover {
 .coloring_list_title_new:hover {
     text-decoration: underline;
 }
+
 @media (max-width: 350px) {
     .coloring_list_title_new {
         margin-top: 20px;
@@ -677,6 +678,10 @@ a.green_menu_element:hover {
         margin-top: 20px;
         margin-left:0px;
         margin-right: 0px;
+        /*height: 400px;*/
+    }
+    .head_and_description {
+        height: 400px!important;
     }
 }
 
@@ -814,7 +819,7 @@ a.green_menu_element:hover {
 }
 .single_coloring_cat {
     position: relative;
-    top: 290px;
+    /*top: 290px;*/
     background: rgba(221, 255, 178, 0.91);
     border-radius: 12px;
     height: 40px;
@@ -830,7 +835,7 @@ a.green_menu_element:hover {
 }
 .single_coloring_cat_sec {
     position: relative;
-    top: 290px;
+    /*top: 290px;*/
     background: rgba(221, 255, 178, 0.91);
     border-radius: 12px;
     height: 40px;
@@ -848,14 +853,14 @@ a.green_menu_element:hover {
 
 .green_single_coloring_cat {
     position: relative;
-    top: 280px;
+    /*top: 280px;*/
     background: rgba(221, 255, 178, 0.91);
     margin-left: 0px!important;
 }
 }
 .coloring_author {
     position: relative;
-    top: 294px;
+    top: 10px;
     margin-left: 6px;
     font-family: 'Rajdhani', sans-serif;
     font-style: normal;
@@ -902,19 +907,19 @@ a.green_menu_element:hover {
     .green_cat_list {
         font-size: 15px;
     }
-    .green_single_coloring_cat {
-        top: 180px;
-    }
+    /*.green_single_coloring_cat {*/
+    /*    top: 180px;*/
+    /*}*/
     .single_coloring_cat {
-        top: 190px;
+        top: 12px;
         font-size: 18px;
     }
     .single_coloring_cat_sec {
-        top: 190px;
+        top: 12px;
         font-size: 13px;
     }
     .coloring_author {
-        top: 184px;
+        /*top: 184px;*/
         font-size: 20px;
     }
     .button_download_green {
@@ -923,18 +928,18 @@ a.green_menu_element:hover {
 }
 @media (min-width: 1100px) {
     .green_single_coloring_cat {
-        top: 220px;
+        /*top: 220px;*/
     }
     .single_coloring_cat {
-        top: 230px;
+        /*top: 230px;*/
         font-size: 20px;
     }
     .single_coloring_cat_sec {
-        top: 230px;
+        /*top: 230px;*/
         font-size: 15px;
     }
     .coloring_author {
-        top: 224px;
+        /*top: 224px;*/
     }
     .button_download_green {
         font-size: 19px;
@@ -944,19 +949,19 @@ a.green_menu_element:hover {
     .green_cat_list {
         font-size: 18px;
     }
-    .green_single_coloring_cat {
-        top: 280px;
-    }
+    /*.green_single_coloring_cat {*/
+    /*    top: 280px;*/
+    /*}*/
     .single_coloring_cat {
-        top: 290px;
+        /*top: 290px;*/
         /*padding-left: 31px !important;*/
     }
     .single_coloring_cat_sec {
-        top: 290px;
+        /*top: 290px;*/
         font-size: 18px;
     }
     .coloring_author {
-        top: 294px;
+        /*top: 294px;*/
         font-size: 24px;
     }
     .button_download_green {
@@ -965,17 +970,17 @@ a.green_menu_element:hover {
 }
 @media (min-width: 1380px) {
     .green_single_coloring_cat {
-        top: 330px;
+        /*top: 330px;*/
     }
-    .single_coloring_cat {
-        top: 340px;
-    }
-    .single_coloring_cat_sec {
-        top: 340px;
+    /*.single_coloring_cat {*/
+    /*    top: 340px;*/
+    /*}*/
+    /*.single_coloring_cat_sec {*/
+    /*    top: 340px;*/
 
-    }
+    /*}*/
     .coloring_author {
-        top: 348px;
+        top: 20px;
     }
 }
 
@@ -1158,4 +1163,14 @@ a.green_menu_element:hover {
 .preload {
     width: 150px;
 }
-
+.prof_set_text {
+    font-size: 1.5rem!important;
+}
+.main_coloring_list_h1 {
+    margin-top: 20px;
+    font-size: 2rem!important;
+    text-align: center;
+}
+.register_text {
+    font-size: 16px;
+}

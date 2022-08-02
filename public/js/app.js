@@ -3403,7 +3403,7 @@ __webpack_require__.r(__webpack_exports__);
       is_not_login: true
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     this.get_user_params();
   },
   methods: {
@@ -3413,7 +3413,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.auth_user) {
         axios.post('/get_user_params_main', {}).then(function (_ref) {
           var data = _ref.data;
-          return _this.image = data.ava[0].ava, _this.nickname = data.ava[0].nickname;
+          return _this.image = '/images/ava/' + data.ava[0].ava, _this.nickname = data.ava[0].nickname;
         });
       }
     }
@@ -3471,7 +3471,9 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       file: '',
       imagepreview1: null,
       imagepreview_start1: false,
-      file1: ''
+      file1: '',
+      description_new: '',
+      description_old: ''
     };
   },
   mounted: function mounted() {
@@ -3491,7 +3493,8 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       } else {
         axios.post('/add_cat', {
           tag: this.tag_to_add,
-          slug: this.chpu
+          slug: this.chpu,
+          description: this.description_new
         }).then(function (response) {
           _this.success_added = true;
           _this.success_text = 'Категория успешно добавлена';
@@ -3570,7 +3573,8 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         axios.post('/edit_cat', {
           tag: this.search_result,
           tag_id: this.search_result_id,
-          slug: this.chpu1
+          slug: this.chpu1,
+          description: this.description_old
         }).then(function (response) {
           _this4.success_added = true;
           _this4.success_text = 'Категория успешно отредактирована';
@@ -3647,10 +3651,10 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
     slugCheck1: function slugCheck1() {
       this.chpu1 = slug(this.search_result);
     },
-    select_tag_from_list: function select_tag_from_list(id, name) {
+    select_tag_from_list: function select_tag_from_list(id, name, description) {
       this.search_result = name;
       this.search_result_id = id;
-      this.disable_edit = false;
+      this.disable_edit = false, this.description_old = description;
       this.slugCheck1();
       this.get_cat_img();
     },
@@ -3668,7 +3672,6 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       });
     },
     add_more_tags: function add_more_tags() {
-      this.tag_offset = this.tag_offset + 50;
       this.get_tag_list(this.tag_list);
     },
     get_tag_list: function get_tag_list(inp) {
@@ -3681,10 +3684,12 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         return data.list_tags.forEach(function (entry) {
           inp.push({
             id: entry.id,
-            name: entry.name
+            name: entry.name,
+            description: entry.description
           });
         }), _this8.tags_count = data.tipes_count;
       });
+      this.tag_offset = this.tag_offset + 20;
     },
     delete_bars: function delete_bars() {
       this.alert = false;
@@ -3870,17 +3875,20 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       color_id: '',
       success_add_final: false,
       published: false,
-      chpu: ''
+      chpu: '',
+      search_result_cat: '',
+      search_result_id_cat: '',
+      cat_list: []
     };
   },
   mounted: function mounted() {
-    this.get_start_color(this.tag_list);
+    this.get_start_color(this.tag_list, this.cat_list);
   },
   methods: {
     slugCheck: function slugCheck() {
       this.chpu = slug(this.coloring_name);
     },
-    get_start_color: function get_start_color(inp) {
+    get_start_color: function get_start_color(inp, inp_cat) {
       var _this = this;
 
       var adres = window.location.href;
@@ -3891,6 +3899,11 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         var data = _ref.data;
         return _this.coloring_name = data[0]['name'], _this.description = data[0]['description'], _this.published = data[0]['published'], _this.chpu = data[0]['slug'], _this.imagepreview_start = '/images/colorings/' + data[0]['img'], data[0].categories.forEach(function (entry) {
           inp.push({
+            id: entry.id,
+            name: entry.name
+          });
+        }), data[0].cat.forEach(function (entry) {
+          inp_cat.push({
             id: entry.id,
             name: entry.name
           });
@@ -4019,12 +4032,17 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         var coloring_name = this.coloring_name;
         var description = this.description;
         var selected_category = this.tag_list;
+        var selected_cat = this.cat_list;
         var color_id = this.color_id;
         var _slug = this.chpu;
         var published = this.published;
         var temp_selected_category = [];
         selected_category.forEach(function (number) {
           temp_selected_category.push(number.id);
+        });
+        var temp_selected_cat = [];
+        selected_cat.forEach(function (number) {
+          temp_selected_cat.push(number.id);
         });
 
         if (this.file) {
@@ -4035,6 +4053,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         data.append('description', description);
         data.append('color_id', color_id);
         data.append('published', published);
+        data.append('cat', temp_selected_cat);
         data.append('slug', _slug);
         data.append('selected_category', temp_selected_category);
         axios.post('/upload_img_edit', data, config).then(function (response) {
@@ -4076,8 +4095,53 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         });
       });
     },
+    search_cat: function search_cat(input) {
+      return new Promise(function (resolve) {
+        if (input.length < 3) {
+          return resolve([]);
+        }
+
+        axios.post('/get_cat_search', {
+          req: input
+        }).then(function (response) {
+          resolve(response.data);
+        });
+      });
+    },
+    delete_cat_from_cat_list: function delete_cat_from_cat_list(id) {
+      var tag_temp_id = id;
+      this.cat_list.forEach(function (item, i, arr) {
+        if (item.id == tag_temp_id) {
+          arr.splice(i, 1);
+        }
+      });
+    },
+    getResultValue_cat: function getResultValue_cat(result) {
+      return result.name;
+    },
+    handleSubmit_cat: function handleSubmit_cat(result) {
+      //результат забирать отсюда
+      this.search_result_cat = result.name;
+      this.search_result_id_cat = result.id;
+    },
     getResultValue: function getResultValue(result) {
       return result.name;
+    },
+    add_cat_to_cat_list: function add_cat_to_cat_list() {
+      var tag_temp_id = this.search_result_id_cat;
+      var flag = false;
+      this.cat_list.forEach(function (item, i, arr) {
+        if (item.id == tag_temp_id) {
+          flag = true;
+        }
+      });
+
+      if (!flag) {
+        this.cat_list.push({
+          id: this.search_result_id_cat,
+          name: this.search_result_cat
+        });
+      }
     },
     handleSubmit: function handleSubmit(result) {
       //результат забирать отсюда
@@ -5916,7 +5980,8 @@ __webpack_require__.r(__webpack_exports__);
       category_flag: false,
       preload: false,
       offset: 0,
-      types_count: 0
+      types_count: 0,
+      img_to_download: ''
     };
   },
   mounted: function mounted() {
@@ -5924,7 +5989,9 @@ __webpack_require__.r(__webpack_exports__);
     this.getColoredData(this.cat_list, this.category_list), this.get_coloring_list(this.coloring_list);
     this.scroll();
   },
-  created: function created() {},
+  created: function created() {// document.title='test 444',
+    //  document.getElementsByTagName('meta')["description"].content= "My new page description!!";
+  },
   methods: {
     scroll: function scroll() {
       var _this = this;
@@ -5963,10 +6030,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     download_img: function download_img() {
-      var url = '/download/1_1657188234.jpg';
-      window.location.href = url; // axios
-      //     .get('/download/1_1657188234.jpg', {
-      //     })
+      var img = this.img_to_download;
+      var url = '/download/' + img;
+      window.location.href = url;
     },
     go_to_one_cat: function go_to_one_cat(slug) {
       window.location.href = '/cat/' + slug;
@@ -6062,7 +6128,7 @@ __webpack_require__.r(__webpack_exports__);
         colorSlug: this.colorSlug
       }).then(function (_ref) {
         var data = _ref.data;
-        return _this2.one_coloring_id = data.coloring[0]['id'], _this2.coloring_name = data.coloring[0]['name'], _this2.description = data.coloring[0]['description'], _this2.mainImage = '/images/colorings/' + data.coloring[0]['img'], _this2.one_count_of_like = data.coloring[0]['count_of_like'], _this2.nickname = data.coloring[0]['nickname'], _this2.one_type_of_like = data.coloring[0]['type_of_like'], data.cat.forEach(function (entry) {
+        return _this2.one_coloring_id = data.coloring[0]['id'], _this2.coloring_name = data.coloring[0]['name'], _this2.description = data.coloring[0]['description'], _this2.mainImage = '/images/colorings/' + data.coloring[0]['img'], _this2.img_to_download = data.coloring[0]['img'], _this2.one_count_of_like = data.coloring[0]['count_of_like'], _this2.nickname = data.coloring[0]['nickname'], _this2.one_type_of_like = data.coloring[0]['type_of_like'], data.cat.forEach(function (entry) {
           cat_list.push({
             id: entry.id,
             cat_id: entry.cat_id,
@@ -7301,7 +7367,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       postFontSize: true
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     this.get_user_params();
   },
   methods: {
@@ -7336,7 +7402,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       this.nickname = this.auth_user.nickname;
       axios.post('/get_user_params', {}).then(function (_ref) {
         var data = _ref.data;
-        return _this.ava_img = data.ava[0].ava;
+        return _this.ava_img = '/images/ava/' + data.ava[0].ava;
       });
     },
     change_profile_data: function change_profile_data() {
@@ -7369,8 +7435,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       this.alert_arr = temp_arr;
     },
     logout: function logout() {
-      axios.post('/logout', {});
-      window.location.href = '/';
+      axios.post('/logout', {}).then(function (_ref3) {
+        var data = _ref3.data;
+        return window.location.href = '/login';
+      });
     }
   }
 });
@@ -8861,7 +8929,7 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "new_head_user_icon",
     attrs: {
-      src: "/images/ava/" + _vm.image
+      src: _vm.image
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "new_head_user_name d-none d-sm-block col-6 align-self-center"
@@ -9045,7 +9113,31 @@ var render = function render() {
     attrs: {
       src: _vm.imagepreview
     }
-  })])])]), _vm._v(" "), _c("div", {
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "desc_cat"
+  }, [_vm._v("Описание новой категории (description)")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.description_new,
+      expression: "description_new"
+    }],
+    staticClass: "input_coloring_name search-control form-control desc_cat",
+    attrs: {
+      placeholder: "введите описание",
+      rows: "5",
+      maxlength: 130
+    },
+    domProps: {
+      value: _vm.description_new
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.description_new = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "add_coloring_title col-6"
   }, [_vm._v("Добавьте изображение для РЕДАКТИРУЕМОЙ категории\n        "), _c("form", {
     attrs: {
@@ -9083,7 +9175,31 @@ var render = function render() {
     attrs: {
       src: _vm.imagepreview1
     }
-  })])])])]), _vm._v(" "), _c("div", {
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "desc_cat"
+  }, [_vm._v("Описание редактируемой категории (description)")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.description_old,
+      expression: "description_old"
+    }],
+    staticClass: "input_coloring_name search-control form-control desc_cat",
+    attrs: {
+      placeholder: "введите описание",
+      rows: "5",
+      maxlength: 130
+    },
+    domProps: {
+      value: _vm.description_old
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.description_old = $event.target.value;
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 tag_list_title"
   }, [_vm._v("\n            Список категорий\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "customers-list row col-12 float-left"
@@ -9094,7 +9210,7 @@ var render = function render() {
       staticClass: "col-12",
       on: {
         click: function click($event) {
-          return _vm.select_tag_from_list(tag.id, tag.name);
+          return _vm.select_tag_from_list(tag.id, tag.name, tag.description);
         }
       }
     }, [_c("h6", {
@@ -9411,6 +9527,46 @@ var render = function render() {
       on: {
         click: function click($event) {
           return _vm.delete_tag_from_tag_list(tag.id);
+        }
+      }
+    }, [_c("h6", {
+      staticClass: "font-14"
+    }, [_vm._v(_vm._s(tag.name))])])]);
+  }), _vm._v(" "), _c("div", {
+    staticClass: "add_coloring_title"
+  }, [_vm._v("Добавьте категории")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-8"
+  }, [_c("autocomplete", {
+    attrs: {
+      search: _vm.search_cat,
+      "get-result-value": _vm.getResultValue_cat,
+      "debounce-time": 500
+    },
+    on: {
+      submit: _vm.handleSubmit_cat,
+      focus: function focus($event) {
+        return _vm.delete_bars();
+      }
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "row float-left add_tag_in_row"
+  }, [_vm.search_result_cat != "" ? _c("div", {
+    staticClass: "tag_title_coloring col-4"
+  }, [_vm._v("Выбрана категория: " + _vm._s(_vm.search_result_cat))]) : _vm._e(), _vm._v(" "), _vm.search_result_cat != "" ? _c("button", {
+    staticClass: "btn btn-light col-4",
+    on: {
+      click: function click($event) {
+        return _vm.add_cat_to_cat_list();
+      }
+    }
+  }, [_vm._v("Добавить категорию")]) : _vm._e()]), _vm._v(" "), _vm._l(_vm.cat_list, function (tag) {
+    return _c("div", {
+      staticClass: "col-4 colored_tags customers-list-item d-flex align-items-center border-top border-bottom _list borders_tag_list cursor-pointer"
+    }, [_c("div", {
+      staticClass: "col-12",
+      on: {
+        click: function click($event) {
+          return _vm.delete_cat_from_cat_list(tag.id);
         }
       }
     }, [_c("h6", {
@@ -11088,15 +11244,17 @@ var render = function render() {
   })]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-lg-6 single_coloring_col_text mob_settings_one_imgs"
   }, [_c("div", {
+    staticClass: "head_and_description"
+  }, [_c("div", {
     staticClass: "col-12 mob_settings_one_imgs",
     "class": {
       "text-center": _vm.menu_size < 992
     }
-  }, [_c("h6", {
+  }, [_c("h1", {
     staticClass: "single_title_descr_main"
   }, [_vm._v(_vm._s(_vm.coloring_name))])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 single_title_descr mob_settings_one_imgs"
-  }, [_vm._v(_vm._s(_vm.description))]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.description))])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 row single_col_mob_setting_menu"
   }, [_c("div", {
     staticClass: "col-5 single_coloring_cat justify-content-center text-center",
@@ -12398,7 +12556,7 @@ var render = function render() {
     staticClass: "rounded-circle mt-5",
     attrs: {
       width: "150px",
-      src: "/images/ava/" + _vm.ava_img
+      src: _vm.ava_img
     }
   }) : _vm._e(), _vm._v(" "), _c("div", [_vm._v("Текущий аватар")]), _vm._v(" "), _c("img", {
     staticClass: "flag",
@@ -12550,8 +12708,8 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "d-flex justify-content-between align-items-center mb-3"
-  }, [_c("h4", {
-    staticClass: "text-right"
+  }, [_c("h1", {
+    staticClass: "text-right prof_set_text"
   }, [_vm._v("Настройки профиля")])]);
 }];
 render._withStripped = true;

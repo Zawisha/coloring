@@ -39,6 +39,7 @@
         "v-slim-dialog": "^0.0.10",
         "vue-advanced-cropper": "^1.11.1",
         "vue-cropperjs": "^4.2.0",
+        "vue-headful": "^2.1.0",
         "vue-ios-alertview": "^1.1.2"
     }
 }

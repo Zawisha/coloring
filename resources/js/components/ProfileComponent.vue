@@ -7,7 +7,7 @@
 
 
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" v-if="!image&&postFontSize" width="150px" :src="'/images/ava/'+ava_img">
+                    <img class="rounded-circle mt-5" v-if="!image&&postFontSize" width="150px" :src="ava_img">
 <!--                    <upload-avatar v-if="!image" @submit="handleImageUpload"/>-->
                     <div>Текущий аватар</div>
                     <img class="flag"  :src="image"/>
@@ -31,7 +31,7 @@
                         </ul>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Настройки профиля</h4>
+                        <h1 class="text-right prof_set_text">Настройки профиля</h1>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Почта</label><input v-on:click="frame_dis()" v-model="email" type="text" class="form-control" placeholder="ваша почта" value=""></div>
@@ -73,7 +73,7 @@ export default {
             postFontSize:true
         };
     },
-    mounted() {
+    created() {
         this.get_user_params()
     },
     methods: {
@@ -120,7 +120,7 @@ export default {
                 .post('/get_user_params',{
                 })
                 .then(({ data }) => (
-                        this.ava_img=data.ava[0].ava
+                        this.ava_img='/images/ava/'+data.ava[0].ava
                     )
                 )
 
@@ -156,7 +156,11 @@ export default {
             axios
                 .post('/logout',{
                 })
-            window.location.href =('/')
+                .then(({ data }) => (
+                    window.location.href =('/login')
+                    )
+                )
+
         }
 
 

@@ -34,8 +34,10 @@
                 <span class="iconify follow_arrow_mob follow_one_coloring_front" data-icon="akar-icons:arrow-forward-thick" data-width="34" data-height="32"></span>
             </div>
             <div class="col-12 col-lg-6 single_coloring_col_text mob_settings_one_imgs">
-                <div class="col-12 mob_settings_one_imgs" v-bind:class="{'text-center':menu_size<992}"> <h6 class="single_title_descr_main">{{ coloring_name }}</h6></div>
+                <div class="head_and_description">
+                <div class="col-12 mob_settings_one_imgs" v-bind:class="{'text-center':menu_size<992}"> <h1 class="single_title_descr_main">{{ coloring_name }}</h1></div>
                 <div class=" col-12 single_title_descr mob_settings_one_imgs">{{ description }}</div>
+                </div>
                 <div class="col-12 row single_col_mob_setting_menu">
                 <div class="col-5 single_coloring_cat justify-content-center text-center" v-bind:class="{ single_coloring_cat_color:cat_flag }" v-on:click="change_status_cat('cat')">категории</div>
                 <div class="col-5 single_coloring_cat_sec  justify-content-center text-center" v-bind:class="{ single_coloring_cat_color:category_flag }" v-on:click="change_status_cat('category')">теги/коллекции</div>
@@ -50,6 +52,8 @@
                       </div>
                     </div>
                 </div>
+
+
                 <div v-if="menu_size>991" class="col-6 coloring_author">Автор:<span class="coloring_author_ref">{{ nickname }}</span></div>
 
             </div>
@@ -206,6 +210,7 @@ export default {
             preload:false,
             offset:0,
             types_count:0,
+            img_to_download:''
         };
     },
     mounted() {
@@ -215,7 +220,8 @@ export default {
         this.scroll();
     },
     created() {
-
+     // document.title='test 444',
+      //  document.getElementsByTagName('meta')["description"].content= "My new page description!!";
     },
     methods: {
         scroll () {
@@ -257,11 +263,9 @@ export default {
         },
         download_img()
         {
-            const url = '/download/1_1657188234.jpg';
+            let img = this.img_to_download;
+            const url = '/download/'+img;
             window.location.href = url;
-            // axios
-            //     .get('/download/1_1657188234.jpg', {
-            //     })
         },
         go_to_one_cat(slug)
         {
@@ -370,6 +374,7 @@ export default {
                             this.coloring_name=data.coloring[0]['name'],
                             this.description=data.coloring[0]['description'],
                             this.mainImage='/images/colorings/'+data.coloring[0]['img'],
+                            this.img_to_download=data.coloring[0]['img'],
                             this.one_count_of_like=data.coloring[0]['count_of_like'],
                             this.nickname=data.coloring[0]['nickname'],
                             this.one_type_of_like=data.coloring[0]['type_of_like'],
