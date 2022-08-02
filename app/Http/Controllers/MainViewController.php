@@ -40,7 +40,8 @@ class MainViewController extends Controller
     {
         $slug=$request->slug;
         $coloring=Cat::where('slug','=',$slug)->get();
-        return view('main.cat_one')->with('auth_user',  auth()->user())->with(['title'=>$coloring[0]['name'],'description'=>$coloring[0]['description']]);
+        $title="бесплатные раскраски -".$coloring[0]['name'];
+        return view('main.cat_one')->with('auth_user',  auth()->user())->with(['title'=>$title,'description'=>$coloring[0]['description']]);
     }
     public function front_fairy_list()
     {
