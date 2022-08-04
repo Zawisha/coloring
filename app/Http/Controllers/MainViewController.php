@@ -21,7 +21,7 @@ class MainViewController extends Controller
     public function index()
    {
        //no h1
-       return view('main.coloring')->with('auth_user',  auth()->user())->with(['title'=>'Первая в мире творческая социальная сеть.','description'=>'ворческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.']);
+       return view('main.coloring')->with('auth_user',  auth()->user())->with(['title'=>'Первая в мире творческая социальная сеть.','description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.']);
    }
    public function profile()
    {

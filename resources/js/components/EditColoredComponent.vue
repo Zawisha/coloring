@@ -230,10 +230,10 @@ export default {
                 this.alert_arr.push('Поле "Название раскраски не должно быть короче 5 символов"');
                 this.isActive_name=true;
             }
-            if((this.coloring_name.length>25)&&(this.coloring_name!==""))
+            if((this.coloring_name.length>70)&&(this.coloring_name!==""))
             {
                 this.alert=true;
-                this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 30 символов"');
+                this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 70 символов"');
                 this.isActive_name=true;
             }
             if(this.description=="")

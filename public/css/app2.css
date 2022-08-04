@@ -345,17 +345,27 @@ a.green_menu_element:hover {
     font-size: 16px;
     }
 }
+@media (min-width: 1140px) {
+    .coloring_list_title_new {
+        font-size: 32px;
+    }
+    .coloring_list_text {
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 37px;
+    }
+}
 @media (min-width: 992px) {
 .coloring_list_title_new {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 29px;
     margin-top: 35px;
     }
 
 .coloring_list_text {
-    font-size: 24px;
+    font-size: 21px;
     line-height: 29px;
-    margin-top: 37px;
+    margin-top: 33px;
     }
 }
 .coloring_rate {

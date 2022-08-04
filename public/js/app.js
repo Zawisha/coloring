@@ -3992,9 +3992,9 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         this.isActive_name = true;
       }
 
-      if (this.coloring_name.length > 25 && this.coloring_name !== "") {
+      if (this.coloring_name.length > 70 && this.coloring_name !== "") {
         this.alert = true;
-        this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 30 символов"');
+        this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 70 символов"');
         this.isActive_name = true;
       }
 
@@ -10652,7 +10652,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "col-9 col-lg-9"
-    }, [_c("div", {
+    }, [_c("h1", {
       staticClass: "coloring_list_title_new col-lg-12 front-list-new-np-l",
       on: {
         click: function click($event) {

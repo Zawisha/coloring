@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Раскраски'  }}</title>
     <meta name="description" content='{{ $description ?? 'Разукрашивай вместе с нами'}}'>
+    <link rel="icon" type="image/png" href="{{ asset('/images/main_images/fav32.jpg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ asset('/css/app1.css') }}"  rel="stylesheet">
     <link href="{{ asset('/css/app2.css') }}"  rel="stylesheet">

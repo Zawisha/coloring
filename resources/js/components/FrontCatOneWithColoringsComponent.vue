@@ -49,7 +49,7 @@
                           <img class="front-list-img-new" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
                     <div class="col-9 col-lg-9">
-                        <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
+                        <h1 class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</h1>
                         <div class="offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l">{{ colored.description }}</div>
                         <div class="rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right">
 
