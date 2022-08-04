@@ -40,8 +40,8 @@ class ImageController extends Controller
         try {
             $this->validate($request,[
                 'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-                'coloring_name'=> 'required|string|min:5|max:40',
-                'description'=> 'required|string|min:10|max:300',
+                'coloring_name'=> 'required|string|min:5|max:70',
+                'description'=> 'required|string|min:5|max:300',
                 'selected_category'=> 'required',
                 'slug'=> 'unique:colored,slug',
             ]);
@@ -286,7 +286,7 @@ class ImageController extends Controller
         $file = request()->file();
         try {
             $this->validate($request,[
-                'coloring_name'=> 'required|string|min:5|max:30',
+                'coloring_name'=> 'required|string|min:5|max:70',
                 'description'=> 'required|string|min:10|max:130',
                 'selected_category'=> 'required',
                 'slug'=>  'required',Rule::unique('colored,slug')->where(function($query,$color_id) {
