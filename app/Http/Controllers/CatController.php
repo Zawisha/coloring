@@ -15,9 +15,9 @@ class CatController extends Controller
         $description = $request->input('description');
         try {
             $this->validate($request,[
-                'tag'=> 'required|string|unique:cat,name|min:3|max:32',
-                'slug'=> 'required|string|unique:cat,slug|min:3|max:32',
-                'description'=> 'required|string|min:3|max:140',
+                'tag'=> 'required|string|unique:cat,name|min:3|max:70',
+                'slug'=> 'required|string|unique:cat,slug|min:3|max:70',
+                'description'=> 'required|string|min:3|max:130',
             ]);
         }
         catch (ValidationException $exception) {
@@ -63,8 +63,8 @@ class CatController extends Controller
         try {
             $this->validate($request,[
                 'tag'=> 'required|string|max:32|min:3|unique:cat,name,'.$tag_id.',id',
-                'slug'=> 'required|string|min:3|max:32|unique:cat,slug,'.$tag_id.',id',
-                'description'=> 'required|string|min:3|max:140',
+                'slug'=> 'required|string|min:3|max:70|unique:cat,slug,'.$tag_id.',id',
+                'description'=> 'required|string|min:3|max:130',
             ]);
         }
         catch (ValidationException $exception) {

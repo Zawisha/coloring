@@ -18,13 +18,13 @@
                     </div>
 
             <div class="col-sm-4 ">
-                <input id="todo-input" type="text" class="form-control" value="" v-model="tag_to_add" v-on:focus=delete_bars() maxlength="32" v-on:change="slugCheck">
+                <input id="todo-input" type="text" class="form-control" value="" v-model="tag_to_add" v-on:focus=delete_bars() maxlength="70" v-on:change="slugCheck">
             </div>
             <div class="col-sm-2">
                 <button type="button"  v-on:click="add_tag()" class="btn btn-light admin_tag_button">Добавить категорию</button>
             </div>
             <div class="col-sm-4 ">
-                        <input id="" type="text" class="form-control" value="" v-on:change="slugCheck1"  v-model="search_result" v-on:focus=delete_bars() :disabled="disable_edit" maxlength="32">
+                        <input id="" type="text" class="form-control" value="" v-on:change="slugCheck1"  v-model="search_result" v-on:focus=delete_bars() :disabled="disable_edit" maxlength="70">
             </div>
             <div class="col-sm-2">
                         <button type="button" v-on:click="edit_tag()" class="btn btn-light admin_tag_button" >Сохранить категорию</button>

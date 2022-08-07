@@ -344,7 +344,7 @@ class ImageController extends Controller
                'colored_id' => $color_id,
            ]);
        }
-       // ColoringCat::where('colored_id','=',$color_id)->delete();
+        ColoringCat::where('colored_id','=',$color_id)->delete();
 
         if($selected_cat) {
             $myArray_cat = explode(',', $selected_cat);

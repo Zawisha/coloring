@@ -8998,7 +8998,7 @@ var render = function render() {
       id: "todo-input",
       type: "text",
       value: "",
-      maxlength: "32"
+      maxlength: "70"
     },
     domProps: {
       value: _vm.tag_to_add
@@ -9040,7 +9040,7 @@ var render = function render() {
       type: "text",
       value: "",
       disabled: _vm.disable_edit,
-      maxlength: "32"
+      maxlength: "70"
     },
     domProps: {
       value: _vm.search_result
@@ -9447,7 +9447,7 @@ var render = function render() {
     },
     attrs: {
       placeholder: "введите название",
-      maxlength: 30
+      maxlength: 70
     },
     domProps: {
       value: _vm.coloring_name
@@ -12272,7 +12272,7 @@ var render = function render() {
     },
     attrs: {
       placeholder: "введите название",
-      maxlength: 30
+      maxlength: 70
     },
     domProps: {
       value: _vm.coloring_name
