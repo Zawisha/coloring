@@ -130,7 +130,7 @@
 				<nav class="navbar navbar-expand">
 					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
 					</div>
-                    <div><a href="/">Перейти на сайт</a></div>
+                    <div><a href="/" target="_blank">Перейти на сайт</a></div>
 {{--					<div class="search-bar flex-grow-1">--}}
 {{--						<div class="position-relative search-bar-box">--}}
 {{--							<input type="text" class="form-control search-control" placeholder="Type to search..."> <span class="position-absolute top-50 search-show translate-middle-y"><i class='bx bx-search'></i></span>--}}
