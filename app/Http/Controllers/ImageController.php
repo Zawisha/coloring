@@ -274,8 +274,7 @@ class ImageController extends Controller
         $published = $request->input('published');
         $slug = $request->input('slug');
         $selected_cat = $request->input('cat');
-
-        if($published=="true")
+        if($published=="true"||$published==1)
         {
             $published=1;
         }
@@ -283,6 +282,7 @@ class ImageController extends Controller
         {
             $published=0;
         }
+
         $file = request()->file();
         try {
             $this->validate($request,[
@@ -326,6 +326,7 @@ class ImageController extends Controller
         }
         else
         {
+
             $colored_id = Colored::where('id','=',$color_id)->
             update([
                 'name' => $coloring_name,
@@ -333,6 +334,7 @@ class ImageController extends Controller
                 'published' => $published,
                 'slug'=>$slug
             ]);
+
         }
         ColoringCategory::where('colored_id','=',$color_id)->delete();
         $myArray = explode(',', $selected_category);
