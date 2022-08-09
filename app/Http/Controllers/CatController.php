@@ -28,6 +28,7 @@ class CatController extends Controller
             ], 422);
 
         }
+
       $cat= Cat::create([
             'name'=>$tag,
             'slug'=>$slug,

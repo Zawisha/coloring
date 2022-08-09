@@ -52,7 +52,7 @@ class TagController extends Controller
         $tag_id = $request->input('tag_id');
         try {
             $this->validate($request,[
-                'tag'=> 'required|string|unique:categories,name|min:3|max:32',
+                'tag'=> 'required|string|min:3|max:32|unique:categories,name,'.$tag_id.',id',
             ]);
         }
         catch (ValidationException $exception) {
