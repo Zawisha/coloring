@@ -306,8 +306,8 @@ a.green_menu_element:hover {
 /*    }*/
 /*}*/
 .coloring_list_title_new {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-style: normal;
+    font-family: 'Montserrat SemiBold', sans-serif;
+    font-style: italic;
     font-weight: 700;
     font-size: 18px;
     line-height: 14px;
@@ -329,8 +329,8 @@ a.green_menu_element:hover {
     }
 }
 .coloring_list_text {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-style: normal;
+    font-family: 'Montserrat Medium', sans-serif;
+    font-style: italic;
     font-weight: 400;
     font-size: 13px;
     line-height: 14px;
@@ -1183,4 +1183,17 @@ a.green_menu_element:hover {
 }
 .register_text {
     font-size: 16px;
+}
+.new_cat{
+    margin-top: 10px;
+    font-size: 16px;
+}
+@media (min-width: 992px) {
+.new_cat{
+    margin-top: 10px;
+    font-size: 20px;
+    }
+}
+.cat_label{
+    margin-top: 10px;
 }

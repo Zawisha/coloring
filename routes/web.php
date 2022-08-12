@@ -104,5 +104,6 @@ Route::get('/users_list', [App\Http\Controllers\AdminController::class, 'users_l
 Route::post('/get_users_list', [App\Http\Controllers\AdminController::class, 'get_users_list'])->name('get_users_list')->middleware('admin');
 Route::post('/add_cat', [\App\Http\Controllers\CatController::class, 'add_cat'])->name('add_cat');
 Route::post('/edit_cat', [\App\Http\Controllers\CatController::class, 'edit_cat'])->name('edit_cat');
+Route::post('/delete_cat', [\App\Http\Controllers\CatController::class, 'delete_cat'])->name('delete_cat');
 
 });

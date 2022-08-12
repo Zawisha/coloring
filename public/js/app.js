@@ -3480,8 +3480,18 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
     this.get_tag_list(this.tag_list);
   },
   methods: {
-    add_tag: function add_tag() {
+    delete_cat: function delete_cat() {
       var _this = this;
+
+      console.log(this.search_result_id);
+      axios.post('/delete_cat', {
+        tag_id: this.search_result_id
+      }.then(function (response) {
+        _this.search_result_id = '', _this.success_added = true, _this.success_text = 'Категория удалена', _this.description_old = '', _this.imagepreview1 = null, _this.imagepreview_start1 = false, _this.file1 = '';
+      }));
+    },
+    add_tag: function add_tag() {
+      var _this2 = this;
 
       this.alert_arr = [];
       this.alert = false;
@@ -3496,27 +3506,27 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
           slug: this.chpu,
           description: this.description_new
         }).then(function (response) {
-          _this.success_added = true;
-          _this.success_text = 'Категория успешно добавлена';
-          _this.added_cat_id = response.data.id;
+          _this2.success_added = true;
+          _this2.success_text = 'Категория успешно добавлена';
+          _this2.added_cat_id = response.data.id;
 
-          _this.tag_list.push({
-            id: _this.added_cat_id,
-            name: _this.tag_to_add
+          _this2.tag_list.push({
+            id: _this2.added_cat_id,
+            name: _this2.tag_to_add
           });
 
-          _this.tag_to_add = '';
+          _this2.tag_to_add = '';
 
-          if (_this.file) {
-            _this.formSubmit();
+          if (_this2.file) {
+            _this2.formSubmit();
           }
         })["catch"](function (error) {
-          _this.add_to_errors(error.response.data.errors);
+          _this2.add_to_errors(error.response.data.errors);
         });
       }
     },
     formSubmit: function formSubmit(e) {
-      var _this2 = this;
+      var _this3 = this;
 
       // e.preventDefault();
       this.success_add_final = false;
@@ -3536,9 +3546,9 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
       data.append('cat_id', cat_id);
       axios.post('/upload_img_cat', data, config).then(function (response) {
-        _this2.success_add_final = true;
+        _this3.success_add_final = true;
       })["catch"](function (error) {
-        _this2.add_to_errors(error.response.data.errors);
+        _this3.add_to_errors(error.response.data.errors);
       });
       this.file = '';
       this.chpu = '';
@@ -3546,7 +3556,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.imagepreview = '';
     },
     imgPreview: function imgPreview(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.imagepreview_start = false;
       this.file = e.target.files[0];
@@ -3555,12 +3565,22 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
       if (this.file.type.match('image.*')) {
         reader.onload = function (e) {
-          _this3.imagepreview = e.target.result;
+          _this4.imagepreview = e.target.result;
         };
       }
     },
     edit_tag: function edit_tag() {
-      var _this4 = this;
+      var _this5 = this;
+
+      // console.log(this.tag_list)
+      // console.log(this.search_result)
+      // console.log(this.search_result_id)
+      // console.log(this.description_old)
+      for (var i = 0; i < this.tag_list.length; i++) {
+        if (this.search_result_id == this.tag_list[i]['id']) {
+          this.tag_list[i]['description'] = this.description_old;
+        }
+      }
 
       this.alert_arr = [];
       this.alert = false;
@@ -3576,33 +3596,34 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
           slug: this.chpu1,
           description: this.description_old
         }).then(function (response) {
-          _this4.success_added = true;
-          _this4.success_text = 'Категория успешно отредактирована';
-          _this4.disable_edit = true;
-          var temp_id = _this4.search_result_id;
-          var temp_name = _this4.search_result;
+          _this5.success_added = true;
+          _this5.success_text = 'Категория успешно отредактирована';
+          _this5.disable_edit = true;
+          var temp_id = _this5.search_result_id;
+          var temp_name = _this5.search_result;
 
-          _this4.tag_list.forEach(function (item) {
+          _this5.tag_list.forEach(function (item) {
             if (item.id == temp_id) {
               item.name = temp_name;
             }
           });
 
-          _this4.search_result = '';
-          _this4.search_result_id = temp_id;
-          _this4.imagepreview_start1 = '';
-          _this4.imagepreview1 = '';
+          _this5.search_result = '';
+          _this5.search_result_id = temp_id;
+          _this5.imagepreview_start1 = '';
+          _this5.imagepreview1 = '';
+          _this5.description_old = '';
 
-          if (_this4.file1) {
-            _this4.formSubmit1();
+          if (_this5.file1) {
+            _this5.formSubmit1();
           }
         })["catch"](function (error) {
-          _this4.add_to_errors(error.response.data.errors);
+          _this5.add_to_errors(error.response.data.errors);
         });
       }
     },
     formSubmit1: function formSubmit1(e) {
-      var _this5 = this;
+      var _this6 = this;
 
       // e.preventDefault();
       this.success_add_final = false;
@@ -3622,9 +3643,9 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
       data.append('cat_id', cat_id);
       axios.post('/upload_img_cat_edit', data, config).then(function (response) {
-        _this5.success_add_final = true;
+        _this6.success_add_final = true;
       })["catch"](function (error) {
-        _this5.add_to_errors(error.response.data.errors);
+        _this6.add_to_errors(error.response.data.errors);
       });
       this.file1 = '';
       this.chpu1 = '';
@@ -3632,7 +3653,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.imagepreview1 = '';
     },
     imgPreview1: function imgPreview1(e) {
-      var _this6 = this;
+      var _this7 = this;
 
       this.imagepreview_start1 = false;
       this.file1 = e.target.files[0];
@@ -3641,7 +3662,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
       if (this.file1.type.match('image.*')) {
         reader.onload = function (e) {
-          _this6.imagepreview1 = e.target.result;
+          _this7.imagepreview1 = e.target.result;
         };
       }
     },
@@ -3652,6 +3673,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.chpu1 = slug(this.search_result);
     },
     select_tag_from_list: function select_tag_from_list(id, name, description) {
+      console.log(description);
       this.search_result = name;
       this.search_result_id = id;
       this.disable_edit = false, this.description_old = description;
@@ -3659,15 +3681,15 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.get_cat_img();
     },
     get_cat_img: function get_cat_img() {
-      var _this7 = this;
+      var _this8 = this;
 
       axios.post('/get_cat_img', {
         cat_id: this.search_result_id
       }).then(function (response) {
         if (response.data.cat_list[0].img != null) {
-          _this7.imagepreview_start1 = '/images/cat/' + response.data.cat_list[0].img;
+          _this8.imagepreview_start1 = '/images/cat/' + response.data.cat_list[0].img;
         } else {
-          _this7.imagepreview_start1 = '/images/no_img.jpg';
+          _this8.imagepreview_start1 = '/images/no_img.jpg';
         }
       });
     },
@@ -3675,7 +3697,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.get_tag_list(this.tag_list);
     },
     get_tag_list: function get_tag_list(inp) {
-      var _this8 = this;
+      var _this9 = this;
 
       axios.post('/get_cat_list', {
         offset: this.tag_offset
@@ -3687,7 +3709,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
             name: entry.name,
             description: entry.description
           });
-        }), _this8.tags_count = data.tipes_count;
+        }), _this9.tags_count = data.tipes_count;
       });
       this.tag_offset = this.tag_offset + 20;
     },
@@ -9026,7 +9048,7 @@ var render = function render() {
       }
     }
   }, [_vm._v("Добавить категорию")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-4"
+    staticClass: "col-sm-6"
   }, [_c("input", {
     directives: [{
       name: "model",
@@ -9056,7 +9078,9 @@ var render = function render() {
       }
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-2"
+    staticClass: "cat_label offset-6 col-6 row"
+  }, [_c("div", {
+    staticClass: "col-sm-5"
   }, [_c("button", {
     staticClass: "btn btn-light admin_tag_button",
     attrs: {
@@ -9067,7 +9091,19 @@ var render = function render() {
         return _vm.edit_tag();
       }
     }
-  }, [_vm._v("Сохранить категорию")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Сохранить категорию")])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-5"
+  }, [_c("button", {
+    staticClass: "btn btn-light admin_tag_button",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.delete_cat();
+      }
+    }
+  }, [_vm._v("Удалить категорию")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 row"
   }, [_c("div", {
     staticClass: "col-6"
@@ -9462,7 +9498,28 @@ var render = function render() {
         _vm.coloring_name = $event.target.value;
       }
     }
-  }), _vm._v(" "), _c("div", [_vm._v("ЧПУ: " + _vm._s(_vm.chpu))]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_vm._v("ЧПУ")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.chpu,
+      expression: "chpu"
+    }],
+    staticClass: "input_coloring_name search-control form-control",
+    attrs: {
+      placeholder: "slug",
+      maxlength: 70
+    },
+    domProps: {
+      value: _vm.chpu
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.chpu = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("div", {
     staticClass: "add_coloring_title"
   }, [_vm._v("Описание раскраски")]), _vm._v(" "), _c("textarea", {
     directives: [{
@@ -10652,7 +10709,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "col-9 col-lg-9"
-    }, [_c("h1", {
+    }, [_c("div", {
       staticClass: "coloring_list_title_new col-lg-12 front-list-new-np-l",
       on: {
         click: function click($event) {
@@ -12287,7 +12344,28 @@ var render = function render() {
         _vm.coloring_name = $event.target.value;
       }
     }
-  }), _vm._v(" "), _c("div", [_vm._v("ЧПУ: " + _vm._s(_vm.chpu))]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_vm._v("ЧПУ")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.chpu,
+      expression: "chpu"
+    }],
+    staticClass: "input_coloring_name search-control form-control",
+    attrs: {
+      placeholder: "slug",
+      maxlength: 70
+    },
+    domProps: {
+      value: _vm.chpu
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.chpu = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("div", {
     staticClass: "add_coloring_title"
   }, [_vm._v("Описание раскраски")]), _vm._v(" "), _c("textarea", {
     directives: [{

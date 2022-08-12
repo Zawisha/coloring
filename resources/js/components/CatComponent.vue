@@ -23,12 +23,17 @@
             <div class="col-sm-2">
                 <button type="button"  v-on:click="add_tag()" class="btn btn-light admin_tag_button">Добавить категорию</button>
             </div>
-            <div class="col-sm-4 ">
+            <div class="col-sm-6">
                         <input id="" type="text" class="form-control" value="" v-on:change="slugCheck1"  v-model="search_result" v-on:focus=delete_bars() :disabled="disable_edit" maxlength="70">
             </div>
-            <div class="col-sm-2">
+                <div class="cat_label offset-6 col-6 row">
+            <div class="col-sm-5">
                         <button type="button" v-on:click="edit_tag()" class="btn btn-light admin_tag_button" >Сохранить категорию</button>
             </div>
+                <div class="col-sm-5">
+                    <button type="button" v-on:click="delete_cat()" class="btn btn-light admin_tag_button" >Удалить категорию</button>
+                </div>
+                </div>
             </div>
             <div class="col-12 row">
                 <div class="col-6">ЧПУ: {{ chpu }}</div>
@@ -115,6 +120,23 @@ export default {
             this.get_tag_list(this.tag_list)
     },
     methods: {
+        delete_cat()
+        {
+            console.log(this.search_result_id)
+            axios.post('/delete_cat', {
+                tag_id:this.search_result_id
+            }
+                .then(response => {
+                        this.search_result_id='',
+                        this.success_added = true,
+                        this.success_text='Категория удалена',
+                        this.description_old='',
+                        this.imagepreview1=null,
+                        this.imagepreview_start1=false,
+                        this.file1=''
+                })
+            )
+        },
         add_tag()
         {
             this.alert_arr=[];
@@ -193,6 +215,17 @@ export default {
         },
         edit_tag()
         {
+            // console.log(this.tag_list)
+            // console.log(this.search_result)
+            // console.log(this.search_result_id)
+            // console.log(this.description_old)
+            for(let i = 0; i < this.tag_list.length; i++)
+            {
+                if(this.search_result_id==this.tag_list[i]['id'])
+                {
+                    this.tag_list[i]['description']=this.description_old;
+                }
+            }
             this.alert_arr=[];
             this.alert=false;
             this.success_added=false
@@ -225,6 +258,7 @@ export default {
                         this.search_result_id=temp_id
                         this.imagepreview_start1=''
                         this.imagepreview1=''
+                        this.description_old=''
                         if(this.file1) {
                             this.formSubmit1()
                         }
@@ -284,6 +318,7 @@ export default {
         },
         select_tag_from_list(id,name,description)
         {
+            console.log(description)
             this.search_result=name
             this.search_result_id=id
             this.disable_edit=false,
@@ -331,6 +366,7 @@ export default {
                     )
                 );
             this.tag_offset=(this.tag_offset)+20
+
         },
         delete_bars()
         {

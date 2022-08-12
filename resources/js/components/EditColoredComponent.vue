@@ -16,7 +16,8 @@
                 <div v-else>Не опубликовано <input type="checkbox" id="checkbox1" v-model="published"></div>
                 <div class="add_coloring_title">Название раскраски</div>
                 <input class="input_coloring_name search-control form-control"v-on:change="slugCheck" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="70" v-on:focus=delete_red_border_name() >
-                <div>ЧПУ: {{ chpu }}</div>
+               <div>ЧПУ</div>
+                <input class="input_coloring_name search-control form-control" v-model="chpu" placeholder="slug" :maxlength="70" >
                 <div class="add_coloring_title">Описание раскраски</div>
                 <textarea class="input_coloring_name search-control form-control" v-model="description" placeholder="введите описание" rows=5 v-bind:class="{ red_border: isActive_description }" :maxlength="130" v-on:focus=delete_red_border_desc()></textarea>
                 <div class="add_coloring_title">Добавьте теги</div>

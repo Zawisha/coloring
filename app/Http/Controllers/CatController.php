@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cat;
+use App\Models\ColoringCat;
 use Illuminate\Http\Request;
 use Nette\Schema\ValidationException;
 
@@ -91,5 +92,29 @@ class CatController extends Controller
         $queryString=$request->input('req');
         $categories = Cat::where('name', 'LIKE', "%$queryString%")->orderBy('name')->get();
         return $categories;
+    }
+    public function delete_cat(Request $request)
+    {
+        $tag_id=$request->input('tag_id');
+        $list_tags= Cat::where('id', $tag_id)
+            ->get('img');
+        if($list_tags[0]->img!==null)
+        {
+            try {
+                $path = public_path() . "/images/cat/" . $list_tags[0]->img;
+                unlink($path);
+            }
+            catch (\Throwable $e)
+            {
+
+            }
+
+        }
+        ColoringCat::where('cat_id', $tag_id)->delete();
+        Cat::where('id', $tag_id)->delete();
+        return response()->json([
+            'status' => 'success',
+            'message'    => 'Категория удалена',
+        ], 201);
     }
 }

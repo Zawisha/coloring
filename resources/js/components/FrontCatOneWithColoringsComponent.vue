@@ -21,6 +21,7 @@
                         </div>
                     </div >
                 </div>
+
                 <div  class="col-12 one_front_coloring " v-for="(colored,index) in coloring_list">
                     <div class="col-12 row reklama_row_main_list" v-if="(index===reklama_number)&& (hide_on_mob)">
                         <div class="col-3 ">
@@ -49,7 +50,7 @@
                           <img class="front-list-img-new" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
                     <div class="col-9 col-lg-9">
-                        <h1 class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</h1>
+                        <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
                         <div class="offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l">{{ colored.description }}</div>
                         <div class="rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right">
 

@@ -102,3 +102,7 @@
 .desc_cat {
     margin-top: 10px;
 }
+.cat_label {
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+}
