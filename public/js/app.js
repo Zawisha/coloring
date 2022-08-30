@@ -10719,7 +10719,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(colored.name))]), _vm._v(" "), _c("div", {
       staticClass: "offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l"
     }, [_vm._v(_vm._s(colored.description))]), _vm._v(" "), _c("div", {
-      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right"
+      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right"
     }, [_c("span", {
       directives: [{
         name: "show",
@@ -10990,9 +10990,9 @@ var render = function render() {
         alt: ""
       }
     })])])]) : _c("span", {
-      staticClass: "row"
+      staticClass: "row list_additional_imgs"
     }, [_c("div", {
-      staticClass: "col-3 col-lg-3 front-list-new-np",
+      staticClass: "d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np",
       on: {
         click: function click($event) {
           return _vm.go_to_one_coloring(colored.slug);
@@ -11005,7 +11005,7 @@ var render = function render() {
         alt: ""
       }
     })]), _vm._v(" "), _c("div", {
-      staticClass: "col-9 col-lg-9"
+      staticClass: "col-8 col-lg-9"
     }, [_c("div", {
       staticClass: "coloring_list_title_new col-lg-12 front-list-new-np-l",
       on: {
@@ -11016,7 +11016,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(colored.name))]), _vm._v(" "), _c("div", {
       staticClass: "offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l"
     }, [_vm._v(_vm._s(colored.description))]), _vm._v(" "), _c("div", {
-      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right"
+      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right"
     }, [_c("span", {
       directives: [{
         name: "show",
@@ -11537,9 +11537,9 @@ var render = function render() {
         alt: ""
       }
     })])])]) : _c("span", {
-      staticClass: "row"
+      staticClass: "row list_additional_imgs"
     }, [_c("div", {
-      staticClass: "col-4 col-lg-3 front-list-new-np",
+      staticClass: "d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np",
       on: {
         click: function click($event) {
           return _vm.go_to_one_coloring(colored.slug);
@@ -11563,7 +11563,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(colored.name))]), _vm._v(" "), _c("div", {
       staticClass: "offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l"
     }, [_vm._v(_vm._s(colored.description))]), _vm._v(" "), _c("div", {
-      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right"
+      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right"
     }, [_vm.menu_size < 993 ? _c("span", {
       staticClass: "iconify like_list",
       attrs: {
@@ -11952,7 +11952,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(colored.name))]), _vm._v(" "), _c("div", {
       staticClass: "offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l"
     }, [_vm._v(_vm._s(colored.description))]), _vm._v(" "), _c("div", {
-      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-4 col-lg-8 text-md-right"
+      staticClass: "rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right"
     }, [_c("span", {
       directives: [{
         name: "show",

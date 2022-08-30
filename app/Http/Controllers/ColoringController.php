@@ -141,6 +141,7 @@ class ColoringController extends Controller
             })
             ->offset($offset)
             ->limit(20)
+            ->orderBy('id', 'desc')
             ->get();
         $count = Colored::where('id', '>', '0')
             ->when($front, function($q){

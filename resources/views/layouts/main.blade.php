@@ -53,6 +53,7 @@
     </script>
 </head>
 <body class="antialiased" >
+@include('cookie-consent::index')
 <div id="app">
 <div>
 
