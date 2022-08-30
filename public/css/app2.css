@@ -15,7 +15,7 @@
     width: 66px;
 }
 .js-cookie-consent{
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0px;
     padding: 10px;
     text-align: center;
@@ -24,6 +24,7 @@
     background-color: #fffbdb;
     border-color: #fffacc;
     border: solid 1px;
+    position: fixed;
 }
 .new_head_search_top {
     top: 13px;
