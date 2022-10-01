@@ -24,6 +24,10 @@ class ColoringController extends Controller
         //unidev comment
         $queryString=$request->input('req');
         $categories = Categories::where('name', 'LIKE', "%$queryString%")->orderBy('name')->get();
+        $categories_old = Categories::where('name', $queryString)->get();
+        if ($categories_old->isEmpty()) {
+            $categories->push(['name' => $request->input('req'), 'id' => 'user_tag']);
+        }
         return $categories;
     }
 
@@ -317,6 +321,7 @@ class ColoringController extends Controller
     {
         $fairy_id =  $request->input('id');
         $to_del = Colored::where('id','=',$fairy_id)->get();
+
         try {
             $path = public_path() . "/images/colorings/" . $to_del[0]['img'];
             unlink($path);

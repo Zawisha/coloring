@@ -47,6 +47,7 @@ Vue.component('streak-component', require('./components/StreakComponent').defaul
 Vue.component('preloader-component', require('./components/PreloaderComponent').default);
 Vue.component('front-coloring-one-component', require('./components/FrontColoringOneComponent').default);
 Vue.component('front-cat-one-with-colorings-component', require('./components/FrontCatOneWithColoringsComponent').default);
+Vue.component('user-add-coloring-component', require('./components/UserAddColoringComponent').default);
 import { Icon } from '@iconify/vue2';
 import iosAlertView from 'vue-ios-alertview';
 Vue.use(iosAlertView);

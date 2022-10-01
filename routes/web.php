@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/upload_crop', [App\Http\Controllers\ProfileController::class, 'upload_crop'])->name('upload_crop');
     Route::post('/get_user_params', [App\Http\Controllers\ProfileController::class, 'get_user_params'])->name('get_user_params');
     Route::post('/get_user_params_main', [App\Http\Controllers\ProfileController::class, 'get_user_params_main'])->name('get_user_params_main');
+    Route::get('/add_coloring_user', [App\Http\Controllers\MainViewController::class, 'add_coloring_user'])->name('add_coloring_user');
 
 });
 

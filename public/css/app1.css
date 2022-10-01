@@ -86,3 +86,14 @@
 .cat_label{
     margin-top: 10px;
 }
+.autocomplete-input{
+    background-color: white!important;
+}
+.tag_user_color {
+    background-color: #40d498;
+    padding-top: 6px;
+    margin-top: 4px;
+}
+.alert_set {
+    margin-top: 10px;
+}

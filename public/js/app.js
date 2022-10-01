@@ -7666,7 +7666,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {},
+  methods: {
+    go_to_user_add_coloring: function go_to_user_add_coloring() {
+      window.location.href = '/add_coloring_user';
+    }
+  }
+});
 
 /***/ }),
 
@@ -7920,6 +7930,312 @@ __webpack_require__.r(__webpack_exports__);
 
         reader.readAsDataURL(input.files[0]);
       }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      alert: false,
+      alert_arr: [],
+      selected_category: '',
+      categories: [],
+      isActive_name: false,
+      isActive_description: false,
+      coloring_name: '',
+      description: '',
+      name: '',
+      file: '',
+      success: '',
+      imagepreview: null,
+      isDisabled_button: false,
+      search_result: '',
+      search_result_id: '',
+      search_result_cat: '',
+      search_result_id_cat: '',
+      tag_list: [],
+      success_added: false,
+      published: false,
+      cat_list: [],
+      chpu: ''
+    };
+  },
+  mounted: function mounted() {},
+  methods: {
+    slugCheck: function slugCheck() {
+      this.chpu = slug(this.coloring_name);
+    },
+    get_categories: function get_categories(inp) {
+      axios.post('/get_categories', {}).then(function (_ref) {
+        var data = _ref.data;
+        return data.forEach(function (entry) {
+          inp.push({
+            id: entry.id,
+            name: entry.name
+          });
+        });
+      });
+    },
+    delete_tag_from_tag_list: function delete_tag_from_tag_list(id) {
+      var tag_temp_id = id;
+      this.tag_list.forEach(function (item, i, arr) {
+        if (item.id == tag_temp_id) {
+          arr.splice(i, 1);
+        }
+      });
+    },
+    delete_cat_from_cat_list: function delete_cat_from_cat_list(id) {
+      var tag_temp_id = id;
+      this.cat_list.forEach(function (item, i, arr) {
+        if (item.id == tag_temp_id) {
+          arr.splice(i, 1);
+        }
+      });
+    },
+    add_tag_to_tag_list: function add_tag_to_tag_list() {
+      var tag_temp_id = this.search_result_id;
+      var tag_temp_name = this.search_result;
+      var flag = false;
+      this.tag_list.forEach(function (item, i, arr) {
+        if (tag_temp_id != 'user_tag') {
+          if (item.id == tag_temp_id) {
+            flag = true;
+          }
+        }
+
+        if (item.name == tag_temp_name) {
+          flag = true;
+        }
+      });
+
+      if (!flag) {
+        this.tag_list.push({
+          id: this.search_result_id,
+          name: this.search_result
+        });
+      }
+    },
+    add_cat_to_cat_list: function add_cat_to_cat_list() {
+      var tag_temp_id = this.search_result_id_cat;
+      var flag = false;
+      this.cat_list.forEach(function (item, i, arr) {
+        if (item.id == tag_temp_id) {
+          flag = true;
+        }
+      });
+
+      if (!flag) {
+        this.cat_list.push({
+          id: this.search_result_id_cat,
+          name: this.search_result_cat
+        });
+      }
+    },
+    delete_bars: function delete_bars() {
+      this.alert = false;
+      this.success_added = false;
+    },
+    delete_red_border_name: function delete_red_border_name() {
+      this.isActive_name = false;
+    },
+    delete_red_border_desc: function delete_red_border_desc() {
+      this.isActive_description = false;
+    },
+    imgPreview: function imgPreview(e) {
+      var _this = this;
+
+      this.file = e.target.files[0];
+      var reader = new FileReader();
+      reader.readAsDataURL(this.file);
+      console.log(this.file.type);
+
+      if (this.file.type.match('image.*')) {
+        reader.onload = function (e) {
+          _this.imagepreview = e.target.result;
+        };
+      } // console.log(this.file);
+
+    },
+    formSubmit: function formSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.alert_arr = [];
+      this.alert = false;
+
+      if (this.coloring_name == "") {
+        this.alert = true;
+        this.alert_arr.push('Заполните поле "Название раскраски"');
+        this.isActive_name = true;
+      }
+
+      if (this.coloring_name.length < 5 && this.coloring_name !== "") {
+        this.alert = true;
+        this.alert_arr.push('Поле "Название раскраски не должно быть короче 5 символов"');
+        this.isActive_name = true;
+      }
+
+      if (this.coloring_name.length > 70 && this.coloring_name !== "") {
+        this.alert = true;
+        this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 70 символов"');
+        this.isActive_name = true;
+      }
+
+      if (this.description == "") {
+        this.alert = true;
+        this.alert_arr.push('Заполните поле "Описание раскраски"');
+        this.isActive_description = true;
+      }
+
+      if (this.description.length < 5 && this.description !== "") {
+        this.alert = true;
+        this.alert_arr.push('Поле "Описание раскраски не должно быть короче 5 символов"');
+        this.isActive_description = true;
+      }
+
+      if (this.description.length > 300 && this.description !== "") {
+        this.alert = true;
+        this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 300 символов"');
+        this.isActive_description = true;
+      }
+
+      if (this.tag_list == '') {
+        this.alert = true;
+        this.alert_arr.push('Выберите хотя бы один тег');
+      }
+
+      if (!this.file) {
+        this.alert = true;
+        this.alert_arr.push('Загрузите изображение');
+      }
+
+      if (this.alert == false) {
+        var config = {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        };
+        this.isDisabled_button = true;
+        var data = new FormData();
+        var coloring_name = this.coloring_name;
+        var description = this.description;
+        var selected_category = this.tag_list;
+        var published = this.published;
+        var selected_cat = this.cat_list;
+        var _slug = this.chpu;
+        var temp_selected_category = [];
+        selected_category.forEach(function (number) {
+          temp_selected_category.push(number.id);
+        });
+        var temp_selected_cat = [];
+        selected_cat.forEach(function (number) {
+          temp_selected_cat.push(number.id);
+        });
+        data.append('file', this.file);
+        data.append('coloring_name', coloring_name);
+        data.append('slug', _slug);
+        data.append('description', description);
+        data.append('published', published);
+        data.append('selected_category', temp_selected_category);
+        data.append('cat', temp_selected_cat);
+        axios.post('/upload_img', data, config).then(function (res) {
+          window.location.href = '/admin/add_coloring_success';
+        })["catch"](function (error) {
+          _this2.isDisabled_button = false;
+
+          _this2.add_to_errors(error.response.data.errors);
+        });
+      }
+    },
+    add_to_errors: function add_to_errors(inp_errors) {
+      this.alert = true;
+      var temp_arr = [];
+
+      for (var _i = 0, _Object$entries = Object.entries(inp_errors); _i < _Object$entries.length; _i++) {
+        var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+            key = _Object$entries$_i[0],
+            value = _Object$entries$_i[1];
+
+        value.forEach(function (number) {
+          temp_arr.push(number);
+        });
+      }
+
+      this.alert_arr = temp_arr;
+    },
+    search: function search(input) {
+      return new Promise(function (resolve) {
+        if (input.length < 3) {
+          return resolve([]);
+        }
+
+        axios.post('/get_categories', {
+          req: input
+        }).then(function (response) {
+          resolve(response.data);
+        });
+      });
+    },
+    getResultValue: function getResultValue(result) {
+      return result.name;
+    },
+    handleSubmit: function handleSubmit(result) {
+      //результат забирать отсюда
+      this.search_result = result.name;
+      this.search_result_id = result.id;
+      this.$refs.autocom_tag.setValue('');
+      this.add_tag_to_tag_list();
+    },
+    search_cat: function search_cat(input) {
+      return new Promise(function (resolve) {
+        if (input.length < 3) {
+          return resolve([]);
+        }
+
+        axios.post('/get_cat_search', {
+          req: input
+        }).then(function (response) {
+          resolve(response.data);
+        });
+      });
+    },
+    getResultValue_cat: function getResultValue_cat(result) {
+      return result.name;
+    },
+    handleSubmit_cat: function handleSubmit_cat(result) {
+      //результат забирать отсюда
+      this.search_result_cat = result.name;
+      this.search_result_id_cat = result.id;
+      this.$refs.autocom_cat.setValue('');
+      this.add_cat_to_cat_list();
     }
   }
 });
@@ -12907,19 +13223,17 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "double-border-button col-12"
-  }, [_vm._v("полоска")])]);
-}];
+    staticClass: "double-border-button col-12",
+    on: {
+      click: _vm.go_to_user_add_coloring
+    }
+  }, [_vm._v("Добавить раскраску")])]);
+};
+
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -13144,6 +13458,196 @@ var render = function render() {
       click: _vm.crop
     }
   }, [_vm._v("Сохранить аватар")]) : _vm._e()])], 1);
+};
+
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm.alert ? _c("div", {
+    staticClass: "alert alert-danger alert_set",
+    attrs: {
+      role: "alert"
+    }
+  }, [_c("ul", {
+    attrs: {
+      id: "error_list"
+    }
+  }, _vm._l(_vm.alert_arr, function (item) {
+    return _c("li", [_vm._v("\n                        " + _vm._s(item) + "\n                    ")]);
+  }), 0)]) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "add_coloring_title"
+  }, [_vm._v("Название раскраски")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.coloring_name,
+      expression: "coloring_name"
+    }],
+    staticClass: "input_coloring_name search-control form-control",
+    "class": {
+      red_border: _vm.isActive_name
+    },
+    attrs: {
+      placeholder: "введите название",
+      maxlength: 70
+    },
+    domProps: {
+      value: _vm.coloring_name
+    },
+    on: {
+      change: _vm.slugCheck,
+      focus: function focus($event) {
+        return _vm.delete_red_border_name();
+      },
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.coloring_name = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("div", [_vm._v("ЧПУ")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.chpu,
+      expression: "chpu"
+    }],
+    staticClass: "input_coloring_name search-control form-control",
+    attrs: {
+      readonly: "",
+      placeholder: "slug",
+      maxlength: 70
+    },
+    domProps: {
+      value: _vm.chpu
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.chpu = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "add_coloring_title"
+  }, [_vm._v("Описание раскраски")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.description,
+      expression: "description"
+    }],
+    staticClass: "input_coloring_name search-control form-control",
+    "class": {
+      red_border: _vm.isActive_description
+    },
+    attrs: {
+      placeholder: "введите описание",
+      rows: "5",
+      maxlength: 300
+    },
+    domProps: {
+      value: _vm.description
+    },
+    on: {
+      focus: function focus($event) {
+        return _vm.delete_red_border_desc();
+      },
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.description = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "add_coloring_title"
+  }, [_vm._v("Добавьте теги")]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("autocomplete", {
+    ref: "autocom_tag",
+    attrs: {
+      search: _vm.search,
+      "get-result-value": _vm.getResultValue,
+      "debounce-time": 500,
+      "auto-select": true,
+      readonly: _vm.tag_list.length > 5
+    },
+    on: {
+      submit: _vm.handleSubmit,
+      focus: function focus($event) {
+        return _vm.delete_bars();
+      }
+    }
+  })], 1), _vm._v(" "), _vm._l(_vm.tag_list, function (tag) {
+    return _c("div", {
+      staticClass: "col-10 offset-1 tag_user_color d-flex align-items-center border-top border-bottom _list cursor-pointer"
+    }, [_c("div", {
+      staticClass: "col-12",
+      on: {
+        click: function click($event) {
+          return _vm.delete_tag_from_tag_list(tag.id);
+        }
+      }
+    }, [_c("h6", {
+      staticClass: "font-14"
+    }, [_vm._v(_vm._s(tag.name))])])]);
+  }), _vm._v(" "), _c("div", {
+    staticClass: "add_coloring_title"
+  }, [_vm._v("Добавьте изображение")]), _vm._v(" "), _c("form", {
+    attrs: {
+      enctype: "multipart/form-data"
+    },
+    on: {
+      submit: _vm.formSubmit
+    }
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "file",
+      name: "avatar",
+      accept: "image/jpeg, image/jpg, image/png"
+    },
+    on: {
+      change: _vm.imgPreview
+    }
+  }), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-light add_coloring_title",
+    attrs: {
+      disabled: _vm.isDisabled_button
+    }
+  }, [_vm._v("Загрузить раскраску")]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 avatar img-fluid img-circle add_c_image justify-content-center",
+    staticStyle: {
+      "margin-top": "10px"
+    }
+  }, [_c("img", {
+    staticClass: "col-6",
+    attrs: {
+      src: _vm.imagepreview
+    }
+  })])])], 2)])]);
 };
 
 var staticRenderFns = [];
@@ -13514,6 +14018,7 @@ Vue.component('streak-component', (__webpack_require__(/*! ./components/StreakCo
 Vue.component('preloader-component', (__webpack_require__(/*! ./components/PreloaderComponent */ "./resources/js/components/PreloaderComponent.vue")["default"]));
 Vue.component('front-coloring-one-component', (__webpack_require__(/*! ./components/FrontColoringOneComponent */ "./resources/js/components/FrontColoringOneComponent.vue")["default"]));
 Vue.component('front-cat-one-with-colorings-component', (__webpack_require__(/*! ./components/FrontCatOneWithColoringsComponent */ "./resources/js/components/FrontCatOneWithColoringsComponent.vue")["default"]));
+Vue.component('user-add-coloring-component', (__webpack_require__(/*! ./components/UserAddColoringComponent */ "./resources/js/components/UserAddColoringComponent.vue")["default"]));
 
 
 Vue.use((vue_ios_alertview__WEBPACK_IMPORTED_MODULE_1___default()));
@@ -54224,6 +54729,45 @@ component.options.__file = "resources/js/components/UploadAvatar.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/UserAddColoringComponent.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/UserAddColoringComponent.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UserAddColoringComponent.vue?vue&type=template&id=450abb53& */ "./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53&");
+/* harmony import */ var _UserAddColoringComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserAddColoringComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _UserAddColoringComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__.render,
+  _UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/UserAddColoringComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/UsersListComponent.vue":
 /*!********************************************************!*\
   !*** ./resources/js/components/UsersListComponent.vue ***!
@@ -54750,6 +55294,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAddColoringComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UserAddColoringComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAddColoringComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/UsersListComponent.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/UsersListComponent.vue?vue&type=script&lang=js& ***!
@@ -55254,6 +55814,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAvatar_vue_vue_type_template_id_0d7604b6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAvatar_vue_vue_type_template_id_0d7604b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UploadAvatar.vue?vue&type=template&id=0d7604b6& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UploadAvatar.vue?vue&type=template&id=0d7604b6&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAddColoringComponent_vue_vue_type_template_id_450abb53___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UserAddColoringComponent.vue?vue&type=template&id=450abb53& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UserAddColoringComponent.vue?vue&type=template&id=450abb53&");
 
 
 /***/ }),
