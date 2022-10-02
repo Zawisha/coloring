@@ -122,7 +122,7 @@ class ImageController extends Controller
         }
 
         $image = request()->file();
-        $save_to=$user->id.'_'.time().$extension;
+        $save_to=$user->id.'_'.time().'.'.$extension;
         Image::make($request->file)->save(public_path('images/colorings/').$save_to);
         $colored_id= Colored::create([
             'name'=>$coloring_name,
