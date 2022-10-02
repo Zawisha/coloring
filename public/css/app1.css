@@ -97,3 +97,12 @@
 .alert_set {
     margin-top: 10px;
 }
+.add_col_but_user {
+    margin-top: 10px;
+}
+.no_padding_left {
+    padding-left: 0px!important;
+}
+.success_marg {
+    margin-top: 20px;
+}

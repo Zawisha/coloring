@@ -44,6 +44,8 @@ Route::post('/get_fairy_id_by_slug',  [App\Http\Controllers\FairyController::cla
 Route::post('/getOneFrontColoring', [App\Http\Controllers\ColoringController::class, 'getOneFrontColoring'])->name('getOneFrontColoring');
 Route::post('/setLike', [App\Http\Controllers\LikeController::class, 'setLike'])->name('setLike');
 Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
+Route::get('/success', [App\Http\Controllers\MainViewController::class, 'success'])->name('success');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
@@ -76,6 +78,7 @@ Route::get('/admin/cat', [App\Http\Controllers\AdminController::class, 'cat'])->
 Route::get('/admin/coloring_list', [App\Http\Controllers\ColoringController::class, 'coloring_list'])->name('coloring_list');
 Route::get('/admin/fairy_list', [App\Http\Controllers\FairyController::class, 'fairy_list'])->name('fairy_list');
 Route::post('/upload_img', [\App\Http\Controllers\ImageController::class, 'upload_img'])->name('upload_img');
+Route::post('/upload_img_user', [\App\Http\Controllers\ImageController::class, 'upload_img_user'])->name('upload_img_user');
 Route::post('/upload_fairy', [\App\Http\Controllers\ImageController::class, 'upload_fairy'])->name('upload_fairy');
 Route::post('/upload_img_edit', [\App\Http\Controllers\ImageController::class, 'upload_img_edit'])->name('upload_img_edit');
 Route::post('/upload_img_cat', [\App\Http\Controllers\ImageController::class, 'upload_img_cat'])->name('upload_img_cat');

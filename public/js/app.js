@@ -7976,7 +7976,6 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       file: '',
       success: '',
       imagepreview: null,
-      isDisabled_button: false,
       search_result: '',
       search_result_id: '',
       search_result_cat: '',
@@ -7985,7 +7984,8 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       success_added: false,
       published: false,
       cat_list: [],
-      chpu: ''
+      chpu: '',
+      extension: ''
     };
   },
   mounted: function mounted() {},
@@ -8075,12 +8075,27 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       this.file = e.target.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(this.file);
-      console.log(this.file.type);
+      console.log(this.file.size);
 
-      if (this.file.type.match('image.*')) {
-        reader.onload = function (e) {
-          _this.imagepreview = e.target.result;
-        };
+      if (this.file.size > 8388608) {
+        this.file = '';
+        this.alert = true;
+        this.alert_arr.push('Допустимый размер файла 8мб');
+      } else {
+        var extension = this.file.name.slice(Math.max(0, this.file.name.lastIndexOf(".") || Infinity) + 1);
+        this.extension = extension;
+
+        if (this.file.type.match('image.*')) {
+          if (extension == 'jpg' || extension == 'jpeg' || extension == 'png') {
+            reader.onload = function (e) {
+              _this.imagepreview = e.target.result;
+            };
+          }
+        } else {
+          this.file = '';
+          this.alert = true;
+          this.alert_arr.push('Не верный формат файла');
+        }
       } // console.log(this.file);
 
     },
@@ -8143,34 +8158,25 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
             'content-type': 'multipart/form-data'
           }
         };
-        this.isDisabled_button = true;
         var data = new FormData();
         var coloring_name = this.coloring_name;
         var description = this.description;
         var selected_category = this.tag_list;
-        var published = this.published;
-        var selected_cat = this.cat_list;
         var _slug = this.chpu;
+        var extension = this.extension;
         var temp_selected_category = [];
         selected_category.forEach(function (number) {
-          temp_selected_category.push(number.id);
-        });
-        var temp_selected_cat = [];
-        selected_cat.forEach(function (number) {
-          temp_selected_cat.push(number.id);
+          temp_selected_category.push(number.name);
         });
         data.append('file', this.file);
         data.append('coloring_name', coloring_name);
         data.append('slug', _slug);
+        data.append('extension', extension);
         data.append('description', description);
-        data.append('published', published);
         data.append('selected_category', temp_selected_category);
-        data.append('cat', temp_selected_cat);
-        axios.post('/upload_img', data, config).then(function (res) {
-          window.location.href = '/admin/add_coloring_success';
+        axios.post('/upload_img_user', data, config).then(function (res) {
+          window.location.href = '/success';
         })["catch"](function (error) {
-          _this2.isDisabled_button = false;
-
           _this2.add_to_errors(error.response.data.errors);
         });
       }
@@ -13487,7 +13493,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row justify-content-center"
   }, [_c("div", {
-    staticClass: "col-md-8"
+    staticClass: "col-md-8 no_padding_left"
   }, [_vm.alert ? _c("div", {
     staticClass: "alert alert-danger alert_set",
     attrs: {
@@ -13633,10 +13639,7 @@ var render = function render() {
       change: _vm.imgPreview
     }
   }), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-light add_coloring_title",
-    attrs: {
-      disabled: _vm.isDisabled_button
-    }
+    staticClass: "btn btn-light add_coloring_title add_col_but_user"
   }, [_vm._v("Загрузить раскраску")]), _vm._v(" "), _c("div", {
     staticClass: "col-12 avatar img-fluid img-circle add_c_image justify-content-center",
     staticStyle: {

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 no_padding_left">
                 <div v-if="alert" class="alert alert-danger alert_set" role="alert">
                     <ul id="error_list">
                         <li v-for="item in alert_arr" >
@@ -37,7 +37,7 @@
                 <div class="add_coloring_title">Добавьте изображение</div>
                 <form @submit="formSubmit" enctype="multipart/form-data">
                     <input type="file" class="form-control" v-on:change="imgPreview" name="avatar" accept="image/jpeg, image/jpg, image/png">
-                    <button class="btn btn-light add_coloring_title" :disabled='isDisabled_button'>Загрузить раскраску</button>
+                    <button class="btn btn-light add_coloring_title add_col_but_user" >Загрузить раскраску</button>
                     <div class="col-12 avatar img-fluid img-circle add_c_image justify-content-center" style="margin-top:10px">
                         <img class="col-6" :src="imagepreview"/>
                     </div>
@@ -64,7 +64,6 @@ export default {
             file: '',
             success: '',
             imagepreview:null,
-            isDisabled_button: false,
             search_result:'',
             search_result_id:'',
             search_result_cat:'',
@@ -73,7 +72,8 @@ export default {
             success_added:false,
             published:false,
             cat_list:[],
-            chpu:''
+            chpu:'',
+            extension:''
         };
     },
     mounted() {
@@ -178,11 +178,31 @@ export default {
             this.file = e.target.files[0];
             let reader = new FileReader();
             reader.readAsDataURL(this.file);
-            console.log(this.file.type);
+            console.log(this.file.size)
+            if(this.file.size>8388608)
+            {
+                this.file='';
+                this.alert=true;
+                this.alert_arr.push('Допустимый размер файла 8мб');
+            }
+            else
+            {
+            let extension=(this.file.name.slice((Math.max(0, (this.file.name.lastIndexOf(".")) || Infinity) + 1)));
+            this.extension=extension;
             if (this.file.type.match('image.*')) {
-                reader.onload = e => {
-                    this.imagepreview=e.target.result;
+                if((extension=='jpg')||(extension=='jpeg')||(extension=='png'))
+                {
+                    reader.onload = e => {
+                        this.imagepreview=e.target.result;
+                    }
                 }
+            }
+            else
+            {
+                this.file='';
+                this.alert=true;
+                this.alert_arr.push('Не верный формат файла');
+            }
             }
             // console.log(this.file);
         },
@@ -243,36 +263,30 @@ export default {
                         'content-type': 'multipart/form-data'
                     }
                 }
-                this.isDisabled_button=true;
                 let data = new FormData();
                 let coloring_name=this.coloring_name;
                 let description=this.description;
                 let selected_category=this.tag_list;
-                let published=this.published;
-                let selected_cat=this.cat_list;
                 let slug=this.chpu;
+                let extension=this.extension;
+
                 let temp_selected_category=[];
                 selected_category.forEach(function(number) {
-                    temp_selected_category.push(number.id)
+                    temp_selected_category.push(number.name)
                 });
-                let temp_selected_cat=[];
-                selected_cat.forEach(function(number) {
-                    temp_selected_cat.push(number.id)
-                });
+
                 data.append('file', this.file);
                 data.append('coloring_name', coloring_name);
                 data.append('slug', slug);
+                data.append('extension', extension);
                 data.append('description', description);
-                data.append('published', published);
                 data.append('selected_category', temp_selected_category);
-                data.append('cat', temp_selected_cat);
-                axios.post('/upload_img'
+                axios.post('/upload_img_user'
                     ,data,config)
                     .then(function (res) {
-                        window.location.href =('/admin/add_coloring_success')
+                        window.location.href =('/success')
                     })
                     .catch((error) => {
-                        this.isDisabled_button=false;
                         this.add_to_errors(error.response.data.errors);
                     })
 

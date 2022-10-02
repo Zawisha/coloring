@@ -23,6 +23,10 @@ class MainViewController extends Controller
        //no h1
        return view('main.coloring')->with('auth_user',  auth()->user())->with(['title'=>'Первая в мире творческая социальная сеть.','description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.']);
    }
+   public function success()
+   {
+       return view('main.success')->with('auth_user',  auth()->user());
+   }
    public function add_coloring_user()
    {
        $user = Auth::user();

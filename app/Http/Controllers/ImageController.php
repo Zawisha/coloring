@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cat;
+use App\Models\Categories;
 use App\Models\Colored;
 use App\Models\ColoringCat;
 use App\Models\ColoringCategory;
@@ -39,7 +40,7 @@ class ImageController extends Controller
 
         try {
             $this->validate($request,[
-                'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+                'file' => 'required|image|mimes:jpeg,png,jpg',
                 'coloring_name'=> 'required|string|min:5|max:70',
                 'description'=> 'required|string|min:5|max:300',
                 'selected_category'=> 'required',
@@ -89,6 +90,83 @@ class ImageController extends Controller
             'message'    => 'Раскраска создана',
             //тут id
             'selected_category'=>$myArray
+        ], 201);
+
+    }
+    public function upload_img_user(Request $request)
+    {
+
+        $user = Auth::user();
+        $coloring_name = $request->input('coloring_name');
+        $description = $request->input('description');
+        $published=0;
+        $selected_category = $request->input('selected_category');
+        $slug = $request->input('slug');
+        $extension = $request->input('extension');
+
+        try {
+            $this->validate($request,[
+                'file' => 'required|image|mimes:jpeg,png,jpg|max:8192',
+                'coloring_name'=> 'required|string|min:5|max:70',
+                'description'=> 'required|string|min:5|max:300',
+                'selected_category'=> 'required',
+                'slug'=> 'unique:colored,slug',
+            ]);
+        }
+        catch (ValidationException $exception) {
+            return response()->json([
+                'status' => 'error',
+                'message'    => 'Error',
+                'errors' => $exception->errors(),
+            ], 422);
+        }
+
+        $image = request()->file();
+        $save_to=$user->id.'_'.time().$extension;
+        Image::make($request->file)->save(public_path('images/colorings/').$save_to);
+        $colored_id= Colored::create([
+            'name'=>$coloring_name,
+            'img' => $save_to,
+            'description' => $description,
+            'from_user' => $user->id,
+            'published'=>$published,
+            'slug'=>$slug
+        ]);
+
+        $myArray = explode(',', $selected_category);
+        foreach ($myArray as $one_tag_name)
+        {
+                $categories_list = Categories::where('name', '=', $one_tag_name)
+                    ->get();
+
+                if ($categories_list->isEmpty()) {
+                    $categories_new= Categories::create([
+                        'name'=>$one_tag_name
+                    ]);
+
+
+                    ColoringCategory::create([
+                        'category_id'=>$categories_new['id'],
+                        'colored_id' => $colored_id['id'],
+                    ]);
+
+                }
+                else
+                {
+
+                    ColoringCategory::create([
+                        'category_id'=>$categories_list[0]['id'],
+                        'colored_id' => $colored_id['id'],
+                    ]);
+                }
+
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message'    => 'Раскраска создана'
+            //тут id
+
         ], 201);
 
     }
