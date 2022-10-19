@@ -1,4 +1,2 @@
 User-agent: *
-Sitemap: http://virask.ru/sitemap.xml
-Disallow:/login
-Disallow:/admin
+Disallow:/

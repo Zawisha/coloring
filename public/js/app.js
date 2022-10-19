@@ -7985,7 +7985,8 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       published: false,
       cat_list: [],
       chpu: '',
-      extension: ''
+      extension: '',
+      preload: false
     };
   },
   mounted: function mounted() {},
@@ -8153,6 +8154,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
       }
 
       if (this.alert == false) {
+        this.preload = true;
         var config = {
           headers: {
             'content-type': 'multipart/form-data'
@@ -8177,6 +8179,8 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         axios.post('/upload_img_user', data, config).then(function (res) {
           window.location.href = '/success';
         })["catch"](function (error) {
+          _this2.preload = false;
+
           _this2.add_to_errors(error.response.data.errors);
         });
       }
@@ -13230,9 +13234,9 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container"
+    staticClass: "container no_padding_left"
   }, [_c("div", {
-    staticClass: "double-border-button col-12",
+    staticClass: "double-border-button col-10 no_padding_left",
     on: {
       click: _vm.go_to_user_add_coloring
     }
@@ -13492,7 +13496,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row justify-content-center"
-  }, [_c("div", {
+  }, [!_vm.preload ? _c("div", {
     staticClass: "col-md-8 no_padding_left"
   }, [_vm.alert ? _c("div", {
     staticClass: "alert alert-danger alert_set",
@@ -13650,7 +13654,7 @@ var render = function render() {
     attrs: {
       src: _vm.imagepreview
     }
-  })])])], 2)])]);
+  })])])], 2) : _vm._e(), _vm._v(" "), _vm.preload ? _c("preloader-component") : _vm._e()], 1)]);
 };
 
 var staticRenderFns = [];

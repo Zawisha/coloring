@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 no_padding_left">
+            <div class="col-md-8 no_padding_left" v-if="!preload">
                 <div v-if="alert" class="alert alert-danger alert_set" role="alert">
                     <ul id="error_list">
                         <li v-for="item in alert_arr" >
@@ -43,6 +43,7 @@
                     </div>
                 </form>
             </div>
+            <preloader-component v-if="preload"></preloader-component>
         </div>
     </div>
 </template>
@@ -73,7 +74,8 @@ export default {
             published:false,
             cat_list:[],
             chpu:'',
-            extension:''
+            extension:'',
+            preload:false
         };
     },
     mounted() {
@@ -258,6 +260,7 @@ export default {
             }
             if(this.alert==false)
             {
+                this.preload=true
                 const config = {
                     headers: {
                         'content-type': 'multipart/form-data'
@@ -287,6 +290,7 @@ export default {
                         window.location.href =('/success')
                     })
                     .catch((error) => {
+                        this.preload=false
                         this.add_to_errors(error.response.data.errors);
                     })
 

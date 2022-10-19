@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div v-on:click="go_to_user_add_coloring" class="double-border-button col-12">Добавить раскраску</div>
+    <div class="container no_padding_left">
+        <div v-on:click="go_to_user_add_coloring" class="double-border-button col-10 no_padding_left">Добавить раскраску</div>
     </div>
 </template>
 

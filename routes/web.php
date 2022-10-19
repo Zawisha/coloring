@@ -46,7 +46,6 @@ Route::post('/setLike', [App\Http\Controllers\LikeController::class, 'setLike'])
 Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
 Route::get('/success', [App\Http\Controllers\MainViewController::class, 'success'])->name('success');
 
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
     Route::get('/new_password', [App\Http\Controllers\MainViewController::class, 'new_password'])->name('new_password');
