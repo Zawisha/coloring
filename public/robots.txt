@@ -1,3 +1,3 @@
 User-agent: *
 Allow:/
-Sitemap: http://virask.ru/sitemap.xml
+Sitemap: https://virask.ru/sitemap.xml
