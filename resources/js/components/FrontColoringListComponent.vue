@@ -79,9 +79,10 @@
 
 <script>
 import {eventBusColoring} from "../app";
+import {eventSearch} from "../app";
 
 export default {
-    props: ['auth_user'],
+    props: ['auth_user','search_q'],
     data() {
         return {
             coloring_list:[],
@@ -115,19 +116,24 @@ export default {
         };
     },
     mounted() {
+        console.log(this.search_q)
         this.get_coloring_list(this.coloring_list);
         this.get_size();
         this.scroll();
     },
     created() {
-        eventBusColoring.$on("click_tag_coloring", (id) => {
-            this.coloring_list=[],
-                this.current_page=1,
-                this.pagination_all=0,
-                this.pagination_numb=[],
-                this.search_id=id,
-                this.get_coloring_list(this.coloring_list)
-        })
+        // //получаем результат поиска
+        // eventSearch.$on("click_search", (id) => {
+        //         console.log(id)
+        // })
+        // eventBusColoring.$on("click_tag_coloring", (id) => {
+        //     this.coloring_list=[],
+        //         this.current_page=1,
+        //         this.pagination_all=0,
+        //         this.pagination_numb=[],
+        //         this.search_id=id,
+        //         this.get_coloring_list(this.coloring_list)
+        // })
     },
     methods: {
         scroll () {
@@ -214,7 +220,8 @@ export default {
                 .post('/get_coloring_list',{
                     offset:this.offset,
                     front:true,
-                    search_id:this.search_id
+                    search_id:this.search_id,
+                    search_q:this.search_q
                 })
                 .then(({ data }) => (
                         this.types_count=data.tipes_count,

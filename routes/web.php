@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\MainViewController::class, 'index'])->name('home');
 //Route::get('/coloring',  [App\Http\Controllers\ColoringController::class, 'index'])->name('coloring');
 Route::post('/get_categories',  [App\Http\Controllers\ColoringController::class, 'get_categories'])->name('get_categories');
+Route::post('/get_coloring_names',  [App\Http\Controllers\ColoringController::class, 'get_coloring_names'])->name('get_coloring_names');
 Route::get('/cat',  [App\Http\Controllers\MainViewController::class, 'front_cat_list'])->name('front_cat_list');
 Route::get('/cat/{slug}',  [App\Http\Controllers\MainViewController::class, 'front_cat_one'])->name('front_cat_one');
 Route::post('/front_get_tag_list',  [App\Http\Controllers\MainViewController::class, 'front_get_tag_list'])->name('front_get_tag_list');

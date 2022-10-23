@@ -63,7 +63,8 @@
             <a href="/" ><img src="{{ url('/images/main_images/logo.jpg') }}" alt="logo icon" class="new_head_logo"></a>
         </div>
             <div class="col-6 col-lg-4 new_head_search_top">
-                <input id="general_search" class="new_head_search" placeholder="поиск раскраски сказки или видео">
+{{--                <input id="general_search" class="new_head_search" placeholder="поиск раскраски сказки или видео">--}}
+                <search-component></search-component>
             </div>
             <div class="new_head_search_icon d-none d-lg-block  col-lg-1 text-left"></div>
             <div class="new_head_help_circle_icon  d-none d-lg-block  col-lg-2"></div>
@@ -130,104 +131,6 @@
     </div>
 
 
-{{--    <!-- Search Wrapper Area Start -->--}}
-{{--    <div class="search-wrapper section-padding-100">--}}
-{{--        <div class="search-close">--}}
-{{--            <i class="fa fa-close" aria-hidden="true"></i>--}}
-{{--        </div>--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-12">--}}
-{{--                    <div class="search-content">--}}
-{{--                        <form action="#" method="get">--}}
-{{--                            <input type="search" name="search" id="search" placeholder="Type your keyword...">--}}
-{{--                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- Search Wrapper Area End -->--}}
-{{--    <!-- ##### Main Content Wrapper Start ##### -->--}}
-{{--    <div class="main-content-wrapper d-flex clearfix">--}}
-{{--        <!-- Mobile Nav (max width 767px)-->--}}
-{{--        <div class="mobile-nav">--}}
-{{--            <!-- Navbar Brand -->--}}
-{{--            <div class="amado-navbar-brand">--}}
-{{--                <a href="/">  <img src="{{ url('/images/main_images/logo.jpg') }}" alt="logo icon"></a>--}}
-{{--                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>--}}
-{{--            </div>--}}
-{{--            <!-- БУРГЕР МЕНЮ -->--}}
-{{--            <div class="amado-navbar-toggler">--}}
-{{--                <span></span><span></span><span></span>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        --}}
-{{--        <header class="header-area clearfix">--}}
-{{--            <!-- Close Icon -->--}}
-{{--            <div class="nav-close">--}}
-{{--                <i class="fa fa-close" aria-hidden="true"></i>--}}
-{{--            </div>--}}
-{{--            <!-- Logo -->--}}
-{{--            <div class="logo">--}}
-{{--                <a href="/"><img src="{{ url('/images/main_images/logo.jpg') }}" alt="logo icon"></a>--}}
-{{--            </div>--}}
-{{--            <!-- Amado Nav -->--}}
-{{--            <nav class="amado-nav">--}}
-{{--                <ul>--}}
-{{--                    <li class="{{ Request::path() ==  '/' ? 'active' : ''  }}"><a href={{ route('home') }} >Раскраски</a></li>--}}
-{{--                    <li class="active"><a href="shop.html">Shop</a></li>--}}
-{{--                    <li class="{{ Request::path() ==  'fairy-list' ? 'active' : ''  }}"><a href={{ route('front_fairy_list') }}>Сказки</a></li>--}}
-{{--                    <li class="{{ Request::path() ==  'video-list' ? 'active' : ''  }}"><a href={{ route('front_video_list') }}>Видео</a></li>--}}
-{{--                </ul>--}}
-{{--            </nav>--}}
-{{--            <!-- Button Group -->--}}
-{{--            <div class="amado-btn-group mt-30 mb-100">--}}
-{{--                @auth--}}
-{{--                @if (\App\Models\Admins::isAdmin())--}}
-{{--                <a href="/admin" class="btn amado-btn mb-15">Админка</a>--}}
-{{--                @endif--}}
-{{--                @endauth--}}
-{{--                    @guest--}}
-{{--                        <a href="/login" class="btn amado-btn mb-15">Войти</a>--}}
-{{--                        <a href="/register" class="btn amado-btn mb-15">Регистрация</a>--}}
-{{--                    @endguest--}}
-{{--            </div>--}}
-
-{{--            <div class="cart-fav-search mb-100">--}}
-
-{{--            </div>--}}
-
-{{--            <div class="front-visible-menu">--}}
-{{--            <div class="social-info d-flex justify-content-between ">--}}
-{{--                <front-categories-component></front-categories-component>--}}
-
-{{--            </div>--}}
-{{--            </div>--}}
-{{--        </header>--}}
-
-
-{{--        @yield('content')--}}
-{{--    </div>--}}
-{{--    <!-- ##### Main Content Wrapper End ##### -->--}}
-
-{{--    <!-- ##### Newsletter Area Start ##### -->--}}
-{{--    <section class="newsletter-area section-padding-100-0">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row align-items-center">--}}
-{{--                <!-- Newsletter Text -->--}}
-{{--                <div class="col-12 col-lg-6 col-xl-7">--}}
-{{--                    <div class="newsletter-text mb-100">--}}
-{{--                        <h2>Сайт для детей и их родителей</h2>--}}
-{{--                        <p>На нашем сайте вы можете найти раскарски, сказки, видео и другую полезную информацию для тедетей и их родителей. Приятного времяпрепровождения.</p>--}}
-{{--                        <p>{{ now()->year }} г. «Раскраски». Все права защищены. </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-
 
 </div>
 </div>
@@ -261,10 +164,10 @@
             document.getElementsByClassName("iconify_main")[i].setAttribute("data-height", "40");
         }
     }
-    if(window.innerWidth<577)
-    {
-            document.getElementById("general_search").setAttribute("placeholder", "ПОИСК");
-    }
+    // if(window.innerWidth<577)
+    // {
+    //         document.getElementById("general_search").setAttribute("placeholder", "ПОИСК");
+    // }
     if(window.innerWidth<993)
     {
         $(".hide_on_mob").hide();

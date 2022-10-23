@@ -18,10 +18,20 @@ use Rawilk\Printing\Facades\Printing;
 
 class MainViewController extends Controller
 {
-    public function index()
+    public function index(Request $request)
    {
+       $search='';
+       if($request->search!=null)
+       {
+           $search=$request->search;
+       }
+      // dd($request->key);
        //no h1
-       return view('main.coloring')->with('auth_user',  auth()->user())->with(['title'=>'Первая в мире творческая социальная сеть.','description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.']);
+       return view('main.coloring')->with('auth_user',  auth()->user())
+           ->with(['title'=>'Первая в мире творческая социальная сеть.',
+               'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.',
+               'search_q'=>$search
+               ]);
    }
    public function success()
    {

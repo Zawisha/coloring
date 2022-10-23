@@ -31,6 +31,31 @@ class ColoringController extends Controller
         return $categories;
     }
 
+    public function get_coloring_names(Request $request)
+    {
+        $queryString=$request->input('req');
+       $coloring = Colored::where('name', 'LIKE', "%$queryString%")->where('published', '=', 1)->orderBy('name')->get();
+      //  $categories_old = Colored::where('name', $queryString)->get();
+        if ($coloring->isEmpty()) {
+            //  $categories_old = Colored::where('name', $queryString)->get();
+            $coloring->push(['name' => $request->input('req'), 'id' => 'user_tag']);
+            return $coloring;
+        }
+//        dd(count($coloring));
+        if(count($coloring)!=1)
+        {
+            $coloring[count($coloring)-1]=$coloring[0];
+            $coloring[0]=(['name' => $request->input('req'), 'id' => 'user_tag']);
+        }
+        else
+        {
+            $temp_col=$coloring[0];
+            $coloring[0]=(['name' => $request->input('req'), 'id' => 'user_tag']);
+            $coloring->push($temp_col);
+        }
+        return $coloring;
+    }
+
     public function coloring_list()
     {
         return view('admin.coloring_list');
@@ -109,6 +134,7 @@ class ColoringController extends Controller
         $offset =  $request->input('offset');
         $search_id =  $request->input('search_id');
         $front =  $request->input('front');
+        $search_q =  $request->input('search_q');
         //если идет поиск по тегу
         if($search_id)
 {
@@ -138,20 +164,43 @@ class ColoringController extends Controller
 }
         //счетчик
 //общий случай без тегов
+        $count=0;
+        //если включён поиск
+        if($search_q)
+        {
+            $list_colored =
+                Colored::where('name', 'LIKE', "%$search_q%")
+                ->where('published','=', '1')
+                ->offset($offset)
+                ->limit(20)
+                ->orderBy('id', 'desc')
+                ->get();
 
-        $list_colored = Colored::where('id', '>', '0')
-            ->when($front, function($q){
-                return $q->where('published','=', '1');
-            })
-            ->offset($offset)
-            ->limit(20)
-            ->orderBy('id', 'desc')
-            ->get();
-        $count = Colored::where('id', '>', '0')
-            ->when($front, function($q){
-                return $q->where('published','=', '1');
-            })
-            ->count();
+            $count =
+                Colored::where('name', 'LIKE', "%$search_q%")
+                ->when($front, function($q){
+                    return $q->where('published','=', '1');
+                })
+                ->count();
+        }
+        //если в поиске нету результатов или вообще нет поиска
+       if($count==0) {
+           $list_colored = Colored::where('id', '>', '0')
+               ->when($front, function ($q) {
+                   return $q->where('published', '=', '1');
+               })
+               ->offset($offset)
+               ->limit(20)
+               ->orderBy('id', 'desc')
+               ->get();
+
+           $count = Colored::where('id', '>', '0')
+               ->when($front, function ($q) {
+                   return $q->where('published', '=', '1');
+               })
+               ->count();
+       }
+
 
 //        return dd($list_colored);
         $col_ids_arr=[];

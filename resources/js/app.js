@@ -44,6 +44,7 @@ Vue.component('front-liked-component', require('./components/FrontLikedComponent
 Vue.component('front-cat-component', require('./components/FrontCatComponent').default);
 Vue.component('ava-component', require('./components/AvaComponent').default);
 Vue.component('streak-component', require('./components/StreakComponent').default);
+Vue.component('search-component', require('./components/SearchComponent').default);
 Vue.component('preloader-component', require('./components/PreloaderComponent').default);
 Vue.component('front-coloring-one-component', require('./components/FrontColoringOneComponent').default);
 Vue.component('front-cat-one-with-colorings-component', require('./components/FrontCatOneWithColoringsComponent').default);
@@ -68,6 +69,11 @@ Vue.use(SlimDialog)
 export let eventBusColoring = new Vue();
 export let eventBusFairy = new Vue();
 export let eventBusVideo = new Vue();
+
+//шина данных для поиска
+
+export let eventSearch = new Vue();
+
 
 
 
