@@ -1,3 +1,11 @@
+User-agent: Googlebot
+Disallow:
+
+User-agent: Googlebot-image
+Disallow:
+
 User-agent: *
 Allow:/
 Sitemap: https://virask.ru/sitemap.xml
+
+
