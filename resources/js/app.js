@@ -45,6 +45,7 @@ Vue.component('front-cat-component', require('./components/FrontCatComponent').d
 Vue.component('ava-component', require('./components/AvaComponent').default);
 Vue.component('streak-component', require('./components/StreakComponent').default);
 Vue.component('search-component', require('./components/SearchComponent').default);
+Vue.component('car-component', require('./components/CarComponent').default);
 Vue.component('preloader-component', require('./components/PreloaderComponent').default);
 Vue.component('front-coloring-one-component', require('./components/FrontColoringOneComponent').default);
 Vue.component('front-cat-one-with-colorings-component', require('./components/FrontCatOneWithColoringsComponent').default);

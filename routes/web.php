@@ -46,6 +46,8 @@ Route::post('/getOneFrontColoring', [App\Http\Controllers\ColoringController::cl
 Route::post('/setLike', [App\Http\Controllers\LikeController::class, 'setLike'])->name('setLike');
 Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
 Route::get('/success', [App\Http\Controllers\MainViewController::class, 'success'])->name('success');
+Route::get('/helper', [App\Http\Controllers\CarController::class, 'helper'])->name('helper');
+Route::post('/check_user', [App\Http\Controllers\CarController::class, 'check_user'])->name('check_user');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');

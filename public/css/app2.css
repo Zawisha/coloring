@@ -1256,3 +1256,6 @@ a.green_menu_element:hover {
     width: calc(100% - 10px);
     height: calc(100% + 10px);
 }
+.car_input {
+    margin-top: 20px;
+}
