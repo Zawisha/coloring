@@ -7214,7 +7214,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
         this.isActive_name = true;
       }
 
-      if (this.coloring_name.length > 30 && this.coloring_name !== "") {
+      if (this.coloring_name.length > 70 && this.coloring_name !== "") {
         this.alert = true;
         this.alert_arr.push('Поле "Название раскраски не должно быть длиннее 70 символов"');
         this.isActive_name = true;
