@@ -138,21 +138,21 @@ export default {
     methods: {
         scroll () {
 
-            $(window).scroll(function() {
-                if($(window).scrollTop() + $(window).height() == $(document).height()) {
-                        if (bottomOfWindow) {
-                            this.get_coloring_list(this.coloring_list)
-                        }
-                }
-            });
-
-            // window.onscroll = () => {
-            //     let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
-            //     console.log(bottomOfWindow)
-            //     if (bottomOfWindow) {
-            //         this.get_coloring_list(this.coloring_list)
+            // $(window).scroll(function() {
+            //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            //
+            //                 this.get_coloring_list(this.coloring_list)
+            //
             //     }
-            // }
+            // });
+
+            window.onscroll = () => {
+                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+                    this.get_coloring_list(this.coloring_list)
+
+                }
+            }
         },
         go_to_col()
         {
