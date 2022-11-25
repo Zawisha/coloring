@@ -147,7 +147,7 @@ export default {
             // });
 
             window.onscroll = () => {
-                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if($(window).scrollTop() + $(window).height() == $(document).height() -100) {
 
                     this.get_coloring_list(this.coloring_list)
 

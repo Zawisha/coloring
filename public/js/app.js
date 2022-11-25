@@ -5860,7 +5860,7 @@ __webpack_require__.r(__webpack_exports__);
       //     }
       // });
       window.onscroll = function () {
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+        if ($(window).scrollTop() + $(window).height() == $(document).height() - 100) {
           _this.get_coloring_list(_this.coloring_list);
         }
       };
