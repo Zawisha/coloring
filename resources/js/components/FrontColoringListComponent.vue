@@ -2,6 +2,7 @@
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
 <!--            <h1 class="col-12 main_coloring_list_h1">Каталог бесплатных раскрасок</h1>-->
+                <div>TEST</div>
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
                         <div class="mob_menu_bootom ">
@@ -139,7 +140,7 @@ export default {
         scroll () {
             window.onscroll = () => {
                 let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
-
+                alert(bottomOfWindow)
                 if (bottomOfWindow) {
                     this.get_coloring_list(this.coloring_list)
                 }

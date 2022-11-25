@@ -5854,6 +5854,7 @@ __webpack_require__.r(__webpack_exports__);
 
       window.onscroll = function () {
         var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        alert(bottomOfWindow);
 
         if (bottomOfWindow) {
           _this.get_coloring_list(_this.coloring_list);
@@ -11535,7 +11536,7 @@ var render = function render() {
     staticClass: "container-fluid front_coloring_list_cont"
   }, [_c("div", {
     staticClass: "row"
-  }, [_vm.menu_size < 992 ? _c("div", {
+  }, [_c("div", [_vm._v("TEST")]), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
     staticClass: "fixed-bottom row justify-content-center mob_menu_main",
     style: {
       top: _vm.window_height + "px"
