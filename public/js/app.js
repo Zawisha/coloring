@@ -5826,9 +5826,7 @@ __webpack_require__.r(__webpack_exports__);
       like_status1: 'ant-design:like-filled',
       like1: false,
       like2: false,
-      preload: false,
-      test: '',
-      test1: ''
+      preload: false
     };
   },
   mounted: function mounted() {
@@ -5860,13 +5858,8 @@ __webpack_require__.r(__webpack_exports__);
         var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
         var modifier = 200;
-        _this.test = currentScroll;
-        _this.test1 = documentHeight;
 
         if (currentScroll + modifier > documentHeight) {
-          _this.test = 'YES!!!!!!!!!!!!';
-          alert('yes1');
-
           _this.get_coloring_list(_this.coloring_list);
         } // }
 
@@ -11749,7 +11742,7 @@ var render = function render() {
         "data-width": _vm.menu_data_width_arrow,
         "data-height": _vm.menu_data_height_arrow
       }
-    }) : _vm._e()])])]), _vm._v(" "), _c("div", [_vm._v(_vm._s(_vm.test) + "qqq ")]), _vm._v(" "), _c("div", [_vm._v(_vm._s(_vm.test1))])]);
+    }) : _vm._e()])])])]);
   }), _vm._v(" "), _vm.preload ? _c("preloader-component") : _vm._e()], 2)]);
 };
 

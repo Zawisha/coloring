@@ -67,8 +67,6 @@
                         </div>
                     </div>
                     </span>
-                    <div>{{ test }}qqq </div>
-                    <div>{{ test1 }}</div>
                 </div>
 
                     <preloader-component v-if="preload"></preloader-component>
@@ -115,8 +113,7 @@ export default {
             like1:false,
             like2:false,
             preload:false,
-            test:'',
-            test1:'',
+
 
         };
     },
@@ -151,11 +148,8 @@ export default {
                     let currentScroll = window.scrollY + window.innerHeight;
                     // When the user is [modifier]px from the bottom, fire the event.
                     let modifier = 200;
-                    this.test=currentScroll
-                    this.test1=documentHeight
                     if(currentScroll + modifier > documentHeight) {
-                        this.test='YES!!!!!!!!!!!!'
-                        alert('yes1')
+
                         this.get_coloring_list(this.coloring_list)
                     }
 
