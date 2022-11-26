@@ -63,11 +63,17 @@ class MainViewController extends Controller
     {
         $slug=$request->slug;
         $coloring=Cat::where('slug','=',$slug)->get();
+        if ($coloring->isEmpty()) {
+            return view('errors.404');
+        }
+        else
+        {
         $title="бесплатные раскраски -".$coloring[0]['name'];
         $cat_name=$coloring[0]['name'];
         return view('main.cat_one')
             ->with('auth_user',  auth()->user())
             ->with(['title'=>$title,'description'=>$coloring[0]['description'],'cat_name'=>$cat_name]);
+        }
     }
     public function front_fairy_list()
     {
