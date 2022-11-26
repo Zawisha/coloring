@@ -2,6 +2,7 @@
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
 <!--            <h1 class="col-12 main_coloring_list_h1">Каталог бесплатных раскрасок</h1>-->
+                <div>{{ test }}</div>
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
                         <div class="mob_menu_bootom ">
@@ -111,7 +112,8 @@ export default {
             like_status1:'ant-design:like-filled',
             like1:false,
             like2:false,
-            preload:false
+            preload:false,
+            test:''
 
         };
     },
@@ -138,21 +140,33 @@ export default {
     methods: {
         scroll () {
 
-            // $(window).scroll(function() {
-            //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            //
-            //                 this.get_coloring_list(this.coloring_list)
-            //
-            //     }
-            // });
-
             window.onscroll = () => {
-                if($(window).scrollTop() + $(window).height() == $(document).height() -100) {
-
+                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    this.test='YES!!!!!!!!!!!!'
+                    alert('yes')
                     this.get_coloring_list(this.coloring_list)
 
                 }
             }
+
+
+
+            // $(window).scroll(function() {
+            //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            //         this.test='YES!!!!!!!!!!!!'
+            //         alert('yes')
+            //         this.get_coloring_list(this.coloring_list)
+            //
+            //     }
+            // });
+            // window.onscroll = () => {
+            //     if($(window).scrollTop() + $(window).height() == $(document).height() -100) {
+            //         console.log('YES')
+            //         this.test='YES!!!!!!!!!!!!'
+            //         this.get_coloring_list(this.coloring_list)
+            //
+            //     }
+            // }
         },
         go_to_col()
         {

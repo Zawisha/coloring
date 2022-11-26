@@ -5826,7 +5826,8 @@ __webpack_require__.r(__webpack_exports__);
       like_status1: 'ant-design:like-filled',
       like1: false,
       like2: false,
-      preload: false
+      preload: false,
+      test: ''
     };
   },
   mounted: function mounted() {
@@ -5852,18 +5853,30 @@ __webpack_require__.r(__webpack_exports__);
     scroll: function scroll() {
       var _this = this;
 
-      // $(window).scroll(function() {
+      window.onscroll = function () {
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+          _this.test = 'YES!!!!!!!!!!!!';
+          alert('yes');
+
+          _this.get_coloring_list(_this.coloring_list);
+        }
+      }; // $(window).scroll(function() {
       //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-      //
-      //                 this.get_coloring_list(this.coloring_list)
+      //         this.test='YES!!!!!!!!!!!!'
+      //         alert('yes')
+      //         this.get_coloring_list(this.coloring_list)
       //
       //     }
       // });
-      window.onscroll = function () {
-        if ($(window).scrollTop() + $(window).height() == $(document).height() - 100) {
-          _this.get_coloring_list(_this.coloring_list);
-        }
-      };
+      // window.onscroll = () => {
+      //     if($(window).scrollTop() + $(window).height() == $(document).height() -100) {
+      //         console.log('YES')
+      //         this.test='YES!!!!!!!!!!!!'
+      //         this.get_coloring_list(this.coloring_list)
+      //
+      //     }
+      // }
+
     },
     go_to_col: function go_to_col() {
       window.location.href = '/';
@@ -11540,7 +11553,7 @@ var render = function render() {
     staticClass: "container-fluid front_coloring_list_cont"
   }, [_c("div", {
     staticClass: "row"
-  }, [_vm.menu_size < 992 ? _c("div", {
+  }, [_c("div", [_vm._v(_vm._s(_vm.test))]), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
     staticClass: "fixed-bottom row justify-content-center mob_menu_main",
     style: {
       top: _vm.window_height + "px"
