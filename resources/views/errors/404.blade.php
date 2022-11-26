@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://html6.com.ru/data/jqmarket/css/bootstrap.css">
 
     <link href="{{ asset('css/404.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/meow.js') }}"></script>
 
 </head>
 <body class="blue-bg">
-<div class="col-md-12" style="top:48vmin">
+<div class="col-sm-12" id="meow_main" style="top:48vmin">
     <div class="meow">
         <div class="cat">
             <div class="cat-inner">
@@ -56,7 +57,7 @@
         <h1>404</h1>
     </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-12" id="second_meow">
     <div class="message">
         <h2>Ничего не найдено...</h2>
         <p>Такой странице нет в нашем Каталоге :(</p>
@@ -70,3 +71,11 @@
 
 </body>
 </html>
+@section('scripts')
+    <script>
+        console.log('asd')
+        window.onload = function () {
+            alert('qwe')
+        }
+    </script>
+@endsection
