@@ -13,7 +13,7 @@
 
 </head>
 <body class="blue-bg">
-<div class="col-sm-12" id="meow_main" style="top:48vmin">
+<div class="col-md-12" id="meow_main" style="top:48vmin">
     <div class="meow">
         <div class="cat">
             <div class="cat-inner">
