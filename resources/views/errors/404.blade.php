@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://html6.com.ru/data/jqmarket/css/bootstrap.css">
 
     <link href="{{ asset('css/404.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/meow.js') }}"></script>
 
 </head>
 <body class="blue-bg">
@@ -71,11 +70,5 @@
 
 </body>
 </html>
-@section('scripts')
-    <script>
-        console.log('asd')
-        window.onload = function () {
-            alert('qwe')
-        }
-    </script>
-@endsection
+
+    <script src="{{ asset('js/meow.js') }}"></script>
