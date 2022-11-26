@@ -4,7 +4,7 @@ window.addEventListener("load", myInitFunction);
 function myInitFunction()
 {
     alert(window.innerWidth)
-    if (window.innerWidth < 1200) {
+    if (window.innerWidth < 1210) {
         alert('asd')
         let current_width = window.innerWidth
         let offset_finall = Number(-450) + Number(((current_width - 300) / 2))
