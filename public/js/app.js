@@ -5827,7 +5827,8 @@ __webpack_require__.r(__webpack_exports__);
       like1: false,
       like2: false,
       preload: false,
-      test: ''
+      test: '',
+      test1: ''
     };
   },
   mounted: function mounted() {
@@ -5854,19 +5855,21 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.onscroll = function () {
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-          var documentHeight = document.body.scrollHeight;
-          var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
+        // if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-          var modifier = 200;
+        var modifier = 200;
+        _this.test = currentScroll;
+        _this.test1 = documentHeight;
 
-          if (currentScroll + modifier > documentHeight) {
-            _this.test = 'YES!!!!!!!!!!!!';
-            alert('yes1');
+        if (currentScroll + modifier > documentHeight) {
+          _this.test = 'YES!!!!!!!!!!!!';
+          alert('yes1');
 
-            _this.get_coloring_list(_this.coloring_list);
-          }
-        }
+          _this.get_coloring_list(_this.coloring_list);
+        } // }
+
       }; // $(window).scroll(function() {
       //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
       //         this.test='YES!!!!!!!!!!!!'
@@ -11560,7 +11563,7 @@ var render = function render() {
     staticClass: "container-fluid front_coloring_list_cont"
   }, [_c("div", {
     staticClass: "row"
-  }, [_c("div", [_vm._v(_vm._s(_vm.test))]), _vm._v(" "), _vm.menu_size < 992 ? _c("div", {
+  }, [_vm.menu_size < 992 ? _c("div", {
     staticClass: "fixed-bottom row justify-content-center mob_menu_main",
     style: {
       top: _vm.window_height + "px"
@@ -11746,7 +11749,7 @@ var render = function render() {
         "data-width": _vm.menu_data_width_arrow,
         "data-height": _vm.menu_data_height_arrow
       }
-    }) : _vm._e()])])])]);
+    }) : _vm._e()])])]), _vm._v(" "), _c("div", [_vm._v(_vm._s(_vm.test) + "qqq ")]), _vm._v(" "), _c("div", [_vm._v(_vm._s(_vm.test1))])]);
   }), _vm._v(" "), _vm.preload ? _c("preloader-component") : _vm._e()], 2)]);
 };
 

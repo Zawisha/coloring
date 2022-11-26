@@ -2,7 +2,7 @@
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
 <!--            <h1 class="col-12 main_coloring_list_h1">Каталог бесплатных раскрасок</h1>-->
-                <div>{{ test }}</div>
+
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
                         <div class="mob_menu_bootom ">
@@ -67,6 +67,8 @@
                         </div>
                     </div>
                     </span>
+                    <div>{{ test }}qqq </div>
+                    <div>{{ test1 }}</div>
                 </div>
 
                     <preloader-component v-if="preload"></preloader-component>
@@ -113,7 +115,8 @@ export default {
             like1:false,
             like2:false,
             preload:false,
-            test:''
+            test:'',
+            test1:'',
 
         };
     },
@@ -141,21 +144,22 @@ export default {
         scroll () {
 
             window.onscroll = () => {
-                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                // if($(window).scrollTop() + $(window).height() == $(document).height()) {
 
 
                     let documentHeight = document.body.scrollHeight;
                     let currentScroll = window.scrollY + window.innerHeight;
                     // When the user is [modifier]px from the bottom, fire the event.
                     let modifier = 200;
-
+                    this.test=currentScroll
+                    this.test1=documentHeight
                     if(currentScroll + modifier > documentHeight) {
                         this.test='YES!!!!!!!!!!!!'
                         alert('yes1')
                         this.get_coloring_list(this.coloring_list)
                     }
 
-                }
+                // }
             }
 
 
