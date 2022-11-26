@@ -142,9 +142,18 @@ export default {
 
             window.onscroll = () => {
                 if($(window).scrollTop() + $(window).height() == $(document).height()) {
-                    this.test='YES!!!!!!!!!!!!'
-                    alert('yes')
-                    this.get_coloring_list(this.coloring_list)
+
+
+                    let documentHeight = document.body.scrollHeight;
+                    let currentScroll = window.scrollY + window.innerHeight;
+                    // When the user is [modifier]px from the bottom, fire the event.
+                    let modifier = 200;
+
+                    if(currentScroll + modifier > documentHeight) {
+                        this.test='YES!!!!!!!!!!!!'
+                        alert('yes1')
+                        this.get_coloring_list(this.coloring_list)
+                    }
 
                 }
             }

@@ -5855,10 +5855,17 @@ __webpack_require__.r(__webpack_exports__);
 
       window.onscroll = function () {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-          _this.test = 'YES!!!!!!!!!!!!';
-          alert('yes');
+          var documentHeight = document.body.scrollHeight;
+          var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-          _this.get_coloring_list(_this.coloring_list);
+          var modifier = 200;
+
+          if (currentScroll + modifier > documentHeight) {
+            _this.test = 'YES!!!!!!!!!!!!';
+            alert('yes1');
+
+            _this.get_coloring_list(_this.coloring_list);
+          }
         }
       }; // $(window).scroll(function() {
       //     if($(window).scrollTop() + $(window).height() == $(document).height()) {
