@@ -35,11 +35,16 @@ export default {
     methods: {
         scroll () {
             window.onscroll = () => {
-                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
 
-                if (bottomOfWindow) {
+                let documentHeight = document.body.scrollHeight;
+                let currentScroll = window.scrollY + window.innerHeight;
+                // When the user is [modifier]px from the bottom, fire the event.
+                let modifier = 200;
+                if(currentScroll + modifier > documentHeight) {
+
                     this.get_cat_list(this.cat_list)
                 }
+
             }
         },
         go_to_one_cat(slug)

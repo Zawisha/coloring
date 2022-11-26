@@ -3812,9 +3812,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.onscroll = function () {
-        var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-        if (bottomOfWindow) {
+        var modifier = 200;
+
+        if (currentScroll + modifier > documentHeight) {
           _this.get_coloring_list(_this.coloring_list);
         }
       };
@@ -5328,9 +5331,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.onscroll = function () {
-        var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-        if (bottomOfWindow) {
+        var modifier = 200;
+
+        if (currentScroll + modifier > documentHeight) {
           _this.get_cat_list(_this.cat_list);
         }
       };
@@ -5429,9 +5435,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       window.onscroll = function () {
-        var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-        if (bottomOfWindow) {
+        var modifier = 200;
+
+        if (currentScroll + modifier > documentHeight) {
           _this2.get_coloring_list(_this2.coloring_list);
         }
       };
@@ -6086,9 +6095,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.onscroll = function () {
-        var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-        if (bottomOfWindow) {
+        var modifier = 200;
+
+        if (currentScroll + modifier > documentHeight) {
           _this.get_coloring_list(_this.coloring_list);
         }
       };
@@ -6572,9 +6584,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       window.onscroll = function () {
-        var bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+        var documentHeight = document.body.scrollHeight;
+        var currentScroll = window.scrollY + window.innerHeight; // When the user is [modifier]px from the bottom, fire the event.
 
-        if (bottomOfWindow) {
+        var modifier = 200;
+
+        if (currentScroll + modifier > documentHeight) {
           _this2.get_coloring_list(_this2.coloring_list);
         }
       };

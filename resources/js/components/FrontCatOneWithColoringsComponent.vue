@@ -1,6 +1,7 @@
 <template>
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
+
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
                         <div class="mob_menu_bootom ">
@@ -129,9 +130,12 @@ export default {
     methods: {
         scroll () {
             window.onscroll = () => {
-                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+                let documentHeight = document.body.scrollHeight;
+                let currentScroll = window.scrollY + window.innerHeight;
+                // When the user is [modifier]px from the bottom, fire the event.
+                let modifier = 200;
+                if(currentScroll + modifier > documentHeight) {
 
-                if (bottomOfWindow) {
                     this.get_coloring_list(this.coloring_list)
                 }
             }
