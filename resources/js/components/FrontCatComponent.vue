@@ -2,6 +2,7 @@
     <div class="container container-fluid ">
         <div class="row justify-content-center">
             <div class="col-12">
+
                 <div class="col-12 row reklama_row_main_list">
                     <div v-for="(cat,index) in cat_list"  class="offset-0 offset-sm-0 col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 cat_list_front_main ">
                         <div  class="text-center cat_back_white">

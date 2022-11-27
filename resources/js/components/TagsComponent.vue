@@ -24,14 +24,16 @@
                         {{ success_text }}
                     </div>
 
+            <div class="col-12">ЧПУ: {{ chpu }}</div>
             <div class="col-sm-4 ">
-                <input id="todo-input" type="text" class="form-control" value="" v-model="tag_to_add" v-on:focus=delete_bars() maxlength="32">
+                <input id="todo-input" type="text" class="form-control" value="" v-model="tag_to_add" v-on:focus=delete_bars() maxlength="32" v-on:change="slugCheck">
             </div>
             <div class="col-sm-2">
                 <button type="button" v-on:click="add_tag()" class="btn btn-light admin_tag_button">Добавить тег</button>
             </div>
+                <div class="col-12">ЧПУ: {{ chpu1 }}</div>
             <div class="col-sm-4 ">
-                        <input id="" type="text" class="form-control" value="" v-model="search_result" v-on:focus=delete_bars() :disabled="disable_edit" maxlength="32">
+                        <input id="" type="text" class="form-control" value="" v-model="search_result" v-on:focus=delete_bars() :disabled="disable_edit" maxlength="32" v-on:change="slugCheck1">
             </div>
             <div class="col-sm-2">
                         <button type="button" v-on:click="edit_tag()" class="btn btn-light admin_tag_button" >Редактировать тег</button>
@@ -55,6 +57,8 @@
 </template>
 
 <script>
+import slug from "slug";
+
 export default {
     data() {
         return {
@@ -69,18 +73,27 @@ export default {
             tag_to_edit:'',
             search_result_id:'',
             success_text:'',
-            disable_edit:true
+            disable_edit:true,
+            chpu:'',
+            chpu1:'',
         };
     },
     mounted() {
             this.get_tag_list(this.tag_list)
     },
     methods: {
+        slugCheck(){
+            this.chpu=slug(this.tag_to_add)
+        },
+        slugCheck1(){
+            this.chpu1=slug(this.search_result)
+        },
         select_tag_from_list(id,name)
         {
             this.search_result=name
             this.search_result_id=id
             this.disable_edit=false
+            this.slugCheck1()
         },
         edit_tag()
         {
@@ -95,7 +108,8 @@ export default {
             else {
                 axios.post('/edit_tag', {
                         tag: this.search_result,
-                        tag_id: this.search_result_id
+                        tag_id: this.search_result_id,
+                        slug: this.chpu1,
                     }
                 )
                     .then(response => {
@@ -157,13 +171,14 @@ export default {
             }
             else {
                 axios.post('/add_tag', {
-                        tag: this.tag_to_add
+                        tag: this.tag_to_add,
+                        slug:this.chpu,
                     }
                 )
                     .then(response => {
                            this.success_added = true
                            this.tag_to_add=''
-                        this.success_text='Тег успешно добавлен'
+                           this.success_text='Тег успешно добавлен'
                     })
                     .catch(error => {
                         this.add_to_errors(error.response.data.errors)

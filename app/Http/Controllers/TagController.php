@@ -11,9 +11,12 @@ class TagController extends Controller
     public function add_tag(Request $request)
     {
         $tag = $request->input('tag');
+        $slug = $request->input('slug');
         try {
             $this->validate($request,[
                 'tag'=> 'required|string|unique:categories,name|min:3|max:32',
+                'slug'=> 'required|string|unique:categories,slug|min:3|max:70',
+
             ]);
         }
         catch (ValidationException $exception) {
@@ -25,7 +28,8 @@ class TagController extends Controller
 
         }
         Categories::create([
-            'name'=>$tag
+            'name'=>$tag,
+            'slug'=>$slug,
         ]);
         return response()->json([
             'status' => 'success',
@@ -50,9 +54,12 @@ class TagController extends Controller
     {
         $tag_name = $request->input('tag');
         $tag_id = $request->input('tag_id');
+        $slug = $request->input('slug');
+
         try {
             $this->validate($request,[
                 'tag'=> 'required|string|min:3|max:32|unique:categories,name,'.$tag_id.',id',
+                'slug'=> 'required|string|min:3|max:70|unique:categories,slug,'.$tag_id.',id',
             ]);
         }
         catch (ValidationException $exception) {
@@ -64,7 +71,8 @@ class TagController extends Controller
 
         }
         Categories::where('id', '=', $tag_id)->update([
-            'name' =>$tag_name
+            'name' =>$tag_name,
+            'slug' =>$slug
         ]);
         return response()->json([
             'status' => 'success',

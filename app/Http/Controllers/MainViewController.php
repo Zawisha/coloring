@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cat;
+use App\Models\Categories;
 use App\Models\Colored;
 use App\Models\ColoringCategory;
 use App\Models\Fairy;
@@ -58,6 +59,22 @@ class MainViewController extends Controller
     public function new_password()
     {
         return view('new_password')->with('auth_user',  auth()->user())->with(['title'=>'Раскраски','description'=>'Распечатай и разукрась свою раскраску']);
+    }
+    public function front_tag_one(Request $request)
+    {
+        $slug=$request->slug;
+        $coloring=Categories::where('slug','=',$slug)->get();
+        if ($coloring->isEmpty()) {
+            return view('errors.404');
+        }
+        else
+        {
+            $title="бесплатные раскраски -".$coloring[0]['name'];
+            $tag_name=$coloring[0]['name'];
+            return view('main.cat_one')
+                ->with('auth_user',  auth()->user())
+                ->with(['title'=>$title,'description'=>$coloring[0]['description'],'tag_name'=>$tag_name]);
+        }
     }
     public function front_cat_one(Request $request)
     {
