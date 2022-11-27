@@ -20,7 +20,7 @@ class ProfileController extends Controller
         try {
         $this->validate($request,[
             'email'=> 'required|string|min:5|max:60|email|unique:users,email,'.$user->id.',id',
-            'nickname'=> 'required|string|min:3|max:60|unique:users,nickname,'.$user->id.',id',
+            'nickname'=> 'required|string|min:3|alpha_num|max:30|unique:users,nickname,'.$user->id.',id',
                   ]);
         }
         catch (ValidationException $exception) {
