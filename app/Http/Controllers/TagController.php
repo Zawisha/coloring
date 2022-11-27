@@ -39,8 +39,9 @@ class TagController extends Controller
     public function get_tag_list(Request $request)
     {
         $offset =  $request->input('offset');
-        $list_tags= Categories::where('id', '>', 0)->
-            offset($offset)
+        $list_tags= Categories::where('id', '>', 0)
+            ->orderBy('name', 'ASC')
+            ->offset($offset)
             ->limit(50)
             ->get();
         $count = Categories::count();
