@@ -29,6 +29,7 @@ Route::get('/tag/{slug}',  [App\Http\Controllers\MainViewController::class, 'fro
 Route::post('/front_get_tag_list',  [App\Http\Controllers\MainViewController::class, 'front_get_tag_list'])->name('front_get_tag_list');
 Route::post('/get_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list'])->name('get_coloring_list');
 Route::post('/get_coloring_list_by_cat', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_cat'])->name('get_coloring_list_by_cat');
+Route::post('/get_coloring_list_by_tag', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_tag'])->name('get_coloring_list_by_tag');
 Route::post('/get_coloring_list_liked', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_liked'])->name('get_coloring_list_liked');
 Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');

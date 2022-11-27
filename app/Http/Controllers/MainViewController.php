@@ -71,7 +71,7 @@ class MainViewController extends Controller
         {
             $title="бесплатные раскраски -".$coloring[0]['name'];
             $tag_name=$coloring[0]['name'];
-            return view('main.cat_one')
+            return view('main.tag_one')
                 ->with('auth_user',  auth()->user())
                 ->with(['title'=>$title,'description'=>$coloring[0]['description'],'tag_name'=>$tag_name]);
         }

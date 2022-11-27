@@ -128,6 +128,64 @@ class ColoringController extends Controller
            'tipes_count' => $count
        ], 201);
     }
+    public function get_coloring_list_by_tag(Request $request)
+    {
+        $search_slug =  $request->input('search_slug');
+        $offset =  $request->input('offset');
+        //получаем id категории
+        $cat_id = Categories::where('slug', $search_slug)
+            ->first('id');
+        $cat_list = ColoringCategory::where('category_id', $cat_id['id'])
+            ->offset($offset)
+            ->limit(20)
+            ->whereHas('colored', function ($query) {
+                $query->where('published', '=', 1);
+            })
+            ->with('colored')
+            ->get();
+        $count = ColoringCategory::where('category_id', $cat_id['id'])
+            ->whereHas('colored', function ($query) {
+                $query->where('published', '=', 1);
+            })
+            ->count();
+        $col_ids_arr=[];
+        foreach ($cat_list as $one_colored)
+        {
+            array_push($col_ids_arr, $one_colored['id']);
+        }
+        $list_like=[];
+        $userId = Auth::id();
+        if(Auth::id())
+        {
+            $list_like = Like::whereIn('post_id', $col_ids_arr)->where('user_id', $userId)->where('type_of_content', '1')->get();
+        }
+        $list_like_counter = LikeCounter::whereIn('post_id', $col_ids_arr)->where('type_of_content', '1')->get();
+        foreach ($cat_list as $key=>$colored)
+        {
+            $colored['type_of_like']='0';
+            $colored['count_of_like']='0';
+            foreach ($list_like as $like)
+            {
+                if($colored['id']==$like['post_id'])
+                {
+                    $cat_list[$key]['type_of_like']=$like['type_of_like'];
+                }
+            }
+            foreach ($list_like_counter as $like_count)
+            {
+                if($colored['id']==$like_count['post_id'])
+                {
+                    $cat_list[$key]['count_of_like']=$like_count['count_of_like'];
+                }
+            }
+        }
+        return response()->json([
+            'status' => 'success',
+            'list_colored' => $cat_list,
+            'like_arr' => $list_like,
+            'tipes_count' => $count
+        ], 201);
+    }
 
     public function get_coloring_list(Request $request)
     {

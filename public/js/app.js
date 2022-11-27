@@ -6135,6 +6135,9 @@ __webpack_require__.r(__webpack_exports__);
       var url = '/download/' + img;
       window.location.href = url;
     },
+    go_to_one_tag: function go_to_one_tag(slug) {
+      window.location.href = '/tag/' + slug;
+    },
     go_to_one_cat: function go_to_one_cat(slug) {
       window.location.href = '/cat/' + slug;
     },
@@ -6240,7 +6243,8 @@ __webpack_require__.r(__webpack_exports__);
           category_list.push({
             id: entry.id,
             cat_id: entry.cat_id,
-            category_name: entry.categories.name
+            category_name: entry.categories.name,
+            slug: entry.categories.slug
           });
         });
       });
@@ -6908,16 +6912,19 @@ __webpack_require__.r(__webpack_exports__);
     this.get_size();
     this.scroll();
   },
-  created: function created() {
-    var _this = this;
-
-    _app__WEBPACK_IMPORTED_MODULE_0__.eventBusColoring.$on("click_tag_coloring", function (id) {
-      _this.coloring_list = [], _this.current_page = 1, _this.pagination_all = 0, _this.pagination_numb = [], _this.search_id = id, _this.get_coloring_list(_this.coloring_list);
-    });
-  },
+  // created() {
+  //     eventBusColoring.$on("click_tag_coloring", (id) => {
+  //         this.coloring_list=[],
+  //             this.current_page=1,
+  //             this.pagination_all=0,
+  //             this.pagination_numb=[],
+  //             this.search_id=id,
+  //             this.get_coloring_list(this.coloring_list)
+  //     })
+  // },
   methods: {
     scroll: function scroll() {
-      var _this2 = this;
+      var _this = this;
 
       window.onscroll = function () {
         var documentHeight = document.body.scrollHeight;
@@ -6926,7 +6933,7 @@ __webpack_require__.r(__webpack_exports__);
         var modifier = 200;
 
         if (currentScroll + modifier > documentHeight) {
-          _this2.get_coloring_list(_this2.coloring_list);
+          _this.get_coloring_list(_this.coloring_list);
         }
       };
     },
@@ -6988,18 +6995,18 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     get_coloring_list: function get_coloring_list(inp) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.offset <= this.types_count) {
         this.preload = true;
         var adress = window.location.href;
         adress = adress.split("/")[4];
-        axios.post('/get_coloring_list_by_cat', {
+        axios.post('/get_coloring_list_by_tag', {
           search_slug: adress,
           offset: this.offset
         }).then(function (_ref) {
           var data = _ref.data;
-          return _this3.types_count = data.tipes_count, data.list_colored.forEach(function (entry) {
+          return _this2.types_count = data.tipes_count, data.list_colored.forEach(function (entry) {
             inp.push({
               id: entry.colored.id,
               name: entry.colored.name,
@@ -7009,7 +7016,7 @@ __webpack_require__.r(__webpack_exports__);
               type_of_like: entry.type_of_like,
               count_of_like: entry.count_of_like
             });
-          }), _this3.preload = false;
+          }), _this2.preload = false;
         }, this.offset = Number(this.offset) + Number(20));
       }
     },
@@ -7166,7 +7173,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     moderation_delete: function moderation_delete(index, id) {
-      var _this4 = this;
+      var _this3 = this;
 
       var options = {
         title: '',
@@ -7176,7 +7183,7 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.$dialogs.confirm('Удалить?', options).then(function (res) {
         if (res.ok == true) {
-          _this4.coloring_list.splice(index, 1);
+          _this3.coloring_list.splice(index, 1);
 
           axios.post('/delete_colored', {
             id: id
@@ -12349,7 +12356,12 @@ var render = function render() {
     }, [_vm._v("\n                        " + _vm._s(one_cat.cat_name) + "\n                    ")]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.category_list, function (one_category) {
     return _vm.category_flag ? _c("div", {
-      staticClass: "col one_cat"
+      staticClass: "col one_cat",
+      on: {
+        click: function click($event) {
+          return _vm.go_to_one_tag(one_category.slug);
+        }
+      }
     }, [_vm._v("\n                          " + _vm._s(one_category.category_name) + "\n                      ")]) : _vm._e();
   })], 2)]), _vm._v(" "), _vm.menu_size > 991 ? _c("div", {
     staticClass: "col-6 coloring_author"

@@ -47,7 +47,7 @@
                     <div v-if="cat_flag" v-for="one_cat in cat_list" v-on:click="go_to_one_cat(one_cat.slug)" class="col one_cat">
                         {{ one_cat.cat_name }}
                     </div>
-                      <div v-if="category_flag" v-for="one_category in category_list" class="col one_cat">
+                      <div v-if="category_flag" v-for="one_category in category_list" v-on:click="go_to_one_tag(one_category.slug)" class="col one_cat">
                           {{ one_category.category_name }}
                       </div>
                     </div>
@@ -272,6 +272,10 @@ export default {
             const url = '/download/'+img;
             window.location.href = url;
         },
+        go_to_one_tag(slug)
+        {
+            window.location.href = '/tag/'+slug
+        },
         go_to_one_cat(slug)
         {
             window.location.href = '/cat/'+slug
@@ -396,6 +400,7 @@ export default {
                                         id:entry.id,
                                         cat_id:entry.cat_id,
                                         category_name:entry.categories.name,
+                                        slug:entry.categories.slug,
                                     });
                                 })
                     )

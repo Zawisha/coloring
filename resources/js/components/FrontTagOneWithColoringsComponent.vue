@@ -117,16 +117,16 @@ export default {
         this.get_size();
         this.scroll();
     },
-    created() {
-        eventBusColoring.$on("click_tag_coloring", (id) => {
-            this.coloring_list=[],
-                this.current_page=1,
-                this.pagination_all=0,
-                this.pagination_numb=[],
-                this.search_id=id,
-                this.get_coloring_list(this.coloring_list)
-        })
-    },
+    // created() {
+    //     eventBusColoring.$on("click_tag_coloring", (id) => {
+    //         this.coloring_list=[],
+    //             this.current_page=1,
+    //             this.pagination_all=0,
+    //             this.pagination_numb=[],
+    //             this.search_id=id,
+    //             this.get_coloring_list(this.coloring_list)
+    //     })
+    // },
     methods: {
         scroll () {
             window.onscroll = () => {
@@ -214,7 +214,7 @@ export default {
             let adress=window.location.href;
             adress=(adress.split("/")[4])
             axios
-                .post('/get_coloring_list_by_cat',{
+                .post('/get_coloring_list_by_tag',{
                     search_slug:adress,
                     offset:this.offset,
                 })
