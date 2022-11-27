@@ -8,4 +8,5 @@ User-agent: *
 Allow:/
 Sitemap: https://virask.ru/sitemap.xml
 
-
+User-agent: *
+Disallow:/password/reset
