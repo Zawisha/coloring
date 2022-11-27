@@ -33,7 +33,9 @@
     <link href="{{ asset('css/css_admin/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/css_admin/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/css_admin/icons.css') }}" rel="stylesheet">
-	<!-- Theme Style CSS -->
+    <script src="{{ asset('js/js_admin/adminka_menu.js') }}"></script>
+
+    <!-- Theme Style CSS -->
 {{--	<link rel="stylesheet" href="/resources/css/css_admin/dark-theme.css" />--}}
 {{--	<link rel="stylesheet" href="/resources/css/css_admin/semi-dark.css" />--}}
 {{--	<link rel="stylesheet" href="/resources/css/css_admin/header-colors.css" />--}}
@@ -45,19 +47,23 @@
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		<div class="sidebar-wrapper" data-simplebar="true">
+		<div class="sidebar-wrapper" id="menu_adminka_column" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="{{ url('/images/admin_images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+                    <a href={{ route('admin') }}><img src="{{ url('/images/admin_images/logo-icon.png') }}" class="logo-icon" alt="logo icon"></a>
 				</div>
 				<div>
-					<h4 class="logo-text"><a href={{ route('admin') }}><i class="bx bx-right-arrow-alt"></i>Админка</a></h4>
+                    <h4 class="logo-text">Админка</h4>
 				</div>
-{{--				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>--}}
-{{--				</div>--}}
+                <div class="menu-btn active" id="menu_button_adminka_burger" onclick="show_hide_menu_adminka()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 			</div>
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
+
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
