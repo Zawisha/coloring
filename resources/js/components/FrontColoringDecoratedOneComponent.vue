@@ -78,42 +78,8 @@
 
         <div class="col-12 streack"></div>
         <div class="col-12 header_works text-center">Работы художников</div>
-        <div class="col-12 row works_imgs_row mob_settings_one_imgs">
-            <div class="col-4 col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-<!--                <span class="streak_black_works iconify" data-icon="codicon:triangle-right" data-width="80" data-height="240"></span>-->
-            </div>
-            <div v-if="menu_size>991" class="col-lg-3">
-                <div class="text-center works_list_empty">
-                    <div class="works_text">
-                       <span class="works_add_plus">+</span>
-                       <div class="works_add">Добавить свой вариант</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div  class="col-12 add_your_coloring text-center">Добавить свой вариант</div>
+        <a class="btn_hov btn_hov_1 col-12">Добавить свой вариант</a>
+<!--        <div  class="col-12 add_your_coloring text-center">Добавить свой вариант</div>-->
 
 
         <div v-if="menu_size<992" class="col-12 row">
@@ -130,7 +96,7 @@
         </div>
 
 
-        <carousel-3d :controls-visible="true">
+        <carousel-3d :controls-visible="true" class="dec_carosuel">
             <slide v-for="(slide, i) in same_colorings" :index="i" v-bind:key="i" >
                 <figure v-on:click="goto_color_decor(i)">
                     <img  :src="'/images/colorings/'+slide.img" alt="">
@@ -237,8 +203,6 @@ export default {
     },
     mounted() {
         this.get_size();
-        console.log(this.same_colorings)
-        //this.get_carusel_images(this.carusel_images_list);
         this.getColoredData(this.cat_list,this.category_list),
         this.getColoringDecoratedLike(),
         this.get_coloring_list(this.coloring_list);
