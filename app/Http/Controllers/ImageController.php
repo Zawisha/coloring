@@ -7,6 +7,7 @@ use App\Models\Categories;
 use App\Models\Colored;
 use App\Models\ColoringCat;
 use App\Models\ColoringCategory;
+use App\Models\ColoringUserOption;
 use App\Models\Fairy;
 use App\Models\FairyCat;
 use App\Models\FairyCategory;
@@ -19,6 +20,22 @@ use Nette\Schema\ValidationException;
 
 class ImageController extends Controller
 {
+    public function get_carusel_images(Request $request)
+    {
+        $coloring_id = $request->input('id');
+        $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
+        $same_colorings = ColoringUserOption::
+        where('coloring_id', '=', $colored_id_all[0]['coloring_id'])
+            -> where('id', '!=', $colored_id_all[0]['id'])
+            ->get();
+        return response()->json([
+            'status' => 'success',
+
+            //тут id
+            'coloring_imgs'=>$same_colorings
+        ], 201);
+
+    }
     public function upload_img(Request $request)
     {
         $user = Auth::user();
@@ -93,6 +110,57 @@ class ImageController extends Controller
         ], 201);
 
     }
+    public function upload_img_user_option(Request $request)
+    {
+
+        $user = Auth::user();
+        $user_name = $request->input('user_name');
+        $slug = $request->input('slug');
+        $age = $request->input('age');
+        try {
+            $this->validate($request,[
+                'file' => 'required|image|mimes:jpeg,png,jpg',
+                'user_name'=> 'required|string|min:2|max:70',
+                'age'=> 'required|string|min:1|max:20',
+            ]);
+        }
+        catch (ValidationException $exception) {
+            return response()->json([
+                'status' => 'error',
+                'message'    => 'Error',
+                'errors' => $exception->errors(),
+            ], 422);
+        }
+        $image = request()->file();
+        $id=ColoringUserOption::orderBy('id','desc')->get();
+        if($id->isEmpty())
+        {
+            $id_plus=1;
+        }
+        else
+        {
+            $id_plus=$id[0]['id']+1;
+        }
+        $save_to=$slug.'_'.$id_plus.'.jpg';
+        Image::make($request->file)->save(public_path('images/colorings/').$save_to);
+        $colored_id = Colored::where('slug', '=', $slug)
+            ->get();
+        ColoringUserOption::create([
+            'coloring_id'=>$colored_id[0]['id'],
+            'user_id' => $user->id,
+            'img' => $save_to,
+            'user_name' => $user_name,
+            'age'=>$age,
+            'slug'=>$slug.'_'.$id_plus,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message'    => 'Раскраска создана',
+        ], 201);
+
+    }
+
     public function upload_img_user(Request $request)
     {
 

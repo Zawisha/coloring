@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
             <div class="mob_menu_bootom_left col">
                 <div class="mob_menu_bootom ">
@@ -112,7 +113,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="menu_size<992" class="col-12 add_your_coloring text-center">Добавить свой вариант</div>
+        <div  class="col-12 add_your_coloring text-center">Добавить свой вариант</div>
 
 
         <div v-if="menu_size<992" class="col-12 row">
@@ -127,6 +128,18 @@
                 </div>
             </div>
         </div>
+
+
+        <carousel-3d :controls-visible="true">
+            <slide v-for="(slide, i) in same_colorings" :index="i" v-bind:key="i" >
+                <figure v-on:click="goto_color_decor(i)">
+                    <img  :src="'/images/colorings/'+slide.img" alt="">
+                    <figcaption>
+                        The sky is the limit only for those who aren't afraid to fly!
+                    </figcaption>
+                </figure>
+            </slide>
+        </carousel-3d>
         <div class="col-12 streack"></div>
         <div class="col-12 header_works text-center">Похожие раскраски</div>
     </div>
@@ -179,14 +192,16 @@
         </div>
             <preloader-component v-if="preload"></preloader-component>
         </div>
+
     </div>
 </template>
 
 <script>
 import {eventBusColoring} from "../app";
+import { Carousel3d, Slide } from 'vue-carousel-3d';
 
 export default {
-    props: ['auth_user'],
+    props: ['auth_user','slugok','coloring_decorated','same_colorings'],
     data() {
         return {
             coloring_name: '',
@@ -214,17 +229,23 @@ export default {
             preload:false,
             offset:0,
             types_count:0,
-            img_to_download:''
+            img_to_download:'',
+            //slides:['1','2','3','4','5','1','2','3','4','5'],
+            carusel_images_list:['novoevv_2.jpg','novoevv_3.jpg'],
+            slides:2
         };
     },
     mounted() {
         this.get_size();
+        console.log(this.same_colorings)
+        //this.get_carusel_images(this.carusel_images_list);
         this.getColoredData(this.cat_list,this.category_list),
+        this.getColoringDecoratedLike(),
         this.get_coloring_list(this.coloring_list);
         this.scroll();
     },
     created() {
-     // document.title='test 444',
+      //  this.get_carusel_images(this.carusel_images_list);
       //  document.getElementsByTagName('meta')["description"].content= "My new page description!!";
     },
     methods: {
@@ -241,6 +262,28 @@ export default {
                 }
 
             }
+        },
+        goto_color_decor(i)
+        {
+            alert(i)
+        },
+        get_carusel_images(carusel_images_list)
+        {
+            axios
+                .post('/get_carusel_images',{
+                    id:this.coloring_decorated[0]['id'],
+                })
+                .then(({ data }) => (
+                    data.coloring_imgs.forEach(function(entry) {
+                        carusel_images_list.push({
+                            id:entry.id,
+                            img:entry.img,
+                            slug:entry.slug,
+                            age:entry.age,
+                        });
+                    })
+                    )
+                )
         },
         go_to_col()
         {
@@ -305,7 +348,7 @@ export default {
                             .post('/setLike', {
                                 type_of_like: n,
                                 colored_id: colored_id,
-                                type_of_content:'1',
+                                type_of_content:'3',
                             })
                         if (inp[i]['type_of_like'] == n) {
                             inp[i]['type_of_like'] = '0'
@@ -333,7 +376,8 @@ export default {
                             .post('/setLike', {
                                 type_of_like: n,
                                 colored_id: colored_id,
-                                type_of_content:'1',
+                                type_of_content:'3',
+
                             })
                         if (this.one_type_of_like == n) {
                             this.one_type_of_like = '0'
@@ -376,23 +420,36 @@ export default {
                 this.menu_data_height=24
             }
         },
+        getColoringDecoratedLike()
+        {
+            axios
+                .post('/getColoringDecoratedLike',{
+                    colorSlug:this.coloring_decorated[0]['slug'],
+                    type_of_content:'3',
+                    id:this.coloring_decorated[0]['id'],
+                })
+                .then(({ data }) => (
+                            this.one_count_of_like=data.count_of_like,
+                            this.one_type_of_like=data.one_type_of_like
+                    )
+                )
+        },
         getColoredData(cat_list,category_list)
         {
-            let adress=window.location.href;
-            this.colorSlug = adress.split("/")[4];
+            this.one_coloring_id=this.coloring_decorated[0]['id']
+            this.mainImage='/images/colorings/'+this.coloring_decorated[0]['img'],
+            this.img_to_download=this.coloring_decorated[0]['img'],
+            this.nickname=this.coloring_decorated[0]['user_name']
+           // console.log('this.coloring_decorated ')
+           // console.log(this.coloring_decorated)
+            this.colorSlug = this.slugok;
             axios
                 .post('/getOneFrontColoring',{
                     colorSlug:this.colorSlug
                 })
                 .then(({ data }) => (
-                            this.one_coloring_id=data.coloring[0]['id'],
                             this.coloring_name=data.coloring[0]['name'],
                             this.description=data.coloring[0]['description'],
-                            this.mainImage='/images/colorings/'+data.coloring[0]['img'],
-                            this.img_to_download=data.coloring[0]['img'],
-                            this.one_count_of_like=data.coloring[0]['count_of_like'],
-                            this.nickname=data.coloring[0]['nickname'],
-                            this.one_type_of_like=data.coloring[0]['type_of_like'],
                                 data.cat.forEach(function(entry) {
                                     cat_list.push({
                                         id:entry.id,

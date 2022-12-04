@@ -6,6 +6,7 @@ use App\Models\Cat;
 use App\Models\Categories;
 use App\Models\Colored;
 use App\Models\ColoringCategory;
+use App\Models\ColoringUserOption;
 use App\Models\Fairy;
 use App\Models\FairyCategory;
 use App\Models\User;
@@ -33,6 +34,17 @@ class MainViewController extends Controller
                'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.',
                'search_q'=>$search
                ]);
+   }
+   public function add_coloring_user_option(Request $request)
+   {
+       $slug=$request->slug;
+       return view('main.coloring_user_option')
+           ->with('auth_user',  auth()->user())
+           ->with('slug',  $slug)
+           ->with(['title'=>'Первая в мире творческая социальная сеть.',
+               'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.',
+
+           ]);
    }
    public function success()
    {
@@ -125,6 +137,33 @@ class MainViewController extends Controller
             return view('main.coloring_one')->with('auth_user',  auth()->user())->with(['coloring'=>$coloring,'title'=>$coloring[0]['name'],'description'=>$coloring[0]['description']]);
         }
 
+    }
+    public function get_one_decorated_coloring(Request $request)
+    {
+        $slug=$request->slug;
+        $coloring_option=ColoringUserOption::where('slug','=',$slug)->get();
+        $coloring=Colored::where('id','=',$coloring_option[0]['coloring_id'])->with('categories')->get();
+
+        $coloring_id = $coloring_option[0]['id'];
+        $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
+        $same_colorings = ColoringUserOption::
+        where('coloring_id', '=', $colored_id_all[0]['coloring_id'])
+            -> where('id', '!=', $colored_id_all[0]['id'])
+            ->get();
+
+
+        if ($coloring->isEmpty()) {
+            return view('errors.404');
+        }
+        else {
+            return view('main.coloring_decorated_one')->with('auth_user', auth()->user())
+                ->with(
+                    [   'coloring' => $coloring,'coloring_decorated' => $coloring_option,
+                        'title' => $coloring[0]['name'], 'description' => $coloring[0]['description'],
+                        'slugMain' => $coloring[0]['slug'],
+                        'same_colorings' => $same_colorings],
+                );
+        }
     }
     public function get_one_fairy(Request $request)
     {

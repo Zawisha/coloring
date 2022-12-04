@@ -358,6 +358,50 @@ class ColoringController extends Controller
             'like_arr' => $list_like,
         ], 201);
     }
+    public function getColoringDecoratedLike(Request $request)
+    {
+        $slug=$request->colorSlug;
+        $type_of_content=$request->type_of_content;
+        $id=$request->id;
+        $count_of_like='0';
+        $one_type_of_like='';
+        //общее количество лайков
+        $like_counter = LikeCounter::where('post_id', $id)->where('type_of_content', $type_of_content)->get();
+        if($like_counter->isEmpty())
+        {
+            $count_of_like='0';
+        }
+        else
+        {
+            $count_of_like=$like_counter[0]['count_of_like'];
+        }
+        $userId = Auth::id();
+        if($userId!==null)
+        {
+            //вытаскиваем состояние его лайка
+            $like_status = Like::where('post_id', '=',$id)->where('user_id','=', $userId)->where('type_of_content','=', $type_of_content)->get();
+            if($like_status->isEmpty())
+            {
+                $one_type_of_like='0';
+            }
+            //если лайк уже был поставлен этим пользователем
+            else
+            {
+                $one_type_of_like=$like_status[0]['type_of_like'];
+
+            }
+        }
+        else
+        {
+            $one_type_of_like='0';
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'one_type_of_like' => $one_type_of_like,
+            'count_of_like' => $count_of_like,
+        ], 200);
+    }
     public function getOneFrontColoring(Request $request)
     {
         $slug=$request->colorSlug;

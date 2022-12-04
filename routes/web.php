@@ -32,6 +32,7 @@ Route::post('/get_coloring_list_by_cat', [\App\Http\Controllers\ColoringControll
 Route::post('/get_coloring_list_by_tag', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_tag'])->name('get_coloring_list_by_tag');
 Route::post('/get_coloring_list_liked', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_liked'])->name('get_coloring_list_liked');
 Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
+Route::get('/coloring/decorated/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_decorated_coloring'])->name('get_one_decorated_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');
 Route::post('/get_fairy_list', [\App\Http\Controllers\FairyController::class, 'get_fairy_list'])->name('get_fairy_list');
 Route::get('/fairy/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_fairy'])->name('get_one_fairy');
@@ -45,11 +46,25 @@ Route::get('/print', [App\Http\Controllers\MainViewController::class, 'print'])-
 Route::post('/get_cat_search',  [App\Http\Controllers\CatController::class, 'get_cat_search'])->name('get_cat_search');
 Route::post('/get_fairy_id_by_slug',  [App\Http\Controllers\FairyController::class, 'get_fairy_id_by_slug'])->name('get_fairy_id_by_slug');
 Route::post('/getOneFrontColoring', [App\Http\Controllers\ColoringController::class, 'getOneFrontColoring'])->name('getOneFrontColoring');
+Route::post('/getColoringDecoratedLike', [App\Http\Controllers\ColoringController::class, 'getColoringDecoratedLike'])->name('getColoringDecoratedLike');
 Route::post('/setLike', [App\Http\Controllers\LikeController::class, 'setLike'])->name('setLike');
 Route::post('/get_cat_list', [\App\Http\Controllers\CatController::class, 'get_cat_list'])->name('get_cat_list');
 Route::get('/success', [App\Http\Controllers\MainViewController::class, 'success'])->name('success');
+Route::get('/add_coloring_user_option/{slug}', [App\Http\Controllers\MainViewController::class, 'add_coloring_user_option'])->name('add_coloring_user_option');
+Route::post('/get_carusel_images', [App\Http\Controllers\ImageController::class, 'get_carusel_images'])->name('get_carusel_images');
+
+
+
 Route::get('/helper', [App\Http\Controllers\CarController::class, 'helper'])->name('helper');
 Route::post('/check_user', [App\Http\Controllers\CarController::class, 'check_user'])->name('check_user');
+Route::get('/get-telegram-users', [App\Http\Controllers\CarController::class, 'get_telegram_users'])->name('get_telegram_users');
+Route::get('/telegram_sending_component', [App\Http\Controllers\CarController::class, 'telegram_sending_component'])->name('telegram_sending_component');
+Route::post('/get_phones', [\App\Http\Controllers\CarController::class, 'get_phones'])->name('get_phones');;
+Route::post('/autorization', [\App\Http\Controllers\CarController::class, 'autorization'])->name('autorization');;
+Route::post('/send_code', [\App\Http\Controllers\CarController::class, 'send_code'])->name('send_code');;
+Route::post('/get_start_data_telegram', [\App\Http\Controllers\CarController::class, 'get_start_data_telegram'])->name('get_start_data_telegram');;
+Route::post('/invite_users', [\App\Http\Controllers\CarController::class, 'invite_users'])->name('invite_users');;
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
@@ -62,6 +77,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/get_user_params', [App\Http\Controllers\ProfileController::class, 'get_user_params'])->name('get_user_params');
     Route::post('/get_user_params_main', [App\Http\Controllers\ProfileController::class, 'get_user_params_main'])->name('get_user_params_main');
     Route::get('/add_coloring_user', [App\Http\Controllers\MainViewController::class, 'add_coloring_user'])->name('add_coloring_user');
+    Route::post('/upload_img_user_option', [\App\Http\Controllers\ImageController::class, 'upload_img_user_option'])->name('upload_img_user_option');
 
 });
 

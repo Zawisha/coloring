@@ -48,9 +48,13 @@ Vue.component('search-component', require('./components/SearchComponent').defaul
 Vue.component('car-component', require('./components/CarComponent').default);
 Vue.component('preloader-component', require('./components/PreloaderComponent').default);
 Vue.component('front-coloring-one-component', require('./components/FrontColoringOneComponent').default);
+Vue.component('front-coloring-decorated-one-component', require('./components/FrontColoringDecoratedOneComponent').default);
 Vue.component('front-cat-one-with-colorings-component', require('./components/FrontCatOneWithColoringsComponent').default);
 Vue.component('front-tag-one-with-colorings-component', require('./components/FrontTagOneWithColoringsComponent').default);
 Vue.component('user-add-coloring-component', require('./components/UserAddColoringComponent').default);
+Vue.component('front-coloring-user-option', require('./components/FrontColoringUserOption').default);
+Vue.component('get-telegram-users', require('./telegram/GetTelegramUsers').default);
+Vue.component('telegram-sending-component', require('./telegram/TelegramSendingComponent').default);
 import { Icon } from '@iconify/vue2';
 import iosAlertView from 'vue-ios-alertview';
 Vue.use(iosAlertView);
@@ -59,7 +63,9 @@ import '@trevoreyre/autocomplete-vue/dist/style.css'
 Vue.use(Autocomplete)
 import 'v-slim-dialog/dist/v-slim-dialog.css'
 import SlimDialog from 'v-slim-dialog'
+import Carousel3d from 'vue-carousel-3d';
 
+Vue.use(Carousel3d);
 // import VueCropper from 'vue-cropperjs';
 // import 'cropperjs/dist/cropper.css';
 // Vue.component(VueCropper);

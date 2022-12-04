@@ -147,7 +147,8 @@ export default {
                           axios
                               .post('/setLike', {
                                   type_of_like: n,
-                                  colored_id: colored_id
+                                  colored_id: colored_id,
+                                  type_of_content:'1',
                               })
                           if (inp[i]['type_of_like'] == n) {
                               inp[i]['type_of_like'] = '0'

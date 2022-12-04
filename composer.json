@@ -9,6 +9,7 @@
         "ext-json": "*",
         "ckeditor/ckeditor": "^4.17",
         "ckfinder/ckfinder-laravel-package": "^3.5",
+        "danog/madelineproto": "^7",
         "doctrine/dbal": "^3.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
