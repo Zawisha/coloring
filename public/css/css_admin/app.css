@@ -4106,3 +4106,9 @@ body.bg-theme12 {
     top: 50%;
     transform: translate(-50%, 0%) rotate(-45deg);
 }
+.card-body {
+    background-color:rgb(1 1 1 / 50%)!important; ;
+}
+.bg-light-admin {
+    background-color: #C1C1C1!important;
+}

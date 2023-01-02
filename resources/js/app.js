@@ -53,6 +53,7 @@ Vue.component('front-cat-one-with-colorings-component', require('./components/Fr
 Vue.component('front-tag-one-with-colorings-component', require('./components/FrontTagOneWithColoringsComponent').default);
 Vue.component('user-add-coloring-component', require('./components/UserAddColoringComponent').default);
 Vue.component('front-coloring-user-option', require('./components/FrontColoringUserOption').default);
+Vue.component('decorated-coloring-list-component', require('./components/DecoratedColoringListComponent').default);
 Vue.component('get-telegram-users', require('./telegram/GetTelegramUsers').default);
 Vue.component('telegram-sending-component', require('./telegram/TelegramSendingComponent').default);
 import { Icon } from '@iconify/vue2';
@@ -82,7 +83,13 @@ export let eventBusVideo = new Vue();
 
 export let eventSearch = new Vue();
 
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
 
 
 

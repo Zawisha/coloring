@@ -38,6 +38,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->username = $this->findUsername();
+        $this->redirectTo = url()->previous();
     }
 
     public function findUsername()
@@ -55,5 +56,17 @@ class LoginController extends Controller
     {
         return $this->username;
     }
+    public function showLoginForm()
+    {
+        // Get URLs
+        $urlPrevious = url()->previous();
+        $urlBase = url()->to('/');
 
+        // Set the previous url that we came from to redirect to after successful login but only if is internal
+        if(($urlPrevious != $urlBase . '/login') && (substr($urlPrevious, 0, strlen($urlBase)) === $urlBase)) {
+            session()->put('url.intended', $urlPrevious);
+        }
+
+        return view('auth.login');
+    }
 }

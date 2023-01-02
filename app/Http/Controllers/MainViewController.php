@@ -38,9 +38,12 @@ class MainViewController extends Controller
    public function add_coloring_user_option(Request $request)
    {
        $slug=$request->slug;
+       $name = Colored::where('slug', $slug)
+           ->get();
        return view('main.coloring_user_option')
            ->with('auth_user',  auth()->user())
            ->with('slug',  $slug)
+           ->with('name',  $name[0]['name'])
            ->with(['title'=>'Первая в мире творческая социальная сеть.',
                'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.',
 
@@ -134,7 +137,24 @@ class MainViewController extends Controller
         }
         else
         {
-            return view('main.coloring_one')->with('auth_user',  auth()->user())->with(['coloring'=>$coloring,'title'=>$coloring[0]['name'],'description'=>$coloring[0]['description']]);
+            $coloring_id = $coloring[0]['id'];
+//            $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
+            $same_colorings = ColoringUserOption::
+            where('coloring_id', '=',$coloring_id)->where('published', '=','1')->get();
+            $count_of_exist=$same_colorings->count();
+            $limit=20-$count_of_exist;
+            $same_colorings_new = ColoringUserOption::
+            where('coloring_id', '!=',$coloring_id)->where('published', '=','1')->limit($limit)->get();
+            $same_colorings_new=$same_colorings_new->shuffle();
+            $same_colorings=$same_colorings->shuffle();
+            $merged = $same_colorings->merge($same_colorings_new);
+            return view('main.coloring_one')->
+            with('auth_user',  auth()->user())->with([
+                'coloring'=>$coloring,
+                'title'=>$coloring[0]['name'],
+                'description'=>$coloring[0]['description'],
+                'same_colorings' => $merged
+                ]);
         }
 
     }
@@ -144,24 +164,34 @@ class MainViewController extends Controller
         $coloring_option=ColoringUserOption::where('slug','=',$slug)->get();
         $coloring=Colored::where('id','=',$coloring_option[0]['coloring_id'])->with('categories')->get();
 
-        $coloring_id = $coloring_option[0]['id'];
-        $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
-        $same_colorings = ColoringUserOption::
-        where('coloring_id', '=', $colored_id_all[0]['coloring_id'])
-            -> where('id', '!=', $colored_id_all[0]['id'])
-            ->get();
-
-
         if ($coloring->isEmpty()) {
             return view('errors.404');
         }
         else {
+
+            $coloring_id = $coloring_option[0]['id'];
+            $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
+            $same_colorings = ColoringUserOption::
+            where('coloring_id', '=', $colored_id_all[0]['coloring_id'])
+                ->where('id', '!=', $colored_id_all[0]['id'])
+                ->where('published', '=','1')
+                ->get();
+
+            $count_of_exist=$same_colorings->count();
+            $limit=20-$count_of_exist;
+            $same_colorings_new = ColoringUserOption::
+            where('coloring_id', '!=',$colored_id_all[0]['coloring_id'])->where('published', '=','1')->limit($limit)->get();
+            $same_colorings_new=$same_colorings_new->shuffle();
+            $same_colorings=$same_colorings->shuffle();
+            $merged = $same_colorings->merge($same_colorings_new);
+
+
             return view('main.coloring_decorated_one')->with('auth_user', auth()->user())
                 ->with(
                     [   'coloring' => $coloring,'coloring_decorated' => $coloring_option,
                         'title' => $coloring[0]['name'], 'description' => $coloring[0]['description'],
                         'slugMain' => $coloring[0]['slug'],
-                        'same_colorings' => $same_colorings],
+                        'same_colorings' => $merged],
                 );
         }
     }

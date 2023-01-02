@@ -22,7 +22,10 @@
         </div>
     <div class="container-fluid single_coloring_back">
         <div class="row single_coloring_img_text ">
-            <div class="col-12 justify-content-center col-lg-6 mob_img_settings">
+            <front-coloring-user-option ></front-coloring-user-option>
+
+            <a class="btn_hov btn_hov_1 col-12" v-on:click="check_is_auth()" v-b-modal.modal-xl variant="primary" >Раскрасили? Добавьте к нам!</a>
+            <div class="col-12 justify-content-center col-lg-6 mob_img_settings main_img_margin">
                 <img id="image" class="col single_coloring_img " :src="mainImage"  alt="Image"/>
             </div>
             <div v-if="menu_size<992" class="col-12 justify-content-center text-center mob_settings_one_imgs">
@@ -77,56 +80,16 @@
 
         <div class="col-12 streack"></div>
         <div class="col-12 header_works text-center">Работы художников</div>
-        <div class="col-12 row works_imgs_row mob_settings_one_imgs">
-            <div class="col-4 col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-            </div>
-            <div class="col-4  col-lg-3">
-                <div class="text-center works_list">
-                    <img class="works_list_img" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    <div class="who_works">
-                        Oleg 5 let
-                    </div>
-                </div>
-<!--                <span class="streak_black_works iconify" data-icon="codicon:triangle-right" data-width="80" data-height="240"></span>-->
-            </div>
-            <div v-if="menu_size>991" class="col-lg-3">
-                <div class="text-center works_list_empty">
-                    <div class="works_text">
-                       <span class="works_add_plus">+</span>
-                       <div class="works_add">Добавить свой вариант</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div v-if="menu_size<992" class="col-12 add_your_coloring text-center">Добавить свой вариант</div>
-
-
-        <div v-if="menu_size<992" class="col-12 row">
-            <div class="col-6">
-                <div class="text-center">
-                    <img class="main_list_rek_mob" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="text-center">
-                    <img class="main_list_rek_mob" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                </div>
-            </div>
-        </div>
+        <carousel-3d :controls-visible="true" class="dec_carosuel">
+            <slide v-for="(slide, i) in same_colorings" :index="i" v-bind:key="i" >
+                <figure v-on:click="goto_color_decor(slide.slug)">
+                    <img  :src="'/images/colorings/'+slide.img" alt="">
+                    <figcaption class="text_in_carusel">
+                        {{ slide.user_name }} {{ slide.age }}
+                    </figcaption>
+                </figure>
+            </slide>
+        </carousel-3d>
         <div class="col-12 streack"></div>
         <div class="col-12 header_works text-center">Похожие раскраски</div>
     </div>
@@ -186,7 +149,7 @@
 import {eventBusColoring} from "../app";
 
 export default {
-    props: ['auth_user'],
+    props: ['auth_user','same_colorings'],
     data() {
         return {
             coloring_name: '',
@@ -242,9 +205,25 @@ export default {
 
             }
         },
+        check_is_auth()
+        {
+            if(!this.auth_user)
+            {
+                window.location.href = '/login'
+            }
+
+        },
+        go_to_add_decorated_coloring()
+        {
+            window.location.href = '/add_coloring_user_option/'+this.colorSlug
+        },
         go_to_col()
         {
             window.location.href = '/'
+        },
+        goto_color_decor(slug)
+        {
+            window.location.href = '/coloring/decorated/'+slug
         },
         print()
         {

@@ -108,8 +108,8 @@
 }
 .btn_hov {
     flex: 1 1 auto;
-    margin: 10px;
-    padding: 30px;
+    /*margin: 10px;*/
+    padding: 10px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -120,7 +120,8 @@
     border-radius: 10px;
 }
 .btn_hov:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
+    cursor: pointer;
 }
 .btn_hov_1 {
     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
@@ -130,4 +131,19 @@
 }
 .dec_carosuel {
     margin-top: 40px!important;
+}
+.text_in_carusel {
+    text-align: center;
+}
+.carousel-3d-container figcaption {
+    padding: 0px!important;
+}
+.carousel-3d-slide {
+    /*height: 84%!important;*/
+}
+.main_img_margin {
+    margin-top: 5px;
+}
+.add_colored_button {
+    margin-top: 10px;
 }

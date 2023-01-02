@@ -31,6 +31,7 @@ Route::post('/get_coloring_list', [\App\Http\Controllers\ColoringController::cla
 Route::post('/get_coloring_list_by_cat', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_cat'])->name('get_coloring_list_by_cat');
 Route::post('/get_coloring_list_by_tag', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_tag'])->name('get_coloring_list_by_tag');
 Route::post('/get_coloring_list_liked', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_liked'])->name('get_coloring_list_liked');
+Route::post('/get_decorated_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_decorated_coloring_list'])->name('get_decorated_coloring_list');
 Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
 Route::get('/coloring/decorated/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_decorated_coloring'])->name('get_one_decorated_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');
@@ -54,7 +55,6 @@ Route::get('/add_coloring_user_option/{slug}', [App\Http\Controllers\MainViewCon
 Route::post('/get_carusel_images', [App\Http\Controllers\ImageController::class, 'get_carusel_images'])->name('get_carusel_images');
 
 
-
 Route::get('/helper', [App\Http\Controllers\CarController::class, 'helper'])->name('helper');
 Route::post('/check_user', [App\Http\Controllers\CarController::class, 'check_user'])->name('check_user');
 Route::get('/get-telegram-users', [App\Http\Controllers\CarController::class, 'get_telegram_users'])->name('get_telegram_users');
@@ -67,6 +67,7 @@ Route::post('/invite_users', [\App\Http\Controllers\CarController::class, 'invit
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/add_coloring_user_option/{slug}', [App\Http\Controllers\MainViewController::class, 'add_coloring_user_option'])->name('add_coloring_user_option');
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
     Route::get('/new_password', [App\Http\Controllers\MainViewController::class, 'new_password'])->name('new_password');
     Route::post('/change_profile_data', [App\Http\Controllers\ProfileController::class, 'change_profile_data'])->name('change_profile_data');
@@ -96,6 +97,7 @@ Route::get('/admin/edit_coloring_success/{id}', [App\Http\Controllers\AdminContr
 Route::get('/admin/tags', [App\Http\Controllers\AdminController::class, 'tags'])->name('tags');
 Route::get('/admin/cat', [App\Http\Controllers\AdminController::class, 'cat'])->name('cat');
 Route::get('/admin/coloring_list', [App\Http\Controllers\ColoringController::class, 'coloring_list'])->name('coloring_list');
+Route::get('/admin/admin_decorated_coloring_list', [App\Http\Controllers\ColoringController::class, 'admin_decorated_coloring_list'])->name('admin_decorated_coloring_list');
 Route::get('/admin/fairy_list', [App\Http\Controllers\FairyController::class, 'fairy_list'])->name('fairy_list');
 Route::post('/upload_img', [\App\Http\Controllers\ImageController::class, 'upload_img'])->name('upload_img');
 Route::post('/upload_img_user', [\App\Http\Controllers\ImageController::class, 'upload_img_user'])->name('upload_img_user');
@@ -116,6 +118,7 @@ Route::post('/store_from_editor', [\App\Http\Controllers\FairyController::class,
 Route::post('/upload_ckeditor', [\App\Http\Controllers\FairyController::class, 'upload_ckeditor'])->name('upload_ckeditor');
 Route::post('/delete_fairy', [\App\Http\Controllers\FairyController::class, 'delete_fairy'])->name('delete_fairy');
 Route::post('/delete_colored', [\App\Http\Controllers\ColoringController::class, 'delete_colored'])->name('delete_colored');
+Route::post('/delete_colored_decoration', [\App\Http\Controllers\ColoringController::class, 'delete_colored_decoration'])->name('delete_colored_decoration');
 Route::post('/delete_video', [\App\Http\Controllers\VideoController::class, 'delete_video'])->name('delete_video');
 Route::get('/admin/add_video', [App\Http\Controllers\AdminController::class, 'add_video'])->name('add_video');
 Route::post('/upload_video', [\App\Http\Controllers\VideoController::class, 'upload_video'])->name('upload_video');
@@ -129,5 +132,7 @@ Route::post('/get_users_list', [App\Http\Controllers\AdminController::class, 'ge
 Route::post('/add_cat', [\App\Http\Controllers\CatController::class, 'add_cat'])->name('add_cat');
 Route::post('/edit_cat', [\App\Http\Controllers\CatController::class, 'edit_cat'])->name('edit_cat');
 Route::post('/delete_cat', [\App\Http\Controllers\CatController::class, 'delete_cat'])->name('delete_cat');
+Route::post('/moderation_decorated_color', [\App\Http\Controllers\ColoringController::class, 'moderation_decorated_color'])->name('moderation_decorated_color');
 
 });
+

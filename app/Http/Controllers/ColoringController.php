@@ -7,6 +7,7 @@ use App\Models\Categories;
 use App\Models\Colored;
 use App\Models\ColoringCat;
 use App\Models\ColoringCategory;
+use App\Models\ColoringUserOption;
 use App\Models\Like;
 use App\Models\LikeCounter;
 use App\Models\User;
@@ -60,11 +61,24 @@ class ColoringController extends Controller
     {
         return view('admin.coloring_list');
     }
+    public function admin_decorated_coloring_list()
+    {
+        return view('admin.admin_decorated_coloring_list');
+    }
     public function moderation_color(Request $request)
     {
         $id=  $request->input('id');
         $published =  $request->input('published');
         Colored::where('id','=',$id)->
+        update([
+            'published' => $published,
+        ]);
+    }
+    public function moderation_decorated_color(Request $request)
+    {
+        $id=  $request->input('id');
+        $published =  $request->input('published');
+        ColoringUserOption::where('id','=',$id)->
         update([
             'published' => $published,
         ]);
@@ -358,6 +372,29 @@ class ColoringController extends Controller
             'like_arr' => $list_like,
         ], 201);
     }
+    public function get_decorated_coloring_list(Request $request)
+    {
+        $offset =  $request->input('offset');
+
+            $list_colored = ColoringUserOption::where('id', '>', '0')
+                ->offset($offset)
+                ->limit(20)
+                ->orderBy('id', 'desc')
+                ->get();
+            foreach ($list_colored as $colored)
+            {
+                $one_color = Colored::where('id', $colored['coloring_id'])->get();
+                //добавить название раскраски старой к новой раскрашенной чтобы вывести на фронте
+                $colored['name_old']=$one_color[0]['name'];
+            }
+            $count = ColoringUserOption::where('id', '>', '0')->count();
+
+        return response()->json([
+            'status' => 'success',
+            'list_colored' => $list_colored,
+            'tipes_count' => $count,
+        ], 201);
+    }
     public function getColoringDecoratedLike(Request $request)
     {
         $slug=$request->colorSlug;
@@ -485,6 +522,25 @@ class ColoringController extends Controller
         ColoringCat::where('colored_id', '=', $fairy_id) ->delete();
         Colored::where('id','=',$fairy_id)->delete();
 
+
+        return response()->json([
+            'status' => 'success',
+        ], 201);
+    }
+    public function delete_colored_decoration(Request $request)
+    {
+        $fairy_id =  $request->input('id');
+        $to_del = ColoringUserOption::where('id','=',$fairy_id)->get();
+
+        try {
+            $path = public_path() . "/images/colorings/" . $to_del[0]['img'];
+            unlink($path);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+        ColoringUserOption::where('id','=',$fairy_id)->delete();
 
         return response()->json([
             'status' => 'success',

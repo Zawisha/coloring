@@ -631,7 +631,7 @@ a.green_menu_element:hover {
 }
 
 .single_coloring_img_text {
-    padding-top: 20px;
+    padding-top: 5px;
 }
 @media (min-width: 992px) {
     /*.single_coloring_img {*/
@@ -1259,3 +1259,4 @@ a.green_menu_element:hover {
 .car_input {
     margin-top: 20px;
 }
+

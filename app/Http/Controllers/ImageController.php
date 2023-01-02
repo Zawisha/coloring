@@ -120,7 +120,7 @@ class ImageController extends Controller
         try {
             $this->validate($request,[
                 'file' => 'required|image|mimes:jpeg,png,jpg',
-                'user_name'=> 'required|string|min:2|max:70',
+                'user_name'=> 'required|string|min:2|max:40',
                 'age'=> 'required|string|min:1|max:20',
             ]);
         }
@@ -141,6 +141,7 @@ class ImageController extends Controller
         {
             $id_plus=$id[0]['id']+1;
         }
+
         $save_to=$slug.'_'.$id_plus.'.jpg';
         Image::make($request->file)->save(public_path('images/colorings/').$save_to);
         $colored_id = Colored::where('slug', '=', $slug)

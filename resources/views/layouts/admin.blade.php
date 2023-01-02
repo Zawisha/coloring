@@ -103,6 +103,8 @@
                     <ul>
                         <li> <a href={{ route('coloring_list' ) }}><i class="bx bx-right-arrow-alt"></i>Раскраски</a>
                         </li>
+                        <li> <a href={{ route('admin_decorated_coloring_list') }}><i class="bx bx-right-arrow-alt"></i>Раскрашенные раскраски</a>
+                        </li>
                         <li> <a href={{ route('fairy_list') }}><i class="bx bx-right-arrow-alt"></i>Сказки</a>
                         </li>
                         <li> <a href={{ route('video_list') }}><i class="bx bx-right-arrow-alt"></i>Видео</a>
