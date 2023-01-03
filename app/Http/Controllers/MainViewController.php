@@ -161,14 +161,18 @@ class MainViewController extends Controller
     public function get_one_decorated_coloring(Request $request)
     {
         $slug=$request->slug;
+       // return dd($slug);
         $coloring_option=ColoringUserOption::where('slug','=',$slug)->get();
-        $coloring=Colored::where('id','=',$coloring_option[0]['coloring_id'])->with('categories')->get();
-
-        if ($coloring->isEmpty()) {
+//return dd($coloring);
+        if ($coloring_option->isEmpty()) {
             return view('errors.404');
         }
         else {
 
+            $coloring=Colored::where('id','=',$coloring_option[0]['coloring_id'])->with('categories')->get();
+            if ($coloring->isEmpty()) {
+                return view('errors.404');
+            }
             $coloring_id = $coloring_option[0]['id'];
             $colored_id_all = ColoringUserOption::where('id', '=', $coloring_id)->get();
             $same_colorings = ColoringUserOption::
