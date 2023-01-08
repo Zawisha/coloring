@@ -117,7 +117,6 @@ export default {
         };
     },
     mounted() {
-        console.log(this.search_q)
         this.get_coloring_list(this.coloring_list);
         this.get_size();
         this.scroll();
@@ -270,7 +269,7 @@ export default {
                         }),
                             this.preload=false
                     ),
-                    this.offset=Number(this.offset)+Number(20),
+                    this.offset=Number(this.offset)+Number(10),
                 );
             }
 

@@ -422,7 +422,7 @@ export default {
                             }),
                 this.preload=false
                     ),
-                this.offset=Number(this.offset)+Number(20),
+                this.offset=Number(this.offset)+Number(10),
                 );
             }
         },

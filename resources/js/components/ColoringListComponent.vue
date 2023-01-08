@@ -81,7 +81,7 @@ export default {
                                         id:entry.id,
                                         name:entry.name,
                                         description:entry.description,
-                                        img:entry.img,
+                                        img:entry.img_small,
                                         published_db:entry.published,
                                         slug:entry.slug,
                                         type_of_like:entry.type_of_like,
@@ -90,7 +90,7 @@ export default {
                                 }),
                                 this.preload=false
                         ),
-                        this.offset=Number(this.offset)+Number(20),
+                        this.offset=Number(this.offset)+Number(10),
                     );
             }
         },

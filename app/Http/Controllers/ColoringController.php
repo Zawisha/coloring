@@ -212,7 +212,7 @@ class ColoringController extends Controller
 {
     $list_colored = ColoringCategory::where('category_id', '=', $search_id)
         ->offset($offset)
-        ->limit(20)
+        ->limit(10)
         ->whereHas('colored', function ($query) {
             $query->where('published', '=', 1);
         })
@@ -244,7 +244,7 @@ class ColoringController extends Controller
                 Colored::where('name', 'LIKE', "%$search_q%")
                 ->where('published','=', '1')
                 ->offset($offset)
-                ->limit(20)
+                ->limit(10)
                 ->orderBy('id', 'desc')
                 ->get();
 
@@ -262,7 +262,7 @@ class ColoringController extends Controller
                    return $q->where('published', '=', '1');
                })
                ->offset($offset)
-               ->limit(20)
+               ->limit(10)
                ->orderBy('id', 'desc')
                ->get();
 
