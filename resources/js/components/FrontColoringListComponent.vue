@@ -47,7 +47,7 @@
                     </div>
                     <span v-else class="row list_additional_imgs">
                      <div class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
-                          <img class="front-list-img-new" :src="'/images/colorings/'+colored.img" alt="">
+                          <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
                     <div class="col-8 col-lg-9">
                         <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
