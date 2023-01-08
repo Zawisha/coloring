@@ -14,6 +14,8 @@ use App\Models\Video;
 use App\Models\VideoCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use Nette\Schema\ValidationException;
 use Rawilk\Printing\Facades\Printing;
 
@@ -34,6 +36,50 @@ class MainViewController extends Controller
                'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.',
                'search_q'=>$search
                ]);
+   }
+   public function color_resize()
+   {
+       $colored_list = Colored::all();
+
+       foreach ($colored_list as $colored)
+       {
+           if($colored['img_small']=='')
+           {
+
+           $path='images/colorings/'.$colored['img'];
+           $files = File::get(public_path($path));
+           $save_small='1'.'_'.time().'small'.'.jpg';
+           Image::make($files)->resize(300,null,function ($constraint) {
+               $constraint->aspectRatio();
+           })->save(public_path('images/colorings/').$save_small);
+           Colored::where('id','=',$colored['id'])->
+           update([
+               'img_small' => $save_small,
+           ]);
+               sleep(1);
+          }
+
+       }
+       $colored_list = ColoringUserOption::all();
+
+       foreach ($colored_list as $colored)
+       {
+           if($colored['img_small']=='')
+           {
+           $path='images/colorings/'.$colored['img'];
+           $files = File::get(public_path($path));
+           $save_small='1'.'_'.time().'small'.'.jpg';
+           Image::make($files)->resize(300,null,function ($constraint) {
+               $constraint->aspectRatio();
+           })->save(public_path('images/colorings/').$save_small);
+           ColoringUserOption::where('id','=',$colored['id'])->
+           update([
+               'img_small' => $save_small,
+           ]);
+               sleep(1);
+         }
+       }
+
    }
    public function add_coloring_user_option(Request $request)
    {

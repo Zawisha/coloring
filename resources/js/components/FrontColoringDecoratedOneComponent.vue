@@ -99,7 +99,7 @@
         <carousel-3d :controls-visible="true" class="dec_carosuel">
             <slide v-for="(slide, i) in same_colorings" :index="i" v-bind:key="i" >
                 <figure v-on:click="goto_color_decor(slide.slug)">
-                    <img  :src="'/images/colorings/'+slide.img" alt="">
+                    <img  :src="'/images/colorings/'+slide.img_small" alt="">
                     <figcaption class="text_in_carusel">
                         {{ slide.user_name }} {{ slide.age }}
                     </figcaption>
@@ -467,7 +467,7 @@ export default {
                                     id:entry.id,
                                     name:entry.name,
                                     description:entry.description,
-                                    img:entry.img,
+                                    img:entry.img_small,
                                     published_db:entry.published,
                                     slug:entry.slug,
                                     type_of_like:entry.type_of_like,

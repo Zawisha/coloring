@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Colored extends Model
 {
     protected $table = 'colored';
-    protected $fillable = ['id','name', 'img','description', 'from_user', 'category','published','slug'];
+    protected $fillable = ['id','name', 'img','description', 'from_user', 'category','published','slug','img_full','img_small'];
     public function categories()
     {
         return $this->belongsToMany(Categories::class,'coloring_category','colored_id','category_id');

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 //разделы фронта
 Route::get('/', [App\Http\Controllers\MainViewController::class, 'index'])->name('home');
+Route::get('/color_resize', [App\Http\Controllers\MainViewController::class, 'color_resize'])->name('color_resize');
 //Route::get('/coloring',  [App\Http\Controllers\ColoringController::class, 'index'])->name('coloring');
 Route::post('/get_categories',  [App\Http\Controllers\ColoringController::class, 'get_categories'])->name('get_categories');
 Route::post('/get_coloring_names',  [App\Http\Controllers\ColoringController::class, 'get_coloring_names'])->name('get_coloring_names');

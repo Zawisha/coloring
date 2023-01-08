@@ -260,7 +260,8 @@ export default {
                                 id:entry.id,
                                 name:entry.name,
                                 description:entry.description,
-                                img:entry.img,
+
+                                img:entry.img_small,
                                 published_db:entry.published,
                                 slug:entry.slug,
                                 type_of_like:entry.type_of_like,

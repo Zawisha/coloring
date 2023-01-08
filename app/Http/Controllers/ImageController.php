@@ -73,10 +73,15 @@ class ImageController extends Controller
         }
         $image = request()->file();
         $save_to=$user->id.'_'.time().'.jpg';
+        $save_small=$user->id.'_'.time().'small'.'.jpg';
+        Image::make($request->file)->resize(300,null,function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path('images/colorings/').$save_small);
         Image::make($request->file)->save(public_path('images/colorings/').$save_to);
-       $colored_id= Colored::create([
+        $colored_id= Colored::create([
             'name'=>$coloring_name,
             'img' => $save_to,
+            'img_small' => $save_small,
             'description' => $description,
             'from_user' => $user->id,
            'published'=>$published,
@@ -110,6 +115,7 @@ class ImageController extends Controller
         ], 201);
 
     }
+
     public function upload_img_user_option(Request $request)
     {
 
@@ -146,10 +152,16 @@ class ImageController extends Controller
         Image::make($request->file)->save(public_path('images/colorings/').$save_to);
         $colored_id = Colored::where('slug', '=', $slug)
             ->get();
+
+        $save_small=$slug.'_'.$id_plus.'small'.'.jpg';
+        Image::make($request->file)->resize(300,null,function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path('images/colorings/').$save_small);
         ColoringUserOption::create([
             'coloring_id'=>$colored_id[0]['id'],
             'user_id' => $user->id,
             'img' => $save_to,
+            'img_small' => $save_small,
             'user_name' => $user_name,
             'age'=>$age,
             'slug'=>$slug.'_'.$id_plus,
@@ -193,9 +205,15 @@ class ImageController extends Controller
         $image = request()->file();
         $save_to=$user->id.'_'.time().'.'.$extension;
         Image::make($request->file)->save(public_path('images/colorings/').$save_to);
+
+        $save_small=$user->id.'_'.time().'small'.'.'.$extension;
+        Image::make($request->file)->resize(300,null,function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path('images/colorings/').$save_small);
         $colored_id= Colored::create([
             'name'=>$coloring_name,
             'img' => $save_to,
+            'img_small' => $save_small,
             'description' => $description,
             'from_user' => $user->id,
             'published'=>$published,
@@ -458,14 +476,22 @@ class ImageController extends Controller
             $to_del = Colored::where('id','=',$color_id)->get();
             $path = public_path()."/images/colorings/".$to_del[0]['img'];
             unlink($path);
+            $path = public_path()."/images/colorings/".$to_del[0]['img_small'];
+            unlink($path);
             $image = request()->file();
             $save_to = $user->id . '_' . time() . '.jpg';
+
+            $save_small=$user->id.'_'.time().'small'.'.jpg';
+            Image::make($request->file)->resize(300,null,function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('images/colorings/').$save_small);
             Image::make($request->file)->save(public_path('images/colorings/') . $save_to);
 
             $colored_id = Colored::where('id','=',$color_id)->
             update([
                 'name' => $coloring_name,
                 'img' => $save_to,
+                'img_small' => $save_small,
                 'description' => $description,
                 'published' => $published,
                 'slug'=>$slug

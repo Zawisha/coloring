@@ -513,6 +513,8 @@ class ColoringController extends Controller
         try {
             $path = public_path() . "/images/colorings/" . $to_del[0]['img'];
             unlink($path);
+            $path = public_path() . "/images/colorings/" . $to_del[0]['img_small'];
+            unlink($path);
         }
         catch (\Throwable $e)
         {
@@ -534,6 +536,8 @@ class ColoringController extends Controller
 
         try {
             $path = public_path() . "/images/colorings/" . $to_del[0]['img'];
+            unlink($path);
+            $path = public_path() . "/images/colorings/" . $to_del[0]['img_small'];
             unlink($path);
         }
         catch (\Throwable $e)
