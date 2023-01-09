@@ -66,7 +66,7 @@
                 blockId: 'R-A-1785111-3'
             })
         })</script>
-    <script>window.yaContextCb.push(()=>{
+    <script type="application/javascript">window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
                 renderTo: 'yandex_rtb_R-A-1785111-4',
                 blockId: 'R-A-1785111-4'
