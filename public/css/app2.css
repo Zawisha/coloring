@@ -95,11 +95,17 @@
     color: #000000;
     /*margin-left: 10px;*/
 }
+
 .left_menu_block {
-    width: 223px;
+
     height: 360px;
     left: 0px;
     padding-right: 4px!important;
+}
+@media (min-width: 992px) {
+    .left_menu_block {
+        min-width: 205px!important;
+    }
 }
 .right_menu_block {
     padding-left: 4px!important;
