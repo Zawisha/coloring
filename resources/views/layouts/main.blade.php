@@ -51,6 +51,9 @@
 
         gtag('config', 'G-1LL2L8VK8T');
     </script>
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body class="antialiased" >
 @include('cookie-consent::index')
@@ -102,6 +105,14 @@
             </div>
             </a>
             <div class="left_menu_nav_empty row col-12">
+                <!-- Yandex.RTB R-A-1785111-1 -->
+                <div id="yandex_rtb_R-A-1785111-1"></div>
+                <script>window.yaContextCb.push(()=>{
+                        Ya.Context.AdvManager.render({
+                            renderTo: 'yandex_rtb_R-A-1785111-1',
+                            blockId: 'R-A-1785111-1'
+                        })
+                    })</script>
             </div>
             <div class="left_menu_nav_reklama row col-12">
                 <div>
