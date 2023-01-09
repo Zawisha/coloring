@@ -113,7 +113,8 @@
                             renderTo: 'yandex_rtb_R-A-1785111-1',
                             blockId: 'R-A-1785111-1'
                         })
-                    })</script>
+                    })
+                </script>
             </div>
             <div class="left_menu_nav_reklama row col-12">
                 <div>
