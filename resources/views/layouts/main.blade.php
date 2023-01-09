@@ -63,16 +63,17 @@
     <script type="application/javascript">
         window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-1',
-                blockId: 'R-A-1785111-1'
-            })
-        })
-        window.yaContextCb.push(()=>{
-            Ya.Context.AdvManager.render({
                 renderTo: 'yandex_rtb_R-A-1785111-3',
                 blockId: 'R-A-1785111-3'
             })
         })
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-1',
+                blockId: 'R-A-1785111-1'
+            })
+        })
+
     </script>
     <div class="container-fluid">
         <div class="row new_head">
@@ -101,7 +102,7 @@
 
     <div class="container-fluid container_header_align">
         <div class="row">
-        <div class="col-2 left_menu_block hide_on_mob">
+        <div class="col-2 left_menu_block hide_on_mob sticky-top">
             <a href="/" >  <div class="left_menu_nav row col-12">
                 <span id="myH1" class="iconify left_menu_icon_f iconify_main" style="color: #6968a9;"   data-icon="ion:color-palette-outline"></span>
                 <span class="left_menu_nav_text"><span class="iconify "  data-icon="bi:dot" style="color: #6968a9;" data-width="20" data-height="20"></span> РАСКРАСКИ</span>
@@ -118,19 +119,12 @@
                 <span class="left_menu_nav_text"><span class="iconify " data-icon="bi:dot" style="color: #6968a9;" data-width="20" data-height="20"></span> ВИДЕО</span>
             </div>
             </a>
+            {{--               блок с рекламой--}}
             <div class="left_menu_nav_empty row col-12">
-                <!-- Yandex.RTB R-A-1785111-3 -->
                 <div id="yandex_rtb_R-A-1785111-3"></div>
-                <div id="yandex_rtb_R-A-1785111-5"></div>
                 <div id="yandex_rtb_R-A-1785111-1"></div>
-
             </div>
 
-            <div class="left_menu_nav_reklama row col-12">
-                <div>
-{{--                    <img src="{{ url('/images/colorings/1_1651100734.jpg') }}" class="menu_img_rek">--}}
-                </div>
-            </div>
         </div>
         <div class="col-12 col-lg-8 green_menu_header  ">
             <div class="col-12 row green_menu_header  ">
