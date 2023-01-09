@@ -65,8 +65,8 @@
                 renderTo: 'yandex_rtb_R-A-1785111-3',
                 blockId: 'R-A-1785111-3'
             })
-        })
-   window.yaContextCb.push(()=>{
+        })</script>
+    <script type="application/javascript">window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
                 renderTo: 'yandex_rtb_R-A-1785111-4',
                 blockId: 'R-A-1785111-4'
@@ -119,7 +119,7 @@
             <div class="left_menu_nav_empty row col-12">
                 <!-- Yandex.RTB R-A-1785111-3 -->
                 <div id="yandex_rtb_R-A-1785111-3"></div>
-                <div class="adv_height"></div>
+{{--                <div class="adv_height"></div>--}}
                 <div id="yandex_rtb_R-A-1785111-4"></div>
             </div>
 
