@@ -67,7 +67,13 @@
                 blockId: 'R-A-1785111-5'
             })
         })
-        </script>
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-3',
+                blockId: 'R-A-1785111-3'
+            })
+        })
+    </script>
     <div class="container-fluid">
         <div class="row new_head">
         <div class="col-3 new_head_icon_top">
@@ -115,14 +121,7 @@
             <div class="left_menu_nav_empty row col-12">
                 <!-- Yandex.RTB R-A-1785111-3 -->
                 <div id="yandex_rtb_R-A-1785111-3"></div>
-                <!-- Yandex.RTB R-A-1785111-5 -->
                 <div id="yandex_rtb_R-A-1785111-5"></div>
-                <script>window.yaContextCb.push(()=>{
-                        Ya.Context.AdvManager.render({
-                            renderTo: 'yandex_rtb_R-A-1785111-5',
-                            blockId: 'R-A-1785111-5'
-                        })
-                    })</script>
             </div>
 
             <div class="left_menu_nav_reklama row col-12">
