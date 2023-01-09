@@ -60,17 +60,19 @@
 @include('cookie-consent::index')
 <div id="app">
 <div>
-    <script type="application/javascript">window.yaContextCb.push(()=>{
+    <script type="application/javascript">
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-4',
+                blockId: 'R-A-1785111-4'
+            })
+        window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
                 renderTo: 'yandex_rtb_R-A-1785111-3',
                 blockId: 'R-A-1785111-3'
             })
         })
-            window.yaContextCb.push(()=>{
-            Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-4',
-                blockId: 'R-A-1785111-4'
-            })
+
         })</script>
     <div class="container-fluid">
         <div class="row new_head">
