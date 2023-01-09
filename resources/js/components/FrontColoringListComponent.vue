@@ -175,6 +175,7 @@ export default {
         },
         go_to_col()
         {
+            console.log('qw')
             window.location.href = '/'
         },
           setLike(n,colored_id,inp) {
@@ -276,6 +277,7 @@ export default {
         },
         go_to_one_coloring(id)
         {
+            console.log('12');
             window.location.href =('/coloring/'+id)
         },
         prev_page()
