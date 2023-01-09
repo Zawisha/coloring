@@ -67,12 +67,12 @@
                 blockId: 'R-A-1785111-5'
             })
         })
-        window.yaContextCb.push(()=>{
-            Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-3',
-                blockId: 'R-A-1785111-3'
-            })
-        })
+        // window.yaContextCb.push(()=>{
+        //     Ya.Context.AdvManager.render({
+        //         renderTo: 'yandex_rtb_R-A-1785111-3',
+        //         blockId: 'R-A-1785111-3'
+        //     })
+        // })
         </script>
     <div class="container-fluid">
         <div class="row new_head">
