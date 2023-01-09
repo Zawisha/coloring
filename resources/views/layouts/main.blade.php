@@ -56,16 +56,16 @@
     <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body class="antialiased" >
-<script type="application/javascript">window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-            renderTo: 'yandex_rtb_R-A-1785111-3',
-            blockId: 'R-A-1785111-3'
-        })
-    })</script>
+
 @include('cookie-consent::index')
 <div id="app">
 <div>
-
+    <script type="application/javascript">window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-3',
+                blockId: 'R-A-1785111-3'
+            })
+        })</script>
     <div class="container-fluid">
         <div class="row new_head">
         <div class="col-3 new_head_icon_top">
