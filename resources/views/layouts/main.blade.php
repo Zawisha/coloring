@@ -60,14 +60,11 @@
 @include('cookie-consent::index')
 <div id="app">
 <div>
-    <!-- Yandex.RTB R-A-1785111-5 -->
-    <div id="yandex_rtb_R-A-1785111-5"></div>
-
     <script type="application/javascript">
         window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-5',
-                blockId: 'R-A-1785111-5'
+                renderTo: 'yandex_rtb_R-A-1785111-1',
+                blockId: 'R-A-1785111-1'
             })
         })
         window.yaContextCb.push(()=>{
@@ -125,6 +122,8 @@
                 <!-- Yandex.RTB R-A-1785111-3 -->
                 <div id="yandex_rtb_R-A-1785111-3"></div>
                 <div id="yandex_rtb_R-A-1785111-5"></div>
+                <div id="yandex_rtb_R-A-1785111-1"></div>
+
             </div>
 
             <div class="left_menu_nav_reklama row col-12">
