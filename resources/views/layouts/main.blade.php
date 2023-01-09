@@ -105,12 +105,12 @@
             </div>
             </a>
             <div class="left_menu_nav_empty row col-12">
-                <!-- Yandex.RTB R-A-1785111-1 -->
-                <div id="yandex_rtb_R-A-1785111-1"></div>
+                <!-- Yandex.RTB R-A-1785111-2 -->
+                <div id="yandex_rtb_R-A-1785111-2"></div>
                 <script>window.yaContextCb.push(()=>{
                         Ya.Context.AdvManager.render({
-                            renderTo: 'yandex_rtb_R-A-1785111-1',
-                            blockId: 'R-A-1785111-1'
+                            renderTo: 'yandex_rtb_R-A-1785111-2',
+                            blockId: 'R-A-1785111-2'
                         })
                     })</script>
             </div>
