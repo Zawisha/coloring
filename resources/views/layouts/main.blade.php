@@ -54,15 +54,15 @@
     <!-- Yandex.RTB -->
     <script>window.yaContextCb=window.yaContextCb||[]</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
-    <!-- Yandex.RTB -->
-    <script>window.yaContextCb=window.yaContextCb||[]</script>
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body class="antialiased" >
 
 @include('cookie-consent::index')
 <div id="app">
 <div>
+    <!-- Yandex.RTB R-A-1785111-5 -->
+    <div id="yandex_rtb_R-A-1785111-5"></div>
+
     <script type="application/javascript">
         window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
