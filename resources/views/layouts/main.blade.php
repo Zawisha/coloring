@@ -120,7 +120,7 @@
             </a>
             <div class="left_menu_nav_empty row col-12">
                 <!-- Yandex.RTB R-A-1785111-3 -->
-                <div id="yandex_rtb_R-A-1785111-3"></div>
+{{--                <div id="yandex_rtb_R-A-1785111-3"></div>--}}
                 <!-- Yandex.RTB R-A-1785111-5 -->
                 <div id="yandex_rtb_R-A-1785111-5"></div>
             </div>
