@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div id="yandex_rtb_R-A-1785111-6"></div>
         <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
             <div class="mob_menu_bootom_left col">
                 <div class="mob_menu_bootom ">
@@ -96,7 +97,7 @@
         <div class="one_coloring_back_white">
         <div  class=" one_front_coloring " v-for="(colored,index) in coloring_list">
             <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
-                <div id="yandex_rtb_R-A-1785111-6"></div>
+<!--                <div id="yandex_rtb_R-A-1785111-6"></div>-->
             </div>
             <span v-else class="row list_additional_imgs">
                      <div class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
