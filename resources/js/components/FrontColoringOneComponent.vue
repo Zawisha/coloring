@@ -166,6 +166,7 @@ export default {
         this.getColoredData(this.cat_list,this.category_list),
         this.get_coloring_list(this.coloring_list);
         this.scroll();
+
     },
     created() {
         window.yaContextCb.push(()=>{
