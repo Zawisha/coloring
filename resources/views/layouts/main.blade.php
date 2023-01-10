@@ -74,6 +74,7 @@
             })
         })
 
+
     </script>
     <div class="container-fluid">
         <div class="row new_head">

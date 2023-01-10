@@ -1,6 +1,7 @@
 <template>
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
+                <div v-on:click="show_vd">show</div>
 <!--            <h1 class="col-12 main_coloring_list_h1">Каталог бесплатных раскрасок</h1>-->
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
@@ -61,13 +62,7 @@
 <script>
 import {eventBusColoring} from "../app";
 import {eventSearch} from "../app";
-window.yaContextCb.push(()=>{
-    Ya.Context.AdvManager.render({
-        renderTo: 'yandex_rtb_R-A-1785111-6',
-        blockId: 'R-A-1785111-6',
-        statId: 34567,
-    })
-})
+
 export default {
     props: ['auth_user','search_q'],
     data() {
@@ -107,6 +102,7 @@ export default {
         this.get_coloring_list(this.coloring_list);
         this.get_size();
         this.scroll();
+
     },
     created() {
         // //получаем результат поиска
@@ -126,6 +122,16 @@ export default {
 
     },
     methods: {
+        show_vd()
+        {
+            window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                    renderTo: 'yandex_rtb_R-A-1785111-6',
+                    blockId: 'R-A-1785111-6',
+                    statId: 34567,
+                })
+            })
+        },
         scroll () {
 
             window.onscroll = () => {
