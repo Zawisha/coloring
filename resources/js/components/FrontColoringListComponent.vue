@@ -23,7 +23,7 @@
                     </div >
                 </div>
                 <div  class="col-12 one_front_coloring " v-for="(colored,index) in coloring_list">
-                    <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
+                    <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(hide_on_mob)&&(menu_size>991)">
                         <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
                     <span v-else class="row list_additional_imgs">
@@ -61,7 +61,12 @@
 <script>
 import {eventBusColoring} from "../app";
 import {eventSearch} from "../app";
-
+window.yaContextCb.push(()=>{
+    Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_R-A-1785111-6',
+        blockId: 'R-A-1785111-6'
+    })
+})
 export default {
     props: ['auth_user','search_q'],
     data() {
@@ -117,12 +122,7 @@ export default {
         // })
     },
     updated() {
-        window.yaContextCb.push(()=>{
-            Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-6',
-                blockId: 'R-A-1785111-6'
-            })
-        })
+
     },
     methods: {
         scroll () {
