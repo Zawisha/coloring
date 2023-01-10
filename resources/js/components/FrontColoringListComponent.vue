@@ -170,7 +170,7 @@ export default {
         show_adv()
         {
             this.adv_counter++
-            window.onload = function() {
+            console.log(this.adv_counter)
                 window.yaContextCb.push(() => {
                     Ya.Context.AdvManager.render({
                         renderTo: 'yandex_rtb_R-A-1785111-6',
@@ -178,7 +178,6 @@ export default {
                         statId:  this.adv_counter,
                     })
                 })
-            }
         },
         go_to_col()
         {
