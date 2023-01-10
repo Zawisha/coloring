@@ -169,7 +169,12 @@ export default {
 
     },
     updated() {
-
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-6',
+                blockId: 'R-A-1785111-6'
+            })
+        })
     },
     methods: {
         scroll () {
