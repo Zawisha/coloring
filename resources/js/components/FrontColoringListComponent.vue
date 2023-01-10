@@ -62,7 +62,15 @@
 <script>
 import {eventBusColoring} from "../app";
 import {eventSearch} from "../app";
-
+window.onload = function() {
+    window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.render({
+            renderTo: 'yandex_rtb_R-A-1785111-6',
+            blockId: 'R-A-1785111-6',
+            statId: 34567,
+        })
+    })
+};
 export default {
     props: ['auth_user','search_q'],
     data() {
@@ -102,7 +110,7 @@ export default {
         this.get_coloring_list(this.coloring_list);
         this.get_size();
         this.scroll();
-this.show_vd();
+
     },
     created() {
         // //получаем результат поиска
@@ -122,16 +130,6 @@ this.show_vd();
 
     },
     methods: {
-        show_vd()
-        {
-            window.yaContextCb.push(()=>{
-                Ya.Context.AdvManager.render({
-                    renderTo: 'yandex_rtb_R-A-1785111-6',
-                    blockId: 'R-A-1785111-6',
-                    statId: 34567,
-                })
-            })
-        },
         scroll () {
 
             window.onscroll = () => {
