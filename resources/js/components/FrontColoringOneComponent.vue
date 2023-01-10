@@ -95,27 +95,8 @@
     </div>
         <div class="one_coloring_back_white">
         <div  class=" one_front_coloring " v-for="(colored,index) in coloring_list">
-            <div class="col-12 row reklama_row_main_list" v-if="(index===reklama_number)&&(hide_on_mob)&&(menu_size>991)">
-                <div class="col-3 ">
-                    <div class="text-center">
-                        <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="text-center">
-                        <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="text-center">
-                        <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="text-center">
-                        <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                    </div>
-                </div>
+            <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
+                <div id="yandex_rtb_R-A-1785111-6"></div>
             </div>
             <span v-else class="row list_additional_imgs">
                      <div class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
@@ -160,7 +141,7 @@ export default {
             menu_data_height:'',
             hide_on_mob:true,
             coloring_list:[],
-            reklama_number:4,
+            reklama_number:6,
             menu_size:'',
             menu_data_width_arrow:'',
             menu_data_height_arrow:'',
@@ -187,8 +168,12 @@ export default {
         this.scroll();
     },
     created() {
-     // document.title='test 444',
-      //  document.getElementsByTagName('meta')["description"].content= "My new page description!!";
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1785111-6',
+                blockId: 'R-A-1785111-6'
+            })
+        })
     },
     methods: {
         scroll () {
