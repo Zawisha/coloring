@@ -85,7 +85,7 @@ export default {
             menu_data_height_arrow:'',
             window_height:'',
             isStick:true,
-            reklama_number:9999,
+            reklama_number:6,
             hide_on_mob:true,
             like_status_arr:[{12: 'ant-design:like-outlined' },{13: 'ant-design:like-filled'}],
             like_status:'ant-design:like-outlined',
