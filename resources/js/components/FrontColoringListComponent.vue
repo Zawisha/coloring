@@ -139,6 +139,7 @@ export default {
                     let documentHeight = document.body.scrollHeight;
                     let currentScroll = window.scrollY + window.innerHeight;
                     let modifier = 200;
+
                     if(currentScroll + modifier > documentHeight) {
 
                         this.get_coloring_list(this.coloring_list)
