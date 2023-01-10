@@ -67,7 +67,7 @@ window.onload = function() {
         Ya.Context.AdvManager.render({
             renderTo: 'yandex_rtb_R-A-1785111-6',
             blockId: 'R-A-1785111-6',
-            statId: 34567,
+            statId: 1,
         })
     })
 };
@@ -102,6 +102,7 @@ export default {
             like1:false,
             like2:false,
             preload:false,
+            adv_counter:1
 
 
         };
@@ -135,14 +136,13 @@ export default {
             window.onscroll = () => {
                 // if($(window).scrollTop() + $(window).height() == $(document).height()) {
 
-
                     let documentHeight = document.body.scrollHeight;
                     let currentScroll = window.scrollY + window.innerHeight;
-                    // When the user is [modifier]px from the bottom, fire the event.
                     let modifier = 200;
                     if(currentScroll + modifier > documentHeight) {
 
                         this.get_coloring_list(this.coloring_list)
+                        this.show_adv()
                     }
 
                 // }
@@ -166,6 +166,19 @@ export default {
             //
             //     }
             // }
+        },
+        show_adv()
+        {
+            this.adv_counter++
+            window.onload = function() {
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        renderTo: 'yandex_rtb_R-A-1785111-6',
+                        blockId: 'R-A-1785111-6',
+                        statId:  this.adv_counter,
+                    })
+                })
+            }
         },
         go_to_col()
         {
