@@ -23,7 +23,7 @@
                         </div>
                     </div >
                 </div>
-                <div  class="col-12 one_front_coloring " v-for="(colored,index) in coloring_list">
+                <div  class="col-12" v-bind:class="{ one_front_coloring: index!==6 }" v-for="(colored,index) in coloring_list">
 <!--                    <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">-->
                     <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
                         <div id="yandex_rtb_R-A-1785111-6"></div>
