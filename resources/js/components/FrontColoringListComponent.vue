@@ -1,7 +1,7 @@
 <template>
         <div class="container-fluid front_coloring_list_cont">
             <div class="row">
-                <div v-on:click="show_vd">show</div>
+
 <!--            <h1 class="col-12 main_coloring_list_h1">Каталог бесплатных раскрасок</h1>-->
                 <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
                     <div class="mob_menu_bootom_left col">
@@ -102,7 +102,7 @@ export default {
         this.get_coloring_list(this.coloring_list);
         this.get_size();
         this.scroll();
-
+this.show_vd();
     },
     created() {
         // //получаем результат поиска
