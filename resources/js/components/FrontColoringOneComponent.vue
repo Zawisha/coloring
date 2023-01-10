@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="yandex_rtb_R-A-1785111-6"></div>
+        <div id="yandex_rtb_R-A-1785111-7"></div>
         <div v-if="menu_size<992"  v-bind:style="{ top: window_height + 'px' }" class="fixed-bottom row justify-content-center mob_menu_main">
             <div class="mob_menu_bootom_left col">
                 <div class="mob_menu_bootom ">
@@ -172,8 +172,8 @@ export default {
     updated() {
         window.yaContextCb.push(()=>{
             Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1785111-6',
-                blockId: 'R-A-1785111-6'
+                renderTo: 'yandex_rtb_R-A-1785111-7',
+                blockId: 'R-A-1785111-7'
             })
         })
     },
