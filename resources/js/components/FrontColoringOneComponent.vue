@@ -94,7 +94,7 @@
         <div class="col-12 header_works text-center">Похожие раскраски</div>
     </div>
         <div class="one_coloring_back_white">
-        <div  class=" one_front_coloring " v-for="(colored,index) in coloring_list" v-bind:class="{ one_front_coloring: index!==6 }">
+        <div v-for="(colored,index) in coloring_list" v-bind:class="{ one_front_coloring: index!==6 }">
             <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
                 <div id="yandex_rtb_R-A-1785111-6"></div>
             </div>
