@@ -94,8 +94,8 @@
         <div class="col-12 header_works text-center">Похожие раскраски</div>
     </div>
         <div class="one_coloring_back_white">
-        <div  class=" one_front_coloring " v-for="(colored,index) in coloring_list">
-            <div class="col-12 row reklama_row_main_list" v-if="(index%reklama_number===0)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
+        <div  class=" one_front_coloring " v-for="(colored,index) in coloring_list" v-bind:class="{ one_front_coloring: index!==6 }">
+            <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
                 <div id="yandex_rtb_R-A-1785111-6"></div>
             </div>
             <span v-else class="row list_additional_imgs">
@@ -128,7 +128,15 @@
 
 <script>
 import {eventBusColoring} from "../app";
-
+window.onload = function() {
+    window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.render({
+            renderTo: 'yandex_rtb_R-A-1785111-6',
+            blockId: 'R-A-1785111-6',
+            statId: 1,
+        })
+    })
+};
 export default {
     props: ['auth_user','same_colorings'],
     data() {
