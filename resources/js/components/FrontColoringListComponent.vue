@@ -24,16 +24,16 @@
                     </div >
                 </div>
                 <div  class="col-12" v-bind:class="{ one_front_coloring: index!==6 }" v-for="(colored,index) in coloring_list">
-                    <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
+                    <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(hide_on_mob)&&(menu_size>991)">
                         <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
-                    <span v-else class="row list_additional_imgs" >
-                        <div id="yandex_rtb_R-A-1785111-8" v-if="(index===6)&&(index!==0)"></div>
+                    <span v-else class="row " v-bind:class="{ list_additional_imgs: index!==6 }">
+                        <div id="yandex_rtb_R-A-1785111-8" v-if="(index===6)"></div>
 <!--                        <span v-else>-->
-                     <div class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
+                     <div v-if="(index!==6)" class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
                           <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
-                    <div class="col-8 col-lg-9">
+                    <div v-if="(index!==6)" class="col-8 col-lg-9">
                         <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
                         <div class="offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l">{{ colored.description }}</div>
                         <div class="rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right">
