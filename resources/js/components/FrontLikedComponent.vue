@@ -21,28 +21,9 @@
                         </div>
                     </div >
                 </div>
-                <div  class="col-12 one_front_coloring " v-for="(colored,index) in coloring_list">
-                    <div class="col-12 row reklama_row_main_list" v-if="(index===reklama_number)&& (hide_on_mob)">
-                        <div class="col-3 ">
-                            <div class="text-center">
-                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="text-center">
-                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="text-center">
-                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="text-center">
-                                <img class="main_list_rek" :src="'/images/colorings/1_1651087261.jpg'" alt="">
-                            </div>
-                        </div>
+                <div  class="col-12" v-for="(colored,index) in coloring_list" v-bind:class="{ one_front_coloring: index!==6 }">
+                    <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
+                        <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
                     <span v-else class="row">
                      <div class="col-3 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
@@ -71,7 +52,15 @@
 
 <script>
 import {eventBusColoring} from "../app";
-
+window.onload = function() {
+    window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.render({
+            renderTo: 'yandex_rtb_R-A-1785111-6',
+            blockId: 'R-A-1785111-6',
+            statId: 1,
+        })
+    })
+};
 export default {
     props: ['auth_user'],
     data() {
@@ -221,7 +210,7 @@ export default {
                                 id:entry.id,
                                 name:entry.name,
                                 description:entry.description,
-                                img:entry.img,
+                                img:entry.img_small,
                                 published_db:entry.published,
                                 slug:entry.slug,
                                 type_of_like:entry.type_of_like,
