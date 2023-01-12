@@ -27,9 +27,9 @@
                     <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(index!==0)&&(hide_on_mob)&&(menu_size>991)">
                         <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
-                    <span v-else class="row" v-bind:class="{ list_additional_imgs: index!==6 }">
+                    <span v-else class="row list_additional_imgs" >
                         <div id="yandex_rtb_R-A-1785111-8" v-if="(index===6)&&(index!==0)"></div>
-                        <span v-else>
+<!--                        <span v-else>-->
                      <div class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
                           <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
@@ -43,13 +43,10 @@
                             <span class="coloring_rate">{{ colored.count_of_like }}</span>
                             <span v-show="colored.type_of_like=='2'" class="like_down3" v-on:click="setLike(2,colored.id,coloring_list)" ><span class="iconify" data-icon="ant-design:dislike-filled" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
                             <span v-show="colored.type_of_like==('0'||'1')" class="like_down4" v-on:click="setLike(2,colored.id,coloring_list)" ><span class="iconify" data-icon="ant-design:dislike-outlined" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height' ></span></span>
-
                             <span v-if="menu_size<993" class="iconify follow_arrow_mob" data-icon="akar-icons:arrow-forward-thick-fill" v-bind:data-width='menu_data_width_arrow'  v-bind:data-height='menu_data_height_arrow'></span>
-<!--                            <span class="iconify" data-icon="ant-design:star-filled" data-width="25" data-height="23"></span>-->
-                            <!--                            <span class="iconify" data-icon="icon-park:like"></span>-->
                         </div>
                     </div>
-                        </span>
+<!--                        </span>-->
                     </span>
                 </div>
 
