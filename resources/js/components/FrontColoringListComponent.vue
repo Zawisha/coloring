@@ -28,7 +28,10 @@
                         <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
                     <span v-else class="row " v-bind:class="{ list_additional_imgs: index!==6 }">
-                        <div id="yandex_rtb_R-A-1785111-8" v-if="(index===6)"></div>
+                        <span v-if="(index===6)">
+
+                            <div id="yandex_rtb_R-A-1785111-8"></div>
+                            </span>
 <!--                        <span v-else>-->
                      <div v-if="(index!==6)" class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
                           <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
@@ -73,7 +76,8 @@ window.onload = function() {
     window.yaContextCb.push(()=>{
         Ya.Context.AdvManager.render({
             renderTo: 'yandex_rtb_R-A-1785111-8',
-            blockId: 'R-A-1785111-8'
+            blockId: 'R-A-1785111-8',
+            statId: 2,
         })
     })
 };
