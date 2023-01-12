@@ -27,7 +27,7 @@
                     <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(hide_on_mob)&&(menu_size>991)">
                         <div id="yandex_rtb_R-A-1785111-6"></div>
                     </div>
-                    <span v-else class="row " v-bind:class="{ list_additional_imgs: index!==6 }">
+                    <span v-else class="row list_additional_imgs" >
                         <span v-if="(index===6)">
 
                             <div id="yandex_rtb_R-A-1785111-8"></div>
