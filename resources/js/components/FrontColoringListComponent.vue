@@ -24,15 +24,17 @@
                     </div >
                 </div>
                 <div  class="col-12" v-bind:class="{ one_front_coloring: index!==6 }" v-for="(colored,index) in coloring_list">
-                    <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(hide_on_mob)&&(menu_size>991)">
-                        <div id="yandex_rtb_R-A-1785111-6"></div>
-                    </div>
-                    <span v-else class="row list_additional_imgs" >
-                        <span v-if="(index===6)">
 
-                            <div id="yandex_rtb_R-A-1785111-8"></div>
-                            </span>
-<!--                        <span v-else>-->
+
+                    <div class="col-12 row reklama_row_main_list" v-if="(index===6)&&(hide_on_mob)&&(menu_size>991)">
+                        <!--          <div id="yandex_rtb_R-A-1785111-6"></div>-->
+                              </div>
+                              <span v-else class="row list_additional_imgs" >
+                                  <span v-if="(index===6)">
+                    <div id="yandex_rtb_R-A-1785111-8"></div>
+
+                                      </span>
+          <!--                        <span v-else>-->
                      <div v-if="(index!==6)" class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
                           <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
@@ -66,18 +68,18 @@
 import {eventBusColoring} from "../app";
 import {eventSearch} from "../app";
 window.onload = function() {
-    window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-            renderTo: 'yandex_rtb_R-A-1785111-6',
-            blockId: 'R-A-1785111-6',
-            statId: 1,
-        })
-    })
+   // window.yaContextCb.push(()=>{
+     //   Ya.Context.AdvManager.render({
+    //        renderTo: 'yandex_rtb_R-A-1785111-6',
+   //         blockId: 'R-A-1785111-6',
+   //         statId: 1,
+   //     })
+  //  })
+
     window.yaContextCb.push(()=>{
         Ya.Context.AdvManager.render({
             renderTo: 'yandex_rtb_R-A-1785111-8',
-            blockId: 'R-A-1785111-8',
-            statId: 2,
+            blockId: 'R-A-1785111-8'
         })
     })
 };
@@ -160,18 +162,6 @@ export default {
             }
 
 
-        },
-        show_adv()
-        {
-            this.adv_counter++
-            console.log(this.adv_counter)
-                window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.render({
-                        renderTo: 'yandex_rtb_R-A-1785111-6',
-                        blockId: 'R-A-1785111-6',
-                        statId:  this.adv_counter,
-                    })
-                })
         },
         go_to_col()
         {
