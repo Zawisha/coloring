@@ -31,9 +31,7 @@
                               <span v-else class="row " v-bind:class="{ list_additional_imgs: index!==6 }">
                                   <span v-if="(index===6)">
                     <div id="yandex_rtb_R-A-1785111-8"></div>
-
-                                      </span>
-          <!--                        <span v-else>-->
+                                  </span>
                      <div v-if="(index!==6)" class="d-flex justify-content-center align-items-center col-4 col-lg-3 front-list-new-np" v-on:click="go_to_one_coloring(colored.slug)">
                           <img class="front-list-img-new" loading="lazy" :src="'/images/colorings/'+colored.img" alt="">
                      </div>
@@ -41,7 +39,6 @@
                         <div class="coloring_list_title_new col-lg-12 front-list-new-np-l"  v-on:click="go_to_one_coloring(colored.slug)">{{ colored.name }}</div>
                         <div class="offset-lg-0 col-lg-11 coloring_list_text justify-content-start front-list-new-np-l">{{ colored.description }}</div>
                         <div class="rate_coloring_list col-12 offset-xl-5 col-xl-6 offset-lg-3 col-lg-8 text-md-right">
-
                             <span v-show="colored.type_of_like=='1'"  class="like_up1"   v-on:click="setLike('1',colored.id,coloring_list)" ><span  class="iconify" data-icon="ant-design:like-filled" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
                             <span v-show="colored.type_of_like==('0'||'2')"  class="like_down2" v-on:click="setLike('1',colored.id,coloring_list)" ><span  class="iconify" data-icon="ant-design:like-outlined" v-bind:data-width='menu_data_width' v-bind:data-height='menu_data_height'></span></span>
                             <span class="coloring_rate">{{ colored.count_of_like }}</span>
@@ -50,7 +47,6 @@
                             <span v-if="menu_size<993" class="iconify follow_arrow_mob" data-icon="akar-icons:arrow-forward-thick-fill" v-bind:data-width='menu_data_width_arrow'  v-bind:data-height='menu_data_height_arrow'></span>
                         </div>
                     </div>
-<!--                        </span>-->
                     </span>
                 </div>
 
