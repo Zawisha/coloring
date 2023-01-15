@@ -67,6 +67,11 @@ class LoginController extends Controller
             session()->put('url.intended', $urlPrevious);
         }
 
-        return view('auth.login');
+        return view('auth.login')
+            ->with(
+                [
+                    'title' =>'Вход в систему virask', 'description' =>'Введите логин и пароль для входа в систему virask']
+            )
+            ;
     }
 }

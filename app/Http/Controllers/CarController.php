@@ -258,7 +258,10 @@ class CarController extends Controller
     }
     public function helper()
     {
-        return view('main.car');
+        return view('main.car')
+            ->with(['title'=>'Машинки для детей','description'=>'Машинки для детей любого возраста']);
+
+        ;
     }
     public function check_user(Request $request)
     {

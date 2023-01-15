@@ -62,6 +62,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
     protected function create(array $data)
     {
         $nickname=$data['name'];
@@ -71,5 +72,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function showRegistrationForm()
+    {
+        return view('auth.register')
+            ->with(
+                [
+                    'title' =>'Регистрация в системе virask', 'description' =>'Придумайте логин и пароль для регистрации в системе virask']
+            );
     }
 }

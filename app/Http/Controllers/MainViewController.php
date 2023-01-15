@@ -97,7 +97,11 @@ class MainViewController extends Controller
    }
    public function success()
    {
-       return view('main.success')->with('auth_user',  auth()->user());
+       return view('main.success')
+           ->with('auth_user',  auth()->user())
+           ->with(['title'=>'Спасибо за раскраску',
+               'description'=>'Спасибо за добавленную раскраску',
+           ]);
    }
    public function add_coloring_user()
    {
@@ -155,11 +159,18 @@ class MainViewController extends Controller
     }
     public function front_fairy_list()
     {
-        return view('main.fairy')->with('auth_user',  auth()->user());
+        return view('main.fairy')
+            ->with('auth_user',  auth()->user())
+            ->with(['title'=>'Сказки для детей','description'=>'Сказки для детей любого возраста']);
+
+        ;
     }
     public function front_video_list()
     {
-        return view('main.video')->with('auth_user',  auth()->user());
+        return view('main.video')
+            ->with('auth_user',  auth()->user())
+            ->with(['title'=>'Видео для детей','description'=>'Видео для детей любого возраста'])
+            ;
     }
     public function front_cat_list()
     {
@@ -234,12 +245,12 @@ class MainViewController extends Controller
             $same_colorings_new=$same_colorings_new->shuffle();
             $same_colorings=$same_colorings->shuffle();
             $merged = $same_colorings->merge($same_colorings_new);
-
-
+            $title=$coloring[0]['name'] .' Разукрашенная, версия '.$coloring_option[0]['id'];
+            $description=$coloring[0]['description'].' Разукрашенная, версия '.$coloring_option[0]['id'].', разукрасил '.$coloring_option[0]['user_name'];
             return view('main.coloring_decorated_one')->with('auth_user', auth()->user())
                 ->with(
                     [   'coloring' => $coloring,'coloring_decorated' => $coloring_option,
-                        'title' => $coloring[0]['name'], 'description' => $coloring[0]['description'],
+                        'title' => $title, 'description' => $description,
                         'slugMain' => $coloring[0]['slug'],
                         'same_colorings' => $merged],
                 );
