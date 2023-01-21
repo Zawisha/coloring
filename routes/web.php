@@ -33,6 +33,7 @@ Route::post('/get_coloring_list_by_cat', [\App\Http\Controllers\ColoringControll
 Route::post('/get_coloring_list_by_tag', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_by_tag'])->name('get_coloring_list_by_tag');
 Route::post('/get_coloring_list_liked', [\App\Http\Controllers\ColoringController::class, 'get_coloring_list_liked'])->name('get_coloring_list_liked');
 Route::post('/get_decorated_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_decorated_coloring_list'])->name('get_decorated_coloring_list');
+Route::post('/get_user_decorated_coloring_list', [\App\Http\Controllers\ColoringController::class, 'get_user_decorated_coloring_list'])->name('get_user_decorated_coloring_list');
 Route::get('/coloring/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_coloring'])->name('get_one_coloring');
 Route::get('/coloring/decorated/{slug}', [\App\Http\Controllers\MainViewController::class, 'get_one_decorated_coloring'])->name('get_one_decorated_coloring');
 Route::get('/fairy-list', [\App\Http\Controllers\MainViewController::class, 'front_fairy_list'])->name('front_fairy_list');
@@ -68,6 +69,8 @@ Route::post('/invite_users', [\App\Http\Controllers\CarController::class, 'invit
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/decorated_user_list', [App\Http\Controllers\MainViewController::class, 'decorated_user_list'])->name('decorated_user_list');
+
     Route::get('/add_coloring_user_option/{slug}', [App\Http\Controllers\MainViewController::class, 'add_coloring_user_option'])->name('add_coloring_user_option');
     Route::get('/profile', [App\Http\Controllers\MainViewController::class, 'profile'])->name('profile');
     Route::get('/new_password', [App\Http\Controllers\MainViewController::class, 'new_password'])->name('new_password');

@@ -372,6 +372,65 @@ class ColoringController extends Controller
             'like_arr' => $list_like,
         ], 201);
     }
+    public function get_user_decorated_coloring_list(Request $request)
+    {
+        $offset =  $request->input('offset');
+        $user = Auth::user();
+
+        $list_colored = ColoringUserOption::where('user_id', $user->id)
+            ->offset($offset)
+            ->limit(20)
+            ->orderBy('id', 'desc')
+            ->get();
+        foreach ($list_colored as $colored)
+        {
+            $one_color = Colored::where('id', $colored['coloring_id'])->get();
+            //добавить название раскраски старой к новой раскрашенной чтобы вывести на фронте
+            $colored['name_old']=$one_color[0]['name'];
+        }
+        $count = ColoringUserOption::where('user_id', $user->id)->count();
+
+        //работа с like
+        $col_ids_arr=[];
+        foreach ($list_colored as $one_colored)
+        {
+            array_push($col_ids_arr, $one_colored['id']);
+        }
+        $list_like=[];
+        $userId = Auth::id();
+        if(Auth::id())
+        {
+            $list_like = Like::whereIn('post_id', $col_ids_arr)->where('user_id', $userId)->where('type_of_content', '3')->get();
+        }
+        $list_like_counter = LikeCounter::whereIn('post_id', $col_ids_arr)->where('type_of_content', '3')->get();
+        foreach ($list_colored as $key=>$colored)
+        {
+            $colored['type_of_like']='0';
+            $colored['count_of_like']='0';
+            foreach ($list_like as $like)
+            {
+                if($colored['id']==$like['post_id'])
+                {
+                    $list_colored[$key]['type_of_like']=$like['type_of_like'];
+                }
+            }
+            foreach ($list_like_counter as $like_count)
+            {
+                if($colored['id']==$like_count['post_id'])
+                {
+                    $list_colored[$key]['count_of_like']=$like_count['count_of_like'];
+                }
+            }
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'list_colored' => $list_colored,
+            'tipes_count' => $count,
+            'like_arr' => $list_like,
+        ], 201);
+    }
+
     public function get_decorated_coloring_list(Request $request)
     {
         $offset =  $request->input('offset');

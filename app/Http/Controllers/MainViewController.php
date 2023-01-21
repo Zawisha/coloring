@@ -37,6 +37,14 @@ class MainViewController extends Controller
                'search_q'=>$search
                ]);
    }
+   //список разукрашеннвх раскрасок
+   public function decorated_user_list()
+   {
+       return view('main.decorated_user_list')->with('auth_user',  auth()->user())
+           ->with(['title'=>'Список раскрашеннвх пользователем.',
+               'description'=>'Творческая социальная сеть для развития детей и помощи родителям. Бесплатные раскраски, известные сказки, популярные мультфильмы и видео.'
+           ]);
+   }
    public function color_resize()
    {
        $colored_list = Colored::all();

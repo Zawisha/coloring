@@ -39,6 +39,7 @@
             <div class="col-md-4">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center experience" ><span v-on:click="go_to_liked()" class="liked_profile_button border col-12 px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Избранное</span></div><br>
+                    <div class="d-flex justify-content-between align-items-center experience" ><span v-on:click="go_to_decorated()" class="liked_profile_button border col-12 px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Мои раскрашки</span></div><br>
                     <div class="col-md-12"><label class="labels profile_text" v-on:click="change_password()">Поменять пароль</label></div><br>
                     <div class="col-md-12"><label v-on:click="logout()" class="labels profile_text">Выйти</label></div>
                 </div>
@@ -103,6 +104,10 @@ export default {
         go_to_liked()
         {
             window.location.href =('/liked')
+        },
+        go_to_decorated()
+        {
+            window.location.href =('/decorated_user_list')
         },
         change_password()
         {

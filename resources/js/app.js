@@ -56,6 +56,7 @@ Vue.component('front-coloring-user-option', require('./components/FrontColoringU
 Vue.component('decorated-coloring-list-component', require('./components/DecoratedColoringListComponent').default);
 Vue.component('get-telegram-users', require('./telegram/GetTelegramUsers').default);
 Vue.component('telegram-sending-component', require('./telegram/TelegramSendingComponent').default);
+Vue.component('front-decorated-user-list-component', require('./components/FrontDecoratedUserListComponent').default);
 import { Icon } from '@iconify/vue2';
 import iosAlertView from 'vue-ios-alertview';
 Vue.use(iosAlertView);
