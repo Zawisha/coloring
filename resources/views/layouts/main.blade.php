@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Раскраски'  }}</title>
     <meta name="description" content='{{ $description ?? 'Разукрашивай вместе с нами'}}'>
+    <link rel=”canonical” href=”https://virask.ru/”>
     <link rel="icon" type="image/png" href="{{ asset('/images/main_images/fav32.jpg') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
