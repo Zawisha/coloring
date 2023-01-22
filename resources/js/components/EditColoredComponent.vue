@@ -243,16 +243,17 @@ export default {
                 this.alert_arr.push('Заполните поле "Описание раскраски"');
                 this.isActive_description=true;
             }
+
             if((this.description.length<10)&&(this.description!==""))
             {
                 this.alert=true;
                 this.alert_arr.push('Поле "Описание раскраски не должно быть короче 10 символов"');
                 this.isActive_description=true;
             }
-            if((this.description.length>130))
+            if((this.description.length>300))
             {
                 this.alert=true;
-                this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 130 символов"');
+                this.alert_arr.push('Поле "Описание раскраски не должно быть длиннее 300 символов"');
                 this.isActive_description=true;
             }
             if(this.tag_list=='') {
