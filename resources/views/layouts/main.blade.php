@@ -27,6 +27,7 @@
     <!-- Active js -->
     <script src="{{ asset('js/js_main/active.js') }}" ></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -139,10 +140,14 @@
             </div>
                         @yield('content')
         </div>
-        <div class="col-2 right_menu_block hide_on_mob">
+        <div class="col right_menu_block hide_on_mob">
             <div class="right_menu_nav_reklama row col-12">
-                <div>
-{{--                    <img src="{{ url('/images/colorings/1_1651087261.jpg') }}" class=" ">--}}
+{{--                ДОДЕЛАТЬ НАСТРОЙКИ КНОПКУ И ОТСТУПЫ А ТАК ЖЕ НА МОБИЛКЕ ПРИДУМАТЬ КНОПКИ ВМЕСТО ЭТИХ--}}
+                <div class="col-12 row main_right_col_border">
+                    <span class="col-1 no_padding_left izbr_star">
+                         <iconify-icon icon="fluent:star-emphasis-20-regular" width="40" height="38"></iconify-icon>
+                    </span>
+                    <div class="col izbrannoe">Избранное</div>
                 </div>
             </div>
         </div>
@@ -156,7 +161,14 @@
 </body>
 </html>
 <script>
-    // alert(window.innerWidth);
+    if(window.innerWidth>1114 && window.innerWidth<1369)
+    {
+        $(".izbr_star").hide();
+    }
+    if(window.innerWidth >992 && window.innerWidth<1115)
+    {
+        $(".izbrannoe").hide();
+    }
     if(window.innerWidth >992 && window.innerWidth<1172)
     {
         for(let i = 0; i < 3; i++)
@@ -164,6 +176,8 @@
             document.getElementsByClassName("iconify_main")[i].setAttribute("data-width", "0");
             document.getElementsByClassName("iconify_main")[i].setAttribute("data-height", "0");
         }
+
+
 
     }
     if(window.innerWidth >1172 && window.innerWidth<1232)
@@ -173,7 +187,8 @@
             document.getElementsByClassName("iconify_main")[i].setAttribute("data-width", "30");
             document.getElementsByClassName("iconify_main")[i].setAttribute("data-height", "30");
         }
-
+        document.getElementsByClassName("iconify_right")[0].setAttribute("data-height", "40");
+        document.getElementsByClassName("iconify_right")[0].setAttribute("data-width", "40");
     }
     if(window.innerWidth>1231)
     {
@@ -191,4 +206,5 @@
     {
         $(".hide_on_mob").hide();
     }
+
 </script>
