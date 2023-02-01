@@ -11,9 +11,9 @@
                                 <h5 class="col-12 custom_text_comp_header">{{ colored.name_old }}</h5>
                                 <p class="col-12 custom_text_comp">{{ colored.description }}</p>
                                 <div class="list-inline contacts-social mt-3 mb-3">
-                                    <span v-if="colored.published_db==1" v-on:click="moderation(index,colored.id)" class="list-inline-item bg-light-admin text-white border-0 change_status_col_fai"><i class="bx bx-check "></i></span>
-                                    <span v-else v-on:click="moderation(index,colored.id)"  class="list-inline-item bg-light-admin text-white border-0 change_status_col_fai"><i class="bx bx-question-mark "></i></span>
-                                    <span class="list-inline-item bg-light-admin text-white border-0 change_status_col_fai"v-on:click="moderation_delete(index,colored.id)"><i class="bx bxs-x-circle"></i></span>
+                                    <span v-if="colored.published_db==1" v-on:click="moderation(index,colored.id)" class="list-inline-item text-white bg-light-border change_status_col_fai"><i class="bx bx-check "></i></span>
+                                    <span v-else v-on:click="moderation(index,colored.id)"  class="list-inline-item  text-white bg-light-border change_status_col_fai"><i class="bx bx-question-mark "></i></span>
+                                    <span class="list-inline-item text-white bg-light-border change_status_col_fai"v-on:click="moderation_delete(index,colored.id)"><i class="bx bxs-x-circle"></i></span>
                                 </div>
                                 <div class="d-grid"> <a :href="'/admin/edit_coloring/' + colored.id " class="btn btn-light radius-15">Редактировать</a>
                                 </div>
