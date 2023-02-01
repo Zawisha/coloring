@@ -131,6 +131,7 @@
         </div>
         <div class="col-12 col-lg-8 green_menu_header  ">
             <div class="col-12 row green_menu_header  ">
+
 {{--                align-self-center--}}
                <a href="/cat"  class="green_menu_element col green_menu_element_0 d-flex justify-content-center align-items-center">Категории</a>
                <a href="/"  class="green_menu_element col green_menu_element_1 d-flex justify-content-center align-items-center">Топ <br>раскрасок</a>
@@ -138,16 +139,39 @@
                <a href="/"  class="green_menu_element col green_menu_element_3 d-flex justify-content-center align-items-center">Топ художников</a>
                <a href="/"  class="green_menu_element col green_menu_element_4 d-flex justify-content-center align-items-center">Топ новых раскрасок</a>
             </div>
+            {{--                круглое мобильное меню--}}
+            <nav class="menu_round hide_on_desc path_div_hide" >
+                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+                <label class="menu-open-button" for="menu-open">
+                    <span class="lines line-1"></span>
+                    <span class="lines line-2"></span>
+                    <span class="lines line-3"></span>
+                </label>
+
+                <a href="/" class="menu-item blue"> <i class="fa fa-gear"></i> </a>
+                <a href="/liked" class="menu-item green"> <i class="fa fa-star"></i> </a>
+{{--                <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>--}}
+{{--                <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>--}}
+{{--                <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>--}}
+{{--                <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>--}}
+            </nav>
+            {{--              конец круглое мобильное меню--}}
+
                         @yield('content')
         </div>
         <div class="col right_menu_block hide_on_mob">
             <div class="right_menu_nav_reklama row col-12">
-{{--                ДОДЕЛАТЬ НАСТРОЙКИ КНОПКУ И ОТСТУПЫ А ТАК ЖЕ НА МОБИЛКЕ ПРИДУМАТЬ КНОПКИ ВМЕСТО ЭТИХ--}}
-                <div class="col-12 row main_right_col_border">
+                <div class="col-12 row main_right_col_border r_menu_first_block" onclick="go('/liked')">
                     <span class="col-1 no_padding_left izbr_star">
                          <iconify-icon icon="fluent:star-emphasis-20-regular" width="40" height="38"></iconify-icon>
                     </span>
                     <div class="col izbrannoe">Избранное</div>
+                </div>
+                <div class="col-12 row main_right_col_border r_menu_second_block" onclick="go('/')">
+                    <span class="col-1 no_padding_left izbr_star">
+                         <iconify-icon icon="ph:gear-bold" width="40" height="38"></iconify-icon>
+                    </span>
+                    <div class="col izbrannoe">Настройки</div>
                 </div>
             </div>
         </div>
@@ -161,6 +185,11 @@
 </body>
 </html>
 <script>
+    let check_path=window.location.pathname.split('/');
+    if(check_path[1]=="login"||check_path[1]=="register"||check_path[1]=="add_coloring_user")
+    {
+        $(".path_div_hide").hide();
+    }
     if(window.innerWidth>1114 && window.innerWidth<1369)
     {
         $(".izbr_star").hide();
@@ -206,5 +235,14 @@
     {
         $(".hide_on_mob").hide();
     }
+    if(window.innerWidth>992)
+    {
+        $(".hide_on_desc").hide();
+    }
+    function go(path)
+    {
+        location.href =path;
+    }
+
 
 </script>

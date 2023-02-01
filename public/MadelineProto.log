@@ -1,0 +1,1296 @@
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+MTProto:        	Filling database cache. This can take few minutes.
+MTProto:        	Cache filled.
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Disconnecting all before reconnect!
+DataCenterConnection: 	Disconnecting from shared DC 
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.55:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Reconnecting to DC 2_media (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.222:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2_media.0
+Session:        	Resetting session in DC 2_media.0...
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Reconnecting to DC 4_media (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4_media.0
+Session:        	Resetting session in DC 4_media.0...
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.116:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+Connection:     	Connected to DC 4.0!
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+Connection:     	Connected to DC 2.0!
+PingLoop:       	Ping DC 2.0
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+Connection:     	Connected to DC 3.0!
+PingLoop:       	Ping DC 3.0
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+Connection:     	Connected to DC 4_media.0!
+Connection:     	Connecting to DC 4_media.1
+Session:        	Resetting session in DC 4_media.1...
+Connection:     	Connected to DC 2_media.0!
+Connection:     	Connecting to DC 2_media.1
+Session:        	Resetting session in DC 2_media.1...
+Connection:     	Connected to DC 1.0!
+PingLoop:       	Ping DC 1.0
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+PingLoop:       	Ping DC 5.0
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+Connection:     	Connected to DC 4_media.1!
+Connection:     	Connecting to DC 4_media.2
+Session:        	Resetting session in DC 4_media.2...
+Connection:     	Connected to DC 2_media.1!
+Connection:     	Connecting to DC 2_media.2
+Session:        	Resetting session in DC 2_media.2...
+Connection:     	Connected to DC 2_media.2!
+Connection:     	Connecting to DC 2_media.3
+Session:        	Resetting session in DC 2_media.3...
+Connection:     	Connected to DC 4_media.2!
+Connection:     	Connecting to DC 4_media.3
+Session:        	Resetting session in DC 4_media.3...
+Connection:     	Connected to DC 2_media.3!
+Connection:     	Connecting to DC 2_media.4
+Session:        	Resetting session in DC 2_media.4...
+Connection:     	Connected to DC 4_media.3!
+Connection:     	Connecting to DC 4_media.4
+Session:        	Resetting session in DC 4_media.4...
+Session:        	Garbage collected 3 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 3 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Connection:     	Connected to DC 2_media.4!
+DataCenterConnection: 	Restoring 0 messages to DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenter:     	OK!
+Connection:     	Connected to DC 4_media.4!
+DataCenterConnection: 	Restoring 0 messages to DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+PingLoop:       	Ping DC 2.0
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+PingLoop:       	Ping DC 3.0
+DataCenterConnection: 	Initing auth for DC 4
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC 2_media
+DataCenterConnection: 	Initing auth for DC 4_media
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update feed loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update feed loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in getUpdate loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in getUpdate loop generic
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update seq loop
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update seq loop
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.55:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 2_media (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.222:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 4_media (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.116:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC 2_media
+DataCenterConnection: 	Initing auth for DC 4_media
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update feed loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in getUpdate loop generic
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update seq loop
+Session:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+PingLoop:       	Ping DC 2.0
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC 2_media
+DataCenterConnection: 	Initing auth for DC 4_media
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update feed loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in getUpdate loop generic
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update seq loop
+AckHandler:     	Could not find users.getUsers with message ID 7172231901237739524 in new_outgoing!
+MTProto:        	AUTH_KEY_UNREGISTERED
+MTProto:        	Starting update system
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update feed loop generic
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in getUpdate loop generic
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+InternalLoop:   	Waiting for auth in update seq loop
+API:            	MadelineProto is ready!
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.ipcState.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.ipcState.php.lock...
+MTProto:        	Accepted IPC client connection!
+Login:          	Sending code...
+Session:        	Garbage collected 2 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 1 left
+Login:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.
+Login:          	Logging in as a normal user...
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 3, 0 left
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+PingLoop:       	Ping DC 2.0
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Trying to copy authorization from DC 2 to DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Trying to copy authorization from DC 2 to DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Trying to copy authorization from DC 2 to DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Trying to copy authorization from DC 2 to DC 5
+Session:        	Garbage collected 3 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 3 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+GarbageCollector: 	gc_collect_cycles done. Cleaned memory: 0 Mb
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 2 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 9 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 1 left
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 5.0
+DataCenterConnection: 	Initing auth for DC 2_media
+DataCenterConnection: 	Initing auth for DC 4_media
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC 2_media
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4_media
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Logged in successfully!
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop generic...
+FeedLoop:       	Resumed update feed loop channel 1521384356
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop channel 1889550754
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 1, 1 left
+FeedLoop:       	Getdiff fed me message of type messageService in update feed loop channel 1889550754...
+FeedLoop:       	Getdiff fed me message of type message in update feed loop channel 1521384356...
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 5, 1 left
+GarbageCollector: 	gc_collect_cycles done. Cleaned memory: 0 Mb
+Session:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 11 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+ReadLoop:       	danog\MadelineProto\NothingInTheSocketException in /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Stream/Common/BufferedRawStream.php:180
+Stack trace:
+#0 [internal function]: danog\MadelineProto\Stream\Common\BufferedRawStream->bufferReadGenerator()
+#1 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(112): Generator->send()
+#2 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Internal/Placeholder.php(149): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}()
+#3 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve()
+#4 /home/andrei/apache_server/coloring/vendor/amphp/byte-stream/lib/ResourceInputStream.php(101): Amp\Deferred->resolve()
+#5 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(327): Amp\ByteStream\ResourceInputStream::Amp\ByteStream\{closure}()
+#6 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(127): Amp\Loop\NativeDriver->selectStreams()
+#7 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(138): Amp\Loop\NativeDriver->dispatch()
+#8 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(72): Amp\Loop\Driver->tick()
+#9 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop.php(95): Amp\Loop\Driver->run()
+#10 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(294): Amp\Loop::run()
+#11 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(110): danog\MadelineProto\Tools::wait()
+#12 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(134): {closure}()
+#13 {main}
+ReadLoop:       	Got nothing in the socket in DC 1.0, reconnecting...
+Connection:     	Reconnecting DC 1.0
+Connection:     	Disconnecting from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenter:     	Reconnecting to DC 1 (0) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.55:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (0)
+Connection:     	Connecting to DC 1.0
+Connection:     	Connected to DC 1.0!
+PingLoop:       	Ping DC 1.0
+DataCenter:     	OK!
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+ReadLoop:       	danog\MadelineProto\NothingInTheSocketException in /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Stream/Common/BufferedRawStream.php:180
+Stack trace:
+#0 [internal function]: danog\MadelineProto\Stream\Common\BufferedRawStream->bufferReadGenerator()
+#1 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(112): Generator->send()
+#2 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Internal/Placeholder.php(149): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}()
+#3 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve()
+#4 /home/andrei/apache_server/coloring/vendor/amphp/byte-stream/lib/ResourceInputStream.php(101): Amp\Deferred->resolve()
+#5 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(327): Amp\ByteStream\ResourceInputStream::Amp\ByteStream\{closure}()
+#6 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(127): Amp\Loop\NativeDriver->selectStreams()
+#7 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(138): Amp\Loop\NativeDriver->dispatch()
+#8 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(72): Amp\Loop\Driver->tick()
+#9 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop.php(95): Amp\Loop\Driver->run()
+#10 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(294): Amp\Loop::run()
+#11 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(110): danog\MadelineProto\Tools::wait()
+#12 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(134): {closure}()
+#13 {main}
+ReadLoop:       	Got nothing in the socket in DC 4_media.2, reconnecting...
+Connection:     	Reconnecting DC 4_media.2
+Connection:     	Disconnecting from DC 4_media.2
+Connection:     	Disconnected from DC 4_media.2
+DataCenter:     	Reconnecting to DC 4_media (2) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (2)
+Connection:     	Connecting to DC 4_media.2
+Connection:     	Connected to DC 4_media.2!
+DataCenter:     	OK!
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+PeerHandler:    	Only have min peer for 5870458183 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5870458183, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+PeerHandler:    	Only have min peer for -1001509608911 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer -1001509608911, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+PeerHandler:    	Only have min peer for 5870458183 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5870458183, this may fail
+PeerHandler:    	Only have min peer for 5870458183 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5870458183, this may fail
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 17 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 15 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+APIWrapper:     	Saved session!
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+ReadLoop:       	danog\MadelineProto\NothingInTheSocketException in /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Stream/Common/BufferedRawStream.php:180
+Stack trace:
+#0 [internal function]: danog\MadelineProto\Stream\Common\BufferedRawStream->bufferReadGenerator()
+#1 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(112): Generator->send()
+#2 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Internal/Placeholder.php(149): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}()
+#3 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve()
+#4 /home/andrei/apache_server/coloring/vendor/amphp/byte-stream/lib/ResourceInputStream.php(101): Amp\Deferred->resolve()
+#5 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(327): Amp\ByteStream\ResourceInputStream::Amp\ByteStream\{closure}()
+#6 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/NativeDriver.php(127): Amp\Loop\NativeDriver->selectStreams()
+#7 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(138): Amp\Loop\NativeDriver->dispatch()
+#8 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop/Driver.php(72): Amp\Loop\Driver->tick()
+#9 /home/andrei/apache_server/coloring/vendor/amphp/amp/lib/Loop.php(95): Amp\Loop\Driver->run()
+#10 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(294): Amp\Loop::run()
+#11 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(110): danog\MadelineProto\Tools::wait()
+#12 /home/andrei/apache_server/coloring/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(134): {closure}()
+#13 {main}
+ReadLoop:       	Got nothing in the socket in DC 5.0, reconnecting...
+Connection:     	Reconnecting DC 5.0
+Connection:     	Disconnecting from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenter:     	Reconnecting to DC 5 (0) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.116:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (0)
+Connection:     	Connecting to DC 5.0
+Connection:     	Connected to DC 5.0!
+PingLoop:       	Ping DC 5.0
+DataCenter:     	OK!
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 6 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 1 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5438922255 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5438922255, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+PeerHandler:    	Only have min peer for 5438922255 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5438922255, this may fail
+PeerHandler:    	Only have min peer for 1809786347 in database, trying to fetch full info
+FeedLoop:       	Getdiff fed me message of type message in update feed loop channel 1509608911...
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 2 left
+PeerHandler:    	MSG_ID_INVALID
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5438922255 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5438922255, this may fail
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 2.0
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 6 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+PeerHandler:    	Only have min peer for 5438922255 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5438922255, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037802) in update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037803) in update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 2 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+PeerHandler:    	Only have min peer for 5438922255 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5438922255, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037805) in update feed loop channel 1509608911
+Session:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 9 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+APIWrapper:     	Saved session!
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037806) in update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 6 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+MTProto:        	Accepted IPC client connection!
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop channel 1518262151
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 1518262151
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+MTProto:        	Accepted IPC client connection!
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 1 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 1518262151
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1518262151
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037809) in update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1518262151
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 15 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 4.0
+Session:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 4 outgoing messages in DC 2, 3 left
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 2 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037810) in update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037811) in update feed loop channel 1509608911
+Session:        	Garbage collected 14 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	MSGID duplicate (2037812) in update feed loop channel 1509608911
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5576136520 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5576136520, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 9 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5153325558 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5153325558, this may fail
+PeerHandler:    	Only have min peer for 5251642362 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5251642362, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	MSGID duplicate (2037813) in update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 2 left
+Session:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 2.0
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 5 left
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PeerHandler:    	Only have min peer for 5512151178 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5512151178, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 1518262151
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1518262151
+Session:        	Garbage collected 2 incoming messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+FeedLoop:       	Resumed update feed loop channel 1518262151
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 1518262151
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop channel 1518262151
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+PeerHandler:    	Only have min peer for 5576136520 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5576136520, this may fail
+FeedLoop:       	Resumed update feed loop channel 1518262151
+FeedLoop:       	Got channel too long update, getting difference...
+FeedLoop:       	Resumed update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	MSGID duplicate (2037814) in update feed loop channel 1509608911
+FeedLoop:       	Resumed update feed loop channel 1509608911
+Session:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 2, 5 left
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /home/andrei/apache_server/coloring/public/my_mad_sessions/+79154325256/session.madeline.lightState.php.lock...
+APIWrapper:     	Saved session!
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 2.0
+Session:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 5.0
+Session:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop:       	Ping DC 3.0
+Session:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updateShort) received via the socket...
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+PingLoop:       	Ping DC 1.0
+Session:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+PeerHandler:    	Only have min peer for 5512151178 in database, trying to fetch full info
+MinDatabase:    	Don't have origin info with min peer 5512151178, this may fail
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+UpdateHandler:  	Parsing updates (updates) received via the socket...
+SeqLoop:        	Was fed updates of type updates...
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Session:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 6 outgoing messages in DC 2, 0 left
+Session:        	Garbage collected 2 outgoing messages in DC 2, 5 left
+Session:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session:        	Garbage collected 5 outgoing messages in DC 2, 0 left

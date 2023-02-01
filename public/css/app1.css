@@ -50,6 +50,7 @@
 .log_reg_form {
     margin-top: 70px;
     margin-bottom: 20px;
+    padding-left: 0px!important;
 }
 .cart_product_img {
     cursor: pointer;
