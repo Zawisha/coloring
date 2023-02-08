@@ -125,6 +125,7 @@ Route::post('/delete_colored', [\App\Http\Controllers\ColoringController::class,
 Route::post('/delete_colored_decoration', [\App\Http\Controllers\ColoringController::class, 'delete_colored_decoration'])->name('delete_colored_decoration');
 Route::post('/delete_video', [\App\Http\Controllers\VideoController::class, 'delete_video'])->name('delete_video');
 Route::get('/admin/add_video', [App\Http\Controllers\AdminController::class, 'add_video'])->name('add_video');
+Route::post('/get_roles_list', [App\Http\Controllers\AdminController::class, 'get_roles_list'])->name('get_roles_list');
 Route::post('/upload_video', [\App\Http\Controllers\VideoController::class, 'upload_video'])->name('upload_video');
 Route::get('/admin/edit_video/{post_id}', [App\Http\Controllers\AdminController::class, 'edit_video'])->name('edit_video');
 Route::post('/get_edit_video', [App\Http\Controllers\VideoController::class, 'get_edit_video'])->name('get_edit_video');

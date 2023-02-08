@@ -5,27 +5,21 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Ник</th>
-                    <th scope="col">Почта</th>
-                    <th scope="col">Статус(админ,редактор,юзер)</th>
+                    <th scope="col" class="admin_text_color">id</th>
+                    <th scope="col" class="admin_text_color">Ник</th>
+                    <th scope="col" class="admin_text_color">Почта</th>
+                    <th scope="col" class="admin_text_color">Статус(админ,редактор,юзер)</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="(user,index) in users_list">
-                    <th scope="row">{{ user.id }}</th>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
+                    <th scope="row" class="admin_text_color">{{ user.id }}</th>
+                    <td class="admin_text_color">{{ user.name }}</td>
+                    <td class="admin_text_color">{{ user.email }}</td>
                     <td>
-                        <input type="radio" value="1" v-model="user.perm" :checked="user.perm=='1'" v-on:change="change_permission(user.id,user.perm)">
-                        <label>Админ</label>
-                        <br>
-                        <input type="radio" value="2" v-model="user.perm" :checked="user.perm=='2'" v-on:change="change_permission(user.id,user.perm)">
-                        <label>Редактор</label>
-                        <br>
-                        <input type="radio" value="0" v-model="user.perm" :checked="user.perm=='0'" v-on:change="change_permission(user.id,user.perm)">
-                        <label>Юзер</label>
-                        <br>
+                        <select  @change="change_permission(user.id,user.perm)"  v-model="user.perm">
+                            <option v-for="(elem,key) in roles_list" :value="elem.role_id" class="sel_cust">{{ elem.name }}</option>
+                        </select>
                     </td>
                 </tr>
                 </tbody>
@@ -67,19 +61,40 @@ export default {
             //ниже массив в который добавляем страницы пагинации 1 2 3 и т.д.
             pagination_numb:[],
             isModalVisible: false,
+            roles_list:[]
         };
     },
     mounted() {
         this.get_users_list(this.users_list);
+        this.get_roles_list(this.roles_list);
     },
     methods: {
         change_permission(user_id,user_perm)
         {
+            console.log(user_id,user_perm)
             axios
                 .post('/change_permission',{
                     user_id:user_id,
                     user_perm:user_perm,
                 })
+        },
+        get_roles_list(inp)
+        {
+            axios
+                .post('/get_roles_list',{
+                })
+                .then(({ data }) => (
+                    // inp=data.roles,
+                            data.roles.forEach(function(entry) {
+                                inp.push({
+                                    id:entry.id,
+                                    name:entry.name,
+                                    role_id:entry.role_id,
+                                    slug:entry.slug
+                                });
+                            })
+                    )
+                );
         },
         get_users_list(inp)
         {
@@ -123,9 +138,9 @@ export default {
         new_page(page_id)
         {
             this.pagination_numb=[]
-            this.coloring_list=[]
+            this.users_list=[]
             this.current_page=page_id
-            this.get_coloring_list(this.coloring_list);
+            this.get_users_list(this.users_list);
         },
         pagination_counter()
         {

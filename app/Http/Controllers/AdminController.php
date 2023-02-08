@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admins;
 use App\Models\Fairy;
 use App\Models\FairyPage;
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -140,5 +141,13 @@ class AdminController extends Controller
             update([
                 'user_permission_id' => $user_perm,
             ]);        }
+    }
+    public function get_roles_list()
+    {
+        $roles = Roles::all();
+        return response()->json([
+            'status' => 'success',
+            'roles' => $roles,
+        ], 201);
     }
 }
