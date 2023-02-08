@@ -1,441 +1,596 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
-        <loc>http://localhost/cat/novaya-kategoriya-1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/knizhki1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/profile</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/skazki</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/register</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/matematika1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/lalafanfan-lalafanfan-duck</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/uravneniya</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/zhivotnye</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/migranty</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/toka-boka-toca-boca</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/svetoforyd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/haggi-vaggi-i-kissi-missi</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/snezhki</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/russkij-alfavit</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/video</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/propisi-russkogo-alfavita</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/foto</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/raskraski-na-novyj-god</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/pticy</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/raskraski-kukly-barbi-barbie</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/misha</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/cat/raskraski-antistress</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/krokodil</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-animeshnyj-kot</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/kot-v-shlyape</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-portret-krasivogo-ko</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/vorona</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/haggi-vaggi</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/jcuf</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/kissi-missi</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/fyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/haggi-vaggi-i-kissi-missi</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/fyvvv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/haggi-vaggi-monstr</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/jcucu</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-haggi-vaggi</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/vjcvjcv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/kissi-missi-raskraska</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/dqwdqwd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/komanda-toka-boka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/asdasd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/toka-boka-nari-v-komnate</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/munin</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/lalafanfan-v-shapochke</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/dasdasd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-shopkins-shopkins-avokado</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/dsadasd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-aleksiya-iz-vip-pets</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/asdasdasd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-a-aist</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/vfyvfyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-b-baran</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/tesmt</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-v-verblyud</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/ngnpngpng</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-g-grib</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/dvarf</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-d</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/fyvfyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-e</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/qqq1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-yo</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/asdasdq</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-zh</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/adcwq</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-z</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/asdqwcqwc</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-i-indyuk</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/fyvfyyvfy</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-j-jogurt</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/schyachsj</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-k-koshka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/final</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-l-los</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/final-mstiteli</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-m-medved</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/bismark</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-n-nosorog</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/yfvfyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-o-osel</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/filmy</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-p-pchela</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/mobilka-dva</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-r-rys</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/listik</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-s-solnce</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/avyavy</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-t-tigr</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/pirat</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-u-utka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/cat/dinamo</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-f-filin</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/raskraska-portret1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-h-homyak</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/raskraska-animeshnyj-kot</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-c-cyplenok</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-ch-chajnik</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/cat-twice-n</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-sh-shmel</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/testovoe-v</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-sh-zubnaya-shyotka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/testovoed</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-u-tverdyj-znak</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/novoevv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-y-rys</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/testovaya1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-myagkij-znak</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/last-image</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-e-eskimos</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vot-ona</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-yu-yunga</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/pirat</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/raskraska-alfavita-bukva-ya-yabloko</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/flagshtokkk</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-a</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/dasdasdasd</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-b</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vavyavyayva</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-b-belka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vfy-vfyv-fyvfyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-b-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vjcvjc-jcv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-a-aist</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/yfvfyvfy-fyvfyv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-a-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vcv-cvc-vcv</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-v</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/vcv-cv-cv-c</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-v-vorobej</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/doom1</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-v-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/doom2</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-g</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/doom3</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-g-gus</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/doom4</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-g-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/novoevva</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-d</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/nazva-malyunka</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-d-dyatel</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
     <url>
-        <loc>http://localhost/coloring/inal-oin</loc>
-        <lastmod>2022-10-20T03:10:43+00:00</lastmod>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-d-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        </url>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-e</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-e-enot</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-e-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-yo</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-yo-yolka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-yo-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-zh</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-zh-zhuk</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-zh-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-z</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-z-zebra</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-z-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-i</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-i-indyuk</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/propisi-russkogo-alfavita-bukva-i-uchimsya-pisat</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/raskraska-antstistress-ezhik-artemka</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/raskraska-antistress-koshka-darya-v-polyah</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbie-s-sobachkoj</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/raskraska-barbie-v-letnih-ochkah</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbi-na-lyubimoj-loshadke</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/ocharovatelnyj-portret-barbie-s-ukrasheniyami</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbi-s-sumochkoj</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/princessa-barbi-v-zamke</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbi-v-dzhinsovoj-kurtochke</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbi-princessa-raskraska</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://virask.ru/coloring/barbi-s-gitaroj</loc>
+        <lastmod>2023-02-08T16:25:02+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
