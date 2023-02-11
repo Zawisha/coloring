@@ -34,7 +34,8 @@
 	<link href="{{ asset('css/css_admin/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/css_admin/icons.css') }}" rel="stylesheet">
     <script src="{{ asset('js/js_admin/adminka_menu.js') }}"></script>
-
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <!-- Theme Style CSS -->
 {{--	<link rel="stylesheet" href="/resources/css/css_admin/dark-theme.css" />--}}
 {{--	<link rel="stylesheet" href="/resources/css/css_admin/semi-dark.css" />--}}
