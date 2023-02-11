@@ -58,6 +58,9 @@
                 </div>
 
                 <div class="add_coloring_title">Добавьте изображение</div>
+                <div class="col-12 row reklama_row_main_list">
+                    <div id="yandex_rtb_R-A-1785111-6"></div>
+                </div>
                 <form @submit="formSubmit" enctype="multipart/form-data">
                     <input type="file" class="form-control" v-on:change="imgPreview" name="avatar">
                     <button class="btn btn-light-img add_coloring_title" :disabled='isDisabled_button'>Загрузить раскраску</button>
@@ -101,6 +104,9 @@ export default {
     },
     mounted() {
 
+    },
+    updated() {
+        this.show()
     },
     methods: {
         slugCheck(){
@@ -172,6 +178,15 @@ export default {
                     name: this.search_result_cat,
                 });
             }
+        },
+        show()
+        {
+            window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                    renderTo: 'yandex_rtb_R-A-1785111-6',
+                    blockId: 'R-A-1785111-6'
+                })
+            })
         },
         delete_bars()
         {

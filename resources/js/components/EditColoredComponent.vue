@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div class="col-12 row reklama_row_main_list">
+            <div id="yandex_rtb_R-A-1785111-6"></div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div v-if="success_add_final" class="alert alert-success" role="alert">
@@ -29,6 +32,9 @@
                         @submit="handleSubmit"
                         v-on:focus=delete_bars()
                     ></autocomplete>
+                </div>
+                <div class="col-12 row reklama_row_main_list">
+                    <div id="yandex_rtb_R-A-1785111-8"></div>
                 </div>
                 <div class="row float-left add_tag_in_row">
                 <div v-if="search_result!=''" class="tag_title_coloring col-4">Выбран тег: {{ search_result }}</div>
@@ -111,7 +117,25 @@ export default {
     mounted() {
         this.get_start_color(this.tag_list,this.cat_list)
     },
+    updated() {
+        this.show()
+    },
     methods: {
+        show()
+        {
+            window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                    renderTo: 'yandex_rtb_R-A-1785111-6',
+                    blockId: 'R-A-1785111-6'
+                })
+            })
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        renderTo: 'yandex_rtb_R-A-1785111-8',
+                        blockId: 'R-A-1785111-8'
+                    })
+                })
+        },
         slugCheck(){
             this.chpu=slug(this.coloring_name)
         },
