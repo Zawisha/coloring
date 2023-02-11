@@ -114,6 +114,8 @@ class AdminController extends Controller
             else{
                 $one_user->perm=$id[0]['user_permission_id'];
                 }
+            $date_new=(date("d.m.Y", strtotime($one_user->created_at)));
+            $one_user->data_ru=$date_new;
         }
 
         $count = User::where('id', '>', '0')

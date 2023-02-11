@@ -60,7 +60,7 @@
                 <div class="add_coloring_title">Добавьте изображение</div>
                 <form @submit="formSubmit" enctype="multipart/form-data">
                     <input type="file" class="form-control" v-on:change="imgPreview" name="avatar">
-                    <button class="btn btn-light add_coloring_title" :disabled='isDisabled_button'>Загрузить раскраску</button>
+                    <button class="btn btn-light-img add_coloring_title" :disabled='isDisabled_button'>Загрузить раскраску</button>
                     <div class="col-12 avatar img-fluid img-circle add_c_image justify-content-center" style="margin-top:10px">
                         <img class="col-6" :src="imagepreview"/>
                     </div>

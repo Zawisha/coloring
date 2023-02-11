@@ -8,6 +8,7 @@
                     <th scope="col" class="admin_text_color">id</th>
                     <th scope="col" class="admin_text_color">Ник</th>
                     <th scope="col" class="admin_text_color">Почта</th>
+                    <th scope="col" class="admin_text_color">Дата регистрации</th>
                     <th scope="col" class="admin_text_color">Статус(админ,редактор,юзер)</th>
                 </tr>
                 </thead>
@@ -16,6 +17,7 @@
                     <th scope="row" class="admin_text_color">{{ user.id }}</th>
                     <td class="admin_text_color">{{ user.name }}</td>
                     <td class="admin_text_color">{{ user.email }}</td>
+                    <td class="admin_text_color">{{ user.data_reg }}</td>
                     <td>
                         <select  @change="change_permission(user.id,user.perm)"  v-model="user.perm">
                             <option v-for="(elem,key) in roles_list" :value="elem.role_id" class="sel_cust">{{ elem.name }}</option>
@@ -110,7 +112,8 @@ export default {
                                 id:entry.id,
                                 name:entry.name,
                                 email:entry.email,
-                                perm:entry.perm
+                                perm:entry.perm,
+                                data_reg:entry.data_ru
                             });
                         }),
                         this.pagination_counter()

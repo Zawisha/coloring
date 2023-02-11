@@ -9,6 +9,13 @@
     margin-bottom: 10px;
     color: #FDFDFD!important;
 }
+.btn-light-img {
+    color: #212529;
+    border:4px double #f8f9fa!important;
+}
+.btn-light-img:hover {
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+}
 .add_c_select {
     margin-bottom: 10px;
     min-width: 220px;
