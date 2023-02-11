@@ -12,7 +12,7 @@
                         </li>
                     </ul>
                 </div>
-                <div v-if="published==1">Опубликовано <input type="checkbox" id="checkbox" v-model="published"></div>
+                <div v-if="published">Опубликовано <input type="checkbox" id="checkbox" v-model="published"></div>
                 <div v-else>Не опубликовано <input type="checkbox" id="checkbox1" v-model="published"></div>
                 <div class="add_coloring_title">Название раскраски</div>
                 <input class="input_coloring_name search-control form-control"v-on:change="slugCheck" v-model="coloring_name" placeholder="введите название" v-bind:class="{ red_border: isActive_name }" :maxlength="70" v-on:focus=delete_red_border_name() >
@@ -101,7 +101,7 @@ export default {
             imagepreview_start:false,
             color_id:'',
             success_add_final:false,
-            published:0,
+            published:false,
             chpu:'',
             search_result_cat:'',
             search_result_id_cat:'',

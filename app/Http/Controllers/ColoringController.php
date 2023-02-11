@@ -550,12 +550,23 @@ class ColoringController extends Controller
     public function get_edit_color(Request $request)
     {
         $color_id =  $request->input('color_id');
+
         $list_colored = Colored::where('id', '=', $color_id)
             ->with('categories')
             ->with('cat')
             ->get();
+
         if($list_colored)
         {
+            if($list_colored[0]['published']==0)
+            {
+                $list_colored[0]['published']=false;
+            }
+            else
+            {
+                $list_colored[0]['published']=true;
+            }
+
             return $list_colored;
         }
         return response()->json([
