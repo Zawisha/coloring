@@ -1,6 +1,9 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col-12 row reklama_row_main_list">
+                <div id="yandex_rtb_R-A-1785111-6"></div>
+            </div>
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
                 <div class="col"  v-for="(colored,index) in coloring_list">
                     <div class="card radius-15">
@@ -49,6 +52,9 @@ export default {
         this.get_coloring_list(this.coloring_list);
         this.scroll();
     },
+    updated() {
+        this.show()
+    },
     methods: {
         scroll () {
             window.onscroll = () => {
@@ -62,7 +68,15 @@ export default {
                 }
             }
         },
-
+        show()
+        {
+            window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                    renderTo: 'yandex_rtb_R-A-1785111-6',
+                    blockId: 'R-A-1785111-6'
+                })
+            })
+        },
         get_coloring_list(inp)
         {
             if(this.offset<=this.types_count)
