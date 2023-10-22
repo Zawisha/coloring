@@ -88,6 +88,7 @@ class ImageController extends Controller
            'slug'=>$slug
         ]);
 
+
         $myArray = explode(',', $selected_category);
 
        foreach ($myArray as $colored)
